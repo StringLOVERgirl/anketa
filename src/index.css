@@ -51,7 +51,6 @@
 
   .preloader {
     position: absolute;
-    bottom: 0;
     width: fit-content;
     padding: 2em;
   }
@@ -694,6 +693,10 @@
   }
 
   @media (max-width: 500px) {
+    .preloader {
+      bottom: 2em;
+    }
+    
     .middleSection {
       height: 100vh;
       background: unset;
