@@ -7,7 +7,7 @@ function App() {
   let [preloader, setpreloader] = useState('')
 
   useEffect(()=>{
-    setTimeout(()=>{setpreloader('hidepreloader')}, 4000)
+    setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
   },[])
 
   return (

@@ -185,7 +185,7 @@ export function Up () {
         setTimeout(()=>{
             setMeg('showMeg')
             isText('showText')
-        }, 4200)
+        }, 3200)
 
         const id = setInterval(() => setTime(new Date().toLocaleTimeString('ru-RU', options)), 1000);
 
