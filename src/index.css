@@ -696,7 +696,7 @@
     .preloader {
       bottom: 2em;
     }
-    
+
     .middleSection {
       height: 100vh;
       background: unset;
@@ -736,4 +736,9 @@
     .leftup {
       font-size: 1.1em;
     }
+
+    .creditsRL {
+      animation: creditsRL 145s linear infinite;
+    }
+
   }
