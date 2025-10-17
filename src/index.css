@@ -696,6 +696,7 @@
   @media (max-width: 500px) {
     .middleSection {
       height: 100vh;
+      background: unset;
     }
 
     .playerCont {
@@ -721,7 +722,7 @@
     }
 
     .meg {
-      font-size: 11em;
+      font-size: 10em;
     }
 
     .upTextLeftCont {
