@@ -699,6 +699,10 @@
 
     .middleSection {
       height: 100vh;
+      /* background: unset; */
+    }
+
+    .creditsCont {
       background: unset;
     }
 
