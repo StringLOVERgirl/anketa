@@ -500,7 +500,7 @@
     font-family: inter;
     text-transform: uppercase;
     color: var(--textColor);
-    font-size: 14em;
+    font-size: 13em;
     font-weight: 400;
     display: flex;
     border-radius: 35px;
@@ -717,7 +717,17 @@
     }
 
     .insp {
-      height: 10vh;
+      /* height: 10vh; */
+      height: 6vh;
+    }
+
+/* new */
+    .inspTitle {
+      font-size: 1.15em;
+    }
+    /* new */
+    .inspBy {
+      font-size: 0.9em;
     }
 
     .linkCont {
