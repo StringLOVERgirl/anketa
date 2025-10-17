@@ -695,7 +695,7 @@
 
   @media (max-width: 500px) {
     .middleSection {
-      height: 100vh;
+      height: 100lvh;
     }
 
     .playerCont {

@@ -204,7 +204,7 @@ export function Up () {
             <div className="upOutter">
                 <div className="upInner">
 
-                    <div className="maskBg" ref={maskref} onMouseMove={mask}></div>
+                    <div className="maskBg" ref={maskref} onMouseMove={()=> {if(window.innerWidth >= 500)mask}}></div>
 
                     <div className='playerCont'>
                         <div className="leftPanelCont">
