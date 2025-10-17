@@ -621,7 +621,7 @@
   }
 
   .middleBg {
-    height: 120lvh;
+    height: 100lvh;
     top: -10%;
     width: 100%;
     position: fixed;
