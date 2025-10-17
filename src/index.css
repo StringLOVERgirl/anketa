@@ -693,6 +693,7 @@
   }
 
   @media (max-width: 500px) {
+
     .preloader {
       bottom: 2em;
     }
@@ -744,5 +745,54 @@
     .creditsRL {
       animation: creditsRL 150s linear infinite;
     }
+  }
 
+  @media (max-height: 600px) {
+
+    .decorSnow {
+      height: 25vh;
+    }
+
+    .link {
+      font-size: 1em;
+    }
+
+    .another {
+      font-size: 0.84em
+    }
+
+    .ostTitle, .ostTitle2 {
+      font-size: 1em;
+    }
+
+    .inspTitle {
+      font-size: 1.2em;
+    }
+
+    .inspBy {
+      font-size: 0.8em;
+    }
+
+    .meg {
+      font-size: 8em;
+    }
+
+    .upTextCont {
+      bottom: 2em;
+    }
+
+    .upTextLeftCont {
+      padding-bottom: 0.25em;
+    }
+
+    .leftup {
+      font-size: 0.9em;
+    }
+
+    .leftTextBottom {
+      padding-top: 1em;
+    }
+    .time, .moscow, .year {
+      font-size:  0.95em;
+    }
   }
