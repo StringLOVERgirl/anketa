@@ -737,6 +737,7 @@
     .playerCont {
       height: 7vh;
       margin-top: 4vh;
+      margin-left: 0.7em;
     }
 
     .decorSnow {
@@ -767,8 +768,9 @@
     }
 
     .linkCont {
-      left: 5%;
+      left: 3%;
       margin-top: 13vh;
+      /* margin-left: 0.1em; */
       height: fit-content;
     }
 
