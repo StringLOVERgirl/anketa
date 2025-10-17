@@ -778,6 +778,13 @@
       z-index: 1;
     }
 
+    .divH1Cont {
+      /* width: fit-content;  */
+      pointer-events: none;
+      display: flex;
+      border-right: unset;
+    }
+
     .meg {
       font-size: 10em;
     }
