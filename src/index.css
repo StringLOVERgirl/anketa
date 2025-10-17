@@ -1,0 +1,735 @@
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    /* width: 100vw; */
+    overscroll-behavior: none;
+    overflow-x: hidden;
+    background: url('assets/startsnow.svg');
+  }
+
+  html {
+    /* overflow-x: hidden; */
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cubic: cubic-bezier(0.65, 0, 0.35, 1);
+    --textColor: #4e4a4a;
+  }
+  
+  @font-face {
+    font-family: inter;
+    src: url('/assets/inter.ttf');
+  }
+
+
+  .preloaderCont {
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    position: fixed;
+    z-index: 6;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s var(--cubic);
+  }
+
+  .hidepreloader {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .preloader {
+    position: absolute;
+    bottom: 0;
+    width: fit-content;
+    padding: 2em;
+  }
+
+  .preloaderline {
+    height: 5px;
+    border-radius: 2px;
+    transform: scaleX(0);
+    background: var(--textColor);
+    transform-origin: left;
+    will-change: transform;
+    animation: preloader 4s linear forwards;
+  }
+
+  @keyframes preloader {
+    from {   
+      transform: scaleX(0);
+    }
+    40% {
+      transform: scaleX(0.3); 
+    }
+    65% {
+      transform: scaleX(0.75);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .preloadertext {
+    font-family: inter;
+    color: var(--textColor);
+    font-size: 3em;
+  }
+
+  .upSection {
+    height: 80vh;
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow: hidden;
+  }
+
+  .maskBg {
+    background: #d8c0d8;
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+  }
+
+  .decorSnow {
+    height: 30vh;
+    aspect-ratio: 1/1;
+    background: url('assets/startsnow.svg') center / cover;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, 20%) rotate(0);
+    animation: snow 35s 5s infinite var(--cubic);
+  }
+
+  @keyframes snow {
+    from {
+      transform: translate(20%, 20%) rotate(0);
+    }
+    /* 25% {
+      transform: translate(20%, 20%) rotate(90deg);
+    } */
+    15% {
+      transform: translate(20%, 20%) rotate(180deg);
+    }
+    30% {
+      transform: translate(20%, 20%) rotate(-15deg);
+    }
+    37% {
+      transform: translate(20%, 20%) rotate(10deg);
+    }
+    42%, 100% {
+      transform: translate(20%, 20%) rotate(0);
+    }
+  }
+
+  .upOutter {
+    position: relative;
+    height: 100%;
+  }
+
+  .upInner {
+    height: 100%;
+  }
+
+  .year {
+    /* color: white; */
+    position: absolute;
+    font-family: inter;
+    /* font-size: 1.25em; */
+    /* border-radius: 35px; */
+    /* background: var(--textColor); */
+    /* padding-inline: 0.5em; */
+    /* padding-top: 0.1em; */
+    /* padding-bottom: 0.1em; */
+    /* text-transform: uppercase; */
+    right: 0%;
+  }
+
+  .year::after {
+    /* content: ''; */
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: -0.1em;
+    background: var(--textColor);
+  }
+
+  .linkCont {
+    position: absolute;
+    height: 15vh;
+    margin-top: 5vh;
+    left: 50%;
+    display: flex;
+    gap: 0.5em;
+  }
+
+  .elHoyoImg {
+    height: 100%; 
+    aspect-ratio: 1.5/1;
+    border-radius: 8px;
+    animation: linkbg 30s linear infinite;
+  }
+
+  @keyframes linkbg {
+    from, 48% {
+      background: url('./assets/link1.png') center / 200%;
+    }
+    52%, 96% {
+      background: url('./assets/link2.png') center / 200%;
+    }
+    to {
+      background: url('./assets/link1.png') center / 200%;
+    }
+  }
+
+  .another {
+    font-size: 1em;
+    white-space: nowrap;
+    font-family: inter;
+    color: var(--textColor);
+  }
+
+  .linkTextCont .inspBy::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    transition: background-color 0.3s;
+    background-color: white;
+  }
+
+  .linkTextCont .inspBy::before {
+    /* background: url('assets/noun-arrow-black.svg') top / 80% no-repeat; */
+    height: 1.15em;
+    margin-top: 0.2em;
+  }
+
+  .link:hover {
+    color: var(--textColor);
+  }
+
+  .linkTextCont .inspBy:hover::before {
+    /* background: url('assets/noun-arrow-92219.svg') top / 80% no-repeat; */
+    height: 1.15em;
+    margin-top: 0.2em;
+  }
+
+  .linkTextCont .inspBy:hover::after {
+    background-color: var(--textColor);
+  }
+
+  .link {
+    font-size: 1.4em;
+    white-space: nowrap;
+    font-family: inter;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .playerCont {
+    height: 9vh;
+    margin-top: 5vh;
+    margin-left: 1em;
+    width: fit-content;
+    position: fixed;
+    z-index: 2;
+    border-radius: 35px;
+    transition: clip-path 0.6s var(--cubic);
+    clip-path: inset(0 40% 0 0 );
+  }
+
+  .playerCont::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 60%;
+    height: 100%;
+    border-radius: 35px;
+    background: rgba(78, 74, 74, 0.221);
+    backdrop-filter: blur(3px);
+    transition: width 0.6s var(--cubic);
+  }
+
+  .playerCont:hover {
+    clip-path: inset(0 0 0 0 );
+  }
+  .playerCont:hover::after {
+    width: 100%;
+  }
+
+  .leftPanelCont {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nextTrack, .prevTrack, .playstatus {
+    transition: transform 0.4s, background 0.2s;
+    will-change: transform;
+    border: none;
+  }
+
+  .nextTrack:hover, .playstatus:hover, .prevTrack:hover {
+    transform: scale(1.25) rotate(var(--rotate));
+  } 
+
+  .playstatus {
+    height: 40%;
+    aspect-ratio: 1/1;
+    margin-left: 1em;
+    margin-right: 0.5em;
+    cursor: pointer;
+  }
+
+  .nextTrack, .prevTrack {
+    background: url('assets/nextcircle.svg') center / cover no-repeat;
+    height: 60%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    --rotate: 0
+  }
+
+  .nextTrack {
+    margin-right: 0.2em;
+  }
+
+  .prevTrack { 
+    margin-left: 0.5em;
+    margin-right: 0.2em;
+    --rotate: -180deg; 
+    margin-top: 0.025em;
+    transform: rotate(180deg);
+  }
+
+  .pause {
+    border: none;
+    background: url('assets/play.svg') center / cover;
+  }
+  .play {
+    border: none;
+    background: url('assets/pause.svg') center / 90% no-repeat;
+  }
+
+  .label {
+    height: 90%;
+    transition: background 0.3s ;
+    aspect-ratio: 1/1;
+  }
+
+  .audioRL {
+    overflow: hidden;
+  }
+
+  .audioRLInner {
+    display: flex;
+    align-items: center;
+    animation: audiorl 15s linear infinite;
+  }
+
+  @keyframes audiorl {
+    from, 25% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .ostTitle, .ostTitle2 {
+    /* padding-left: 0.5em; */
+    font-family: inter;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: white;
+    /* padding-right: 1em; */
+    /* text-decoration: underline; */
+  }
+
+  .ostTitle2 {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .hierarchyOst {
+    background: url('assets/hierarchylabel.jpeg') center / cover;
+  }
+
+  .xxxost {
+    background: url('assets/xxxlabel.jpeg') center / cover;
+  }
+
+  .bones {
+    background: url('assets/hqdefault.jpeg') center / cover;
+  }
+
+  .chlorella {
+    background: url('assets/chlorella.webp') center / cover;
+  }
+
+  .chekoi {
+    background: url('assets/chekoi.jpeg') center / cover;
+  }
+
+
+  .inspiredCont {
+    position: absolute;
+    right: 5%;
+    padding-top: 2em;
+    width: fit-content;
+    /* display: flex; */
+  }
+
+  .insp {
+    background: url('./assets/inspired.png') center / cover;
+    height: 15vh;
+    border-radius: 7px;
+    aspect-ratio: 1.65/1;
+  }
+
+  .inspTitle {
+    color: var(--textColor);
+    font-family: inter;
+    font-size: 1.4em;
+    letter-spacing: 0.025em;
+    padding-top: 0.25em;
+    pointer-events: none;
+  }
+
+  .inspTitle::after {
+    content: '(2024)';
+    position: absolute;
+    font-family: inter;
+    color: var(--textColor);
+    font-size: 0.65em;
+    padding-left: 0.1em;
+  }
+
+  .inspByInner {
+    transition: color 0.5s;
+    text-decoration: none;
+    color: white;
+  }
+
+  .inspBy {
+    overflow: hidden;
+    font-family: inter;
+    font-size: 1em; 
+    position: relative;
+    margin-top: 0.25em;
+    display: flex;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  .inspBy:hover .inspByInner {
+    color: var(--textColor);
+  }
+
+  .inspBy:hover .inspByInner::after {
+    background: var(--textColor);
+  }
+
+  .inspBy:hover::before {
+    background: url('assets/noun-arrow-black.svg') top / 80% no-repeat;
+  }
+
+  .inspByInner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    height: 1px;
+    width: 100%;
+    transition: background 0.5s;
+  }
+
+  .inspBy::before {
+    content: '';
+    position: relative;
+    display: block;
+    height: 1em;
+    margin-right: 0.25em;
+    aspect-ratio: 1/1;
+    transition: background 0.3s;
+    background: url('assets/noun-arrow-92219.svg') top / 80% no-repeat;
+  }
+
+
+  .upTextCont {
+    position: absolute;
+    bottom: 3em;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .divH1Cont {
+    /* width: fit-content;  */
+    pointer-events: none;
+    display: flex;
+  }
+
+  .meg {
+    font-family: inter;
+    text-transform: uppercase;
+    color: var(--textColor);
+    font-size: 14em;
+    font-weight: 400;
+    display: flex;
+    border-radius: 35px;
+    transition: transform 1.2s var(--delay) var(--cubic);
+    transform: translateY(-100%);
+    line-height: 0.8;
+    /* border: solid 2px #4e4a4a; */
+  }
+  .showMeg {
+    transform: translateY(0);
+  }
+
+  .g::after {
+    content: "©";
+    font-size: 0.15em;
+    /* position: absolute; */
+    /* top: 15%; */
+    display: block;
+    /* margin-top: 1.1em; */
+    transform: translateX(-0.5em);
+  }
+
+
+  .upTextLeftCont {
+    height: fit-content;
+    align-self: flex-end;
+    width: fit-content;
+    /* overflow: hidden; */
+    padding-bottom: 1em;
+    padding-left: 2em;
+    position: relative;
+    /* transform: translateY(-0.5em);     */
+  }
+
+  .upTextCont::after {
+    /* content: ''; */
+    position: absolute;
+    bottom: -0.5em;
+    background: var(--textColor);
+    height: 1px;
+    width: 100%;
+    transform-origin: center;
+    /* transform: scaleX(0.82); */
+  }
+
+  .leftup {
+    font-family: inter;
+    font-size: 1.35em;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--textColor);
+    pointer-events: none;
+  }
+
+  .leftTextTop {
+    pointer-events: none;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.5s var(--cubic);
+  }
+
+  .showText {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .leftTextBottom {
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+  }
+
+  .time, .moscow, .year {
+    font-size: 1.1em;
+    border: solid 1px var(--textColor);
+    border-radius: 35px;
+    padding-inline: 0.5em;
+    color: var(--textColor);
+    /* text-align: center; */
+  }
+
+  .time {
+    margin-right: 0.25em;
+  }
+
+  .langCont {
+    right: 0;
+    position: absolute;
+    pointer-events: all;
+  } 
+
+  .langCont:hover .lang {
+    background: #957171a0;
+    pointer-events: all;
+  }
+
+  .lang {
+    background: var(--textColor);
+    border-radius: 35px;
+    cursor: pointer;
+    border: unset;
+    color: white;
+    padding-inline: 1.5em;
+    font-family: inter;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
+    transition: background 0.3s;
+  }
+
+
+  .middleSection{
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: rgba(78, 74, 74, 0.1);
+  }
+
+  .middleBg {
+    height: 120%;
+    top: -10%;
+    width: 100%;
+    position: fixed;
+    will-change: transform;
+    filter: brightness(95%);
+    transform: translateY(calc(var(--prlxMiddle)));
+    background: url('./assets/2148110472.jpg') center / cover;
+    z-index: -1;
+  }
+
+  .creditsCont {
+    width: fit-content;
+    background: rgba(78, 74, 74, 0.221);
+  }
+
+  .creditsRL {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    justify-content: center;
+    /* width: fit-content;
+    background: rgba(78, 74, 74, 0.221); */
+    padding-inline: 2em;
+    backdrop-filter: blur(1px);
+    animation: creditsRL 135s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes creditsRL {
+    from {
+      transform: translateY(85vh)
+    }
+    to {
+      transform: translateY(-100%)
+    }
+  }
+
+  .shows, .movies, .other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5em;
+  }
+
+  .other {
+    padding-bottom: 85vh;
+  }
+
+  .mostly {
+    color: white;
+    font-family: inter;
+    padding-bottom: 0.5em;
+  }
+
+  .title {
+    color: white;
+    font-family: inter;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 500;
+    padding-bottom: 1em;
+  }
+
+  .titleContent {
+    color: rgb(255, 255, 255);
+    font-family: inter;
+    font-size: 1.2em;
+    text-align: center;
+    padding-bottom: 0.15em;
+  }
+
+  @media (max-width: 500px) {
+    .middleSection {
+      height: 100vh;
+    }
+
+    .playerCont {
+      height: 7vh;
+    }
+
+    .decorSnow {
+      height: 10vh;
+    }
+
+    .insp {
+      height: 10vh;
+    }
+
+    .linkCont {
+      left: 5%;
+      margin-top: 14vh;
+    }
+
+    .upTextCont {
+      flex-direction: column;
+      bottom: 2em;
+    }
+
+    .meg {
+      font-size: 11em;
+    }
+
+    .upTextLeftCont {
+      padding-left: 1em;
+      padding-top: 1em;
+    }
+
+    .leftup {
+      font-size: 1.1em;
+    }
+  }
