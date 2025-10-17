@@ -620,7 +620,7 @@
   }
 
   .middleBg {
-    height: 120%;
+    height: 120lvh;
     top: -10%;
     width: 100%;
     position: fixed;
@@ -695,7 +695,7 @@
 
   @media (max-width: 500px) {
     .middleSection {
-      height: 100lvh;
+      height: 100vh;
     }
 
     .playerCont {
