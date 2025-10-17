@@ -53,6 +53,7 @@
     position: absolute;
     width: fit-content;
     padding: 2em;
+    padding-left: 1.25em;
     bottom: 0;
   }
 
@@ -399,7 +400,7 @@
   .inspiredCont {
     position: absolute;
     right: 5%;
-    padding-top: 2em;
+    padding-top: 5vh;
     width: fit-content;
     /* display: flex; */
   }
@@ -724,7 +725,10 @@
 /* new */
     .inspTitle {
       font-size: 1.15em;
+      /* display: flex; */
+      /* flex-direction: column; */
     }
+    .inspTitle::after { content: '';}
     /* new */
     .inspBy {
       font-size: 0.9em;
