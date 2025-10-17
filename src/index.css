@@ -716,6 +716,7 @@
 
     .decorSnow {
       height: 10vh;
+      /* z-index: ; */
     }
 
     .inspiredCont { 
@@ -748,7 +749,8 @@
 
     .upTextCont {
       flex-direction: column;
-      bottom: 2em;
+      bottom: 1em;
+      z-index: 1;
     }
 
     .meg {
