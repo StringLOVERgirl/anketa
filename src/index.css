@@ -53,6 +53,7 @@
     position: absolute;
     width: fit-content;
     padding: 2em;
+    bottom: 0;
   }
 
   .preloaderline {
@@ -747,7 +748,7 @@
     }
   }
 
-  @media (max-height: 600px) {
+  @media (max-height: 600px) and (max-width: 1000px) {
 
     .decorSnow {
       height: 25vh;
@@ -794,5 +795,47 @@
     }
     .time, .moscow, .year {
       font-size:  0.95em;
+    }
+  }
+
+  @media (min-width: 1380px) {
+    .decorSnow {
+      height: 20vh;
+    }
+
+    .ostTitle, .ostTitle2 {
+      font-size: 2em;
+    }
+
+    .link {
+      font-size: 1.75em;
+    }
+
+    .insp {
+      height: 13vh;
+    }
+
+    .another {
+      font-size: 1.2em
+    }
+
+    .meg {
+      font-size: 17em;
+    }
+
+    .leftup {
+      font-size: 1.7em;
+    }
+
+    .time, .moscow, .year {
+      font-size:  1.2em;
+    }
+
+    .title {
+      font-size: 3em;
+    }
+
+    .titleContent {
+      font-size: 1.5em;
     }
   }
