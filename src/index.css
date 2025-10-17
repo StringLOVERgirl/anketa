@@ -711,10 +711,16 @@
 
     .playerCont {
       height: 7vh;
+      margin-top: 4vh;
     }
 
     .decorSnow {
       height: 10vh;
+    }
+
+    .inspiredCont { 
+      right: 3%;
+      padding-top: 4vh;
     }
 
     .insp {
@@ -736,7 +742,8 @@
 
     .linkCont {
       left: 5%;
-      margin-top: 14vh;
+      margin-top: 13vh;
+      height: fit-content;
     }
 
     .upTextCont {
