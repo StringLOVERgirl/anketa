@@ -612,7 +612,7 @@
 
 
   .middleSection{
-    height: 85vh;
+    height: 85svh;
     position: relative;
     overflow: hidden;
     display: flex;
