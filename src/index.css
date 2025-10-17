@@ -64,7 +64,7 @@
     background: var(--textColor);
     transform-origin: left;
     will-change: transform;
-    animation: preloader 4s linear forwards;
+    animation: preloader 3s linear forwards;
   }
 
   @keyframes preloader {
