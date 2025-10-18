@@ -10,6 +10,7 @@
     overscroll-behavior: none;
     overflow-x: hidden;
     background: url('assets/startsnow.svg');
+
   }
 
   html {
@@ -657,7 +658,7 @@
     will-change: transform;
     filter: brightness(95%);
     transform: translateY(calc(var(--prlxMiddle)));
-    background: url('./assets/2148110472.jpg') center / cover;
+    background: linear-gradient( rgba(78, 74, 74, 0.1), rgba(78, 74, 74, 0.1)), url('./assets/2148110472.jpg') center / cover;
     z-index: -1;
   }
 
