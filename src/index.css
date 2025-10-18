@@ -652,7 +652,7 @@
 
   .middleBg {
     height: 120lvh;
-    top: -10%;
+    top: -10lvh;
     width: 100%;
     position: fixed;
     will-change: transform;
