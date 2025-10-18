@@ -738,7 +738,7 @@
 
     .middleSection {
       height: 85vh;
-      background: rgba(78, 74, 74, 0.2)
+      background: unset
       
     }
 
