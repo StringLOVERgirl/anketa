@@ -8,7 +8,7 @@ import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
 
 
 function CreditsRL() {
-
+// мне леень было раздедлять на компоненты -итак сойдет
     const content = [
         [
            'Reborn Rich',
