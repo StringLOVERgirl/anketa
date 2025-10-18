@@ -227,7 +227,7 @@ export function Up () {
                             <button className={`nextTrack ${next.next}`} onClick={()=>playnext('+')}></button>
                             <div className="audioRL">
                                 <div className="audioRLInner">
-                                    <div className="ostTitle">{'\u00A0'}{'\u00A0'}{playerst.title}{'\u00A0'}{'\u00A0'}</div>
+                                    <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}</div>
                                     <div className="ostTitle2">{'\u00A0'}{'\u00A0'}{playerst.title}</div>
                                 </div>
                             </div>
