@@ -792,12 +792,21 @@
     }
 
     .upTextLeftCont {
-      padding-left: 1em;
+      padding-left: 0.75em;
+      padding-top: 1em;
+      align-self: unset;
+    }
+
+    .leftTextBottom {
       padding-top: 1em;
     }
 
     .leftup {
-      font-size: 1.1em;
+      font-size: 1em;
+    }
+
+    .time, .moscow, .year {
+      font-size:  1em;
     }
 
     .creditsRL {
@@ -810,7 +819,7 @@
     .preloader {
       margin-bottom: 2em;
     }
-    
+
     .decorSnow {
       height: 25vh;
     }

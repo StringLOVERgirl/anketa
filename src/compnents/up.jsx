@@ -245,6 +245,7 @@ export function Up () {
                     <audio src={playerst.track} ref={audioref} onEnded={() => setPlaystatus('pause')}></audio>
                     <div className="upTextCont">
                         <div className="divH1Cont">
+                            {/* {['s','k','y'].map((e,i) => { */}
                             {['m','e','g'].map((e,i) => {
                                    if (i == 2) {return <span className={`meg g ${meg}`} style={{'--delay': i * 0.17 + "s"}}>{e}</span>}
                                    else {return <span className={`meg ${meg}`} style={{'--delay': i * 0.17 + 's'}}>{e}</span>}
@@ -254,6 +255,8 @@ export function Up () {
 
                         <div className="upTextLeftCont">
                             <div className={`leftTextTop ${text}`} ref={leftTextTop}>
+                                {/* <div className="leftup topText">Thank you for visiting</div> */}
+                                {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
                                 <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div>
                                 <div className="leftup bottomText">Здесь немного из мира моих интересов</div>
                             </div>
