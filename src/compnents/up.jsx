@@ -190,10 +190,13 @@ export function Up () {
 
         const id = setInterval(() => setTime(new Date().toLocaleTimeString('ru-RU', options)), 1000);
 
-        window.addEventListener('scroll', middleParallax)
+        if (window.innerWidth >= 600){
+            window.addEventListener('scroll', middleParallax) 
+        }
 
         return (() => {
-            window.removeEventListener('scroll', middleParallax)
+            if (window.innerWidth >= 600){
+            window.removeEventListener('scroll', middleParallax) }
             clearInterval(id);
         })
 
@@ -205,7 +208,7 @@ export function Up () {
             <div className="upOutter">
                 <div className="upInner">
 
-                    <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 500){mask(ev)}}}></div>
+                    <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div>
 
                     <div className='playerCont'>
                         <div className="leftPanelCont">
