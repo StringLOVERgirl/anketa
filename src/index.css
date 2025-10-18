@@ -54,7 +54,7 @@
     position: absolute;
     width: fit-content;
     padding: 2em;
-    padding-left: 1.25em;
+    padding-left: 1.15em;
     bottom: 0;
   }
 
@@ -736,7 +736,7 @@
     }
 
     .middleBg {
-      background: linear-gradient( rgba(78, 74, 74, 0.21), rgba(78, 74, 74, 0.21)), url('./assets/2148110472.jpg') center / cover;
+      background: linear-gradient( rgba(78, 74, 74, 0.22), rgba(78, 74, 74, 0.22)), url('./assets/2148110472.jpg') center / cover;
     }
 
     .creditsCont {
