@@ -323,8 +323,8 @@
     transform: scale(1.25) rotate(var(--rotate));
   } 
 
-  .trackButtonsDef {
-    transform: scale(1) rotate(var(--rotate));
+  .trackButtonsScale {
+    transform: scale(1.25) rotate(var(--rotate)) !important;
   }
 
   .playstatus {
@@ -352,7 +352,7 @@
     margin-right: 0.2em;
     --rotate: -180deg; 
     margin-top: 0.025em;
-    transform: rotate(180deg);
+    transform: rotate(var(--rotate));
   }
 
   .pause {
@@ -729,6 +729,12 @@
     .preloader {
       bottom: 2em;
     }
+
+
+
+  .nextTrack:hover,  .prevTrack:hover {
+    transform: rotate(var(--rotate));
+  } 
 
     .middleSection {
       height: 85vh;

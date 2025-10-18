@@ -137,12 +137,16 @@ export function Up () {
             track: player[nexttrack][2]
            }
            ))
+
+           if (direction == '+') {setnext(pr=>({...pr, next: 'trackButtonsScale'}))} else {
+            setnext(pr=>({...pr, prev: 'trackButtonsScale'}))   
+        }
+        
        setTimeout(()=>{ 
         audioref.current.play()
         setPlaystatus('play')
-        if (direction == '+') {setnext(prev=>({...prev, next: 'trackButtonsDef'}))} else {
-            setnext(prev=>({...prev, prev: 'trackButtonsDef'}))   
-        }
+        setnext(_=>({prev: '', next: ''}))
+        // setnext(_=>({prev:'',next:''}))
        }, 300)
     }
 
