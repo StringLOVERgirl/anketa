@@ -377,7 +377,7 @@
   .audioRLInner {
     display: flex;
     align-items: center;
-    animation: audiorl 15s linear infinite;
+    animation: audiorl 8s linear infinite;
   }
 
   @keyframes audiorl {
