@@ -647,7 +647,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background: rgba(78, 74, 74, 0.15);
+    /* background: rgba(78, 74, 74, 0.15); */
   }
 
   .middleBg {
@@ -658,13 +658,13 @@
     will-change: transform;
     filter: brightness(95%);
     transform: translateY(calc(var(--prlxMiddle)));
-    background: linear-gradient( rgba(78, 74, 74, 0.1), rgba(78, 74, 74, 0.1)), url('./assets/2148110472.jpg') center / cover;
+    background: linear-gradient( rgba(78, 74, 74, 0.2), rgba(78, 74, 74, 0.2)), url('./assets/2148110472.jpg') center / cover;
     z-index: -1;
   }
 
   .creditsCont {
     width: fit-content;
-    /* background: rgba(78, 74, 74, 0.221); */
+    background: rgba(78, 74, 74, 0.15);
   }
 
   .creditsRL {
