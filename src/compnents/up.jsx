@@ -93,6 +93,7 @@ export function Up () {
     const maskref = useRef(null)
     const leftTextTop = useRef(null) 
     let [text, isText] = useState('')
+    const isMobile = useRef()
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],

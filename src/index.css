@@ -322,6 +322,10 @@
     transform: scale(1.25) rotate(var(--rotate));
   } 
 
+  .trackButtonsDef {
+    transform: scale(1) rotate(var(--rotate));
+  }
+
   .playstatus {
     height: 40%;
     aspect-ratio: 1/1;
@@ -672,7 +676,7 @@
     background: rgba(78, 74, 74, 0.221); */
     padding-inline: 2em;
     backdrop-filter: blur(1px);
-    animation: creditsRL 135s linear infinite;
+    animation: creditsRL 140s linear infinite;
     will-change: transform;
   }
 
