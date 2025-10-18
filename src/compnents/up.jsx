@@ -228,7 +228,7 @@ export function Up () {
                             <div className="audioRL">
                                 <div className="audioRLInner">
                                     <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}</div>
-                                    <div className="ostTitle2">{'\u00A0'}{'\u00A0'}{playerst.title}</div>
+                                    <div className="ostTitle2">{playerst.title}{'\u00A0'}{'\u00A0'}</div>
                                 </div>
                             </div>
                         </div>
