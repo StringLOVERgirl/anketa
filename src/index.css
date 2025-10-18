@@ -735,6 +735,10 @@
       /* background: unset; */
     }
 
+    .middleBg {
+      background: linear-gradient( rgba(78, 74, 74, 0.21), rgba(78, 74, 74, 0.21)), url('./assets/2148110472.jpg') center / cover;
+    }
+
     .creditsCont {
       background: unset;
     }
