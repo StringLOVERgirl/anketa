@@ -5,7 +5,7 @@
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
+    /* height: 100vh; */
     /* width: 100vw; */
     overscroll-behavior: none;
     overflow-x: hidden;
@@ -731,7 +731,7 @@
     }
 
     .middleSection {
-      height: 85vh;
+      height: 80lvh;
       background: unset;
     }
 
