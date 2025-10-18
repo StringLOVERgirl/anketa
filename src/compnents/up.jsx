@@ -94,6 +94,7 @@ export function Up () {
     const leftTextTop = useRef(null) 
     let [text, isText] = useState('')
     const isMobile = useRef()
+    let [next, setnext] = useState({next: '', prev: ''})
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
@@ -139,6 +140,9 @@ export function Up () {
        setTimeout(()=>{ 
         audioref.current.play()
         setPlaystatus('play')
+        if (direction == '+') {setnext(prev=>({...prev, next: 'trackButtonsDef'}))} else {
+            setnext(prev=>({...prev, prev: 'trackButtonsDef'}))   
+        }
        }, 300)
     }
 
@@ -215,8 +219,8 @@ export function Up () {
                         <div className="leftPanelCont">
                             <button className={`playstatus ${playstatus}`} onClick={changePlayStatus}></button>
                             <div className={`label ${playerst.label}`}></div>
-                            <button className="prevTrack" onClick={()=>playnext('-')}></button>
-                            <button className="nextTrack" onClick={()=>playnext('+')}></button>
+                            <button className={`prevTrack ${next.prev}`} onClick={()=>playnext('-')}></button>
+                            <button className={`nextTrack ${next.next}`} onClick={()=>playnext('+')}></button>
                             <div className="audioRL">
                                 <div className="audioRLInner">
                                     <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}</div>
