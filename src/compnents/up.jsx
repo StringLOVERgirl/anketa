@@ -190,13 +190,14 @@ export function Up () {
 
         const id = setInterval(() => setTime(new Date().toLocaleTimeString('ru-RU', options)), 1000);
 
-        if (window.innerWidth >= 600){
+        // if (window.innerWidth >= 600){
             window.addEventListener('scroll', middleParallax) 
-        }
+        // }
 
         return (() => {
-            if (window.innerWidth >= 600){
-            window.removeEventListener('scroll', middleParallax) }
+            // if (window.innerWidth >= 600){
+            window.removeEventListener('scroll', middleParallax) 
+        // }
             clearInterval(id);
         })
 
