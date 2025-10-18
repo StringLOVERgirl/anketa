@@ -750,6 +750,10 @@
       background: unset;
     }
 
+    .creditsRL {
+      animation: creditsRL 150s linear infinite;
+    }
+
     .playerCont {
       height: 7vh;
       margin-top: 4vh;
