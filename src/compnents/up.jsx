@@ -185,7 +185,7 @@ export function Up () {
 
     function middleParallax () {
         const value = window.scrollY * 0.008 + "%"
-        // console.log(value)
+        console.log(value)
         middleSection.current.style.setProperty('--prlxMiddle', value)
     }
 
