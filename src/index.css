@@ -736,7 +736,7 @@
     }
 
     .middleBg {
-      background: linear-gradient( rgba(78, 74, 74, 0.22), rgba(78, 74, 74, 0.22)), url('./assets/2148110472.jpg') center / cover;
+      background: linear-gradient( rgba(78, 74, 74, 0.3), rgba(78, 74, 74, 0.3)), url('./assets/2148110472.jpg') center / cover;
     }
 
     .creditsCont {
