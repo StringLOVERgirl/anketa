@@ -98,10 +98,10 @@ export function Up () {
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
-        xxx: ['XXXTENTACION - before I dive (AI Generated Song)', 'xxxost', xxx],
-        bones: ['Bones - IAmCertainlyNotWorthYourTime', 'bones', bones],
-        maid: ['Chikoi The Maid - Reflection', 'chekoi', chikoi],
-        chlorellaBones: ['Bones - Chlorella by TeamSESH', 'chlorella', chlorella],
+        xxx: ['XXXTENTACION - before I dive (AI Generated Song) ', 'xxxost', xxx],
+        bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
+        maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
+        chlorellaBones: [' Bones - Chlorella by TeamSESH ', 'chlorella', chlorella],
     }
 
     const playlist = Object.keys(player)
@@ -227,8 +227,8 @@ export function Up () {
                             <button className={`nextTrack ${next.next}`} onClick={()=>playnext('+')}></button>
                             <div className="audioRL">
                                 <div className="audioRLInner">
-                                    <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}</div>
-                                    <div className="ostTitle2">{playerst.title}{'\u00A0'}{'\u00A0'}</div>
+                                    <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}</div>
+                                    <div className="ostTitle2">{playerst.title}</div>
                                 </div>
                             </div>
                         </div>
