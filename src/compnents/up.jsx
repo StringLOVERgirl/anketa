@@ -9,6 +9,10 @@ import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
 import handbook from '/audio/HandbookForTheRecentlyDeceased.mp3'
 import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
 import twoh from '/audio/2high.mp3'
+import dclxvi from '/audio/DCLXVI_-_DISSECTION_76038142.mp3'
+import dissection from '/assets/dissection720.mp4'
+
+
 
 
 
@@ -101,12 +105,34 @@ export function Up () {
     let [text, isText] = useState('')
     const isMobile = useRef()
     let [next, setnext] = useState({next: '', prev: ''})
+    const videoref = useRef(null)
+    let [videoSet, setfirstplay] = useState({status: false, class: ""})
+    let [h1ContOpacity, setH1Opacity] = useState('')
+
+    function dclxviChecking(){
+        console.log(videoSet.status, playerst.label)
+        if (playerst.label == 'burgos' && videoSet.status == false) {
+            console.log(123245)
+            setfirstplay(prev=>({
+                status: true, class: 'speedhunters' 
+            }))
+            videoref.current.play()
+            setH1Opacity('h1ContVideo')
+        }
+        if (videoSet.class == 'speedhunters') {
+             setfirstplay(prev=>({
+                status: true, class: '' 
+            }))
+            setH1Opacity('')
+        }
+    }
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
         burgos: ['White Girls in the Back of the Bus', 'burgos', burgos],
+        special: ['DCLXVI - Dissection • SPECIAL', 'special', dclxvi],
         handbook: ['Bones - HandbookForTheRecentlyDeceased', 'handbook', handbook],
-        xxx: ['XXXTENTACION - before I dive (AI Generated Song) ', 'xxxost', xxx],
+        xxx: ['XXXTENTACION - before I dive (AI) ', 'xxxost', xxx],
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
         maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
         blackl: [' Bones - BlackLungs & YellowTape ', 'handbook', blacklungs],
@@ -137,6 +163,9 @@ export function Up () {
             } else {
                currentindex.current -= 1
             }
+            // video cheking
+        dclxviChecking()
+
         console.log(currentindex.current)
         let nexttrack = playlist[currentindex.current]
         setCurrentTrack(nexttrack);
@@ -229,8 +258,11 @@ export function Up () {
 
                     {/* <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div> */}
                     <div className="blurBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
-                    <div className="maskBg"></div>
-                    <div className="maskBg blurbg2"></div>
+                       <div className="maskBg"></div>
+                       <div className="maskBg blurbg2"></div>
+                    </div>
+                    <div className={`special ${videoSet.class}`}>
+                        <video src={dissection} ref={videoref} muted onEnded={() => videoref.current.style.setProperty('--opacity', 0)}></video>
                     </div>
 
                     <div className='playerCont'>
@@ -269,9 +301,15 @@ export function Up () {
                         </div>
                     </div>
 
-                    <audio src={playerst.track} ref={audioref} onEnded={() => setPlaystatus('pause')}></audio>
-                    <div className="upTextCont">
-                        <div className="divH1Cont">
+                    <audio src={playerst.track} ref={audioref} onEnded={() => {
+                           setPlaystatus('pause')
+                           if (playerst.label == 'special') {
+                              setfirstplay(prev=>({...prev, class: ''}))
+                              setH1Opacity('')
+                           }
+                        }}></audio>
+                    <div className={`upTextCont ${h1ContOpacity}`}>
+                        <div className='divH1Cont'>
                             {/* {['s','k','y'].map((e,i) => { */}
                             {['m','e','g'].map((e,i) => {
                                    if (i == 2) {return <span className={`meg g ${meg}`} style={{'--delay': i * 0.17 + "s"}}>{e}</span>}

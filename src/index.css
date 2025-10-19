@@ -129,6 +129,32 @@
     overflow: hidden;
   }
 
+  .special {
+    background: black;
+    height: 100%;
+    width: 100vw;
+    /* z-index: 1; */
+    position: absolute;
+    /* display: none; */
+    transition: clip-path 1.3s var(--cubic);
+    clip-path: inset(0 100% 0 0);
+    background-color: black;
+  }
+
+  .speedhunters {
+    clip-path: inset(0 0 0 0);
+    /* display: initial; */
+  }
+
+  .special video {
+    --opacity: 1;
+    height: 100%;
+    /* width: 100vw; */
+    object-fit: contain;
+    transition: opacity 0.3s;
+    opacity: var(--opacity);
+  }
+
   .maskBg {
     background: radial-gradient(
       closest-corner at 35vw 20vw,
@@ -189,7 +215,7 @@
     bottom: 0;
     right: 0;
     display: flex;
-    transform: translate(-45%, -45%) rotate(0);
+    transform: translate(-30%, -45%) rotate(0);
   }
 
   .decorSnow {
@@ -271,7 +297,7 @@
 
   .linkCont {
     position: absolute;
-    height: 15vh;
+    /* height: 15vh; */
     margin-top: 5vh;
     left: 50%;
     display: flex;
@@ -604,6 +630,8 @@ padding: 1em;
     display: flex;
     overflow: hidden;
     pointer-events: none;
+    transition: opacity 0.3s;
+    opacity: 1;
   }
 
   .divH1Cont {
@@ -611,6 +639,10 @@ padding: 1em;
     pointer-events: none;
     display: flex;
     border-right: 1px solid var(--textColor);
+  }
+
+  .h1ContVideo {
+    opacity: 0.3;
   }
 
   .meg {
@@ -820,6 +852,16 @@ padding: 1em;
       bottom: 2em;
     }
 
+    .speedhunters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .special video {
+      height: 70%;
+    }
+
     .maskBg {
       background: unset
       /* radial-gradient(
@@ -859,14 +901,24 @@ padding: 1em;
     .playerCont {
       height: 7vh;
       margin-top: 4vh;
-      margin-left: 0.7em;
+      margin-left: 0.7em;;
+    }
+
+    .snowCont {
+      bottom: 3.75em;
+      display: none
     }
 
     .decorSnow {
-      display: none;
+      /* display: none; */
+      background: url(/src/assets/startsnow.svg) center / contain no-repeat;
       height: 13vh;
-      display: none;
+      /* display: none; */
       /* z-index: ; */
+    }
+
+    .snowblur {
+      background: var(--textColor);
     }
 
     .inspiredCont { 
