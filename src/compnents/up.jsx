@@ -100,7 +100,7 @@ export function Up () {
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
-        burgos: ['Burgos, NUG BEATZ - White Girls in the Back of the Bus', 'burgos', burgos],
+        burgos: ['White Girls in the Back of the Bus', 'burgos', burgos],
         xxx: ['XXXTENTACION - before I dive (AI Generated Song) ', 'xxxost', xxx],
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
         maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
