@@ -7,6 +7,7 @@ import chlorella from '/audio/BONES-Chlorella.mp3'
 import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
 import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
 import handbook from '/audio/HandbookForTheRecentlyDeceased.mp3'
+import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
 
 
 function CreditsRL() {
@@ -106,6 +107,7 @@ export function Up () {
         xxx: ['XXXTENTACION - before I dive (AI Generated Song) ', 'xxxost', xxx],
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
         maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
+        blackl: [' Bones - BlackLungs & YellowTape ', 'handbook', blacklungs],
         chlorellaBones: [' Bones - Chlorella by TeamSESH ', 'chlorella', chlorella],
     }
 
