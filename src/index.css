@@ -34,6 +34,11 @@
     src: url('/assets/inter.ttf');
   }
 
+  @font-face {
+    font-family: raleway;
+    src: url('../public/Raleway-VariableFont_wght.ttf');
+  }
+
 
   .preloaderCont {
     height: 100vh;
@@ -632,7 +637,7 @@
   .leftup {
     font-family: inter;
     font-size: 1.35em;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
     color: var(--textColor);
     pointer-events: none;
