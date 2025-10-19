@@ -795,17 +795,19 @@
         #acbb78 not,
         transparent 40%
         ) no-repeat; */
-      }
+    }
 
+    .audioRLInner {
+      animation: audiorl 30s linear infinite;
+    }
 
-  .nextTrack:hover,  .prevTrack:hover {
-    transform: rotate(var(--rotate));
-  } 
+     .nextTrack:hover,  .prevTrack:hover {
+       transform: rotate(var(--rotate));
+     } 
 
     .middleSection {
       height: 85vh;
-      background: unset
-      
+      background: unset 
     }
 
     .middleBg {
