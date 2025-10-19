@@ -783,13 +783,14 @@
     }
 
     .maskBg {
-      background: radial-gradient(
+      background: unset
+      /* radial-gradient(
         farthest-corner at 40vw 50vw,
-        /* rgba(255, 47, 47, 0.571) 0%, */
+        rgba(255, 47, 47, 0.571) 0%,not
         #e1eec3,
-        /* #acbb78, */
+        #acbb78 not,
         transparent 40%
-        ) no-repeat;
+        ) no-repeat; */
       }
 
 
