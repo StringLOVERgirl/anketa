@@ -89,6 +89,7 @@ export function Up () {
 
     const topSection = useRef(null)
     const middleSection = useRef(null)
+    const middleSectionCont = useRef(null)
     const audioref = useRef(null)
     const maskref = useRef(null)
     const leftTextTop = useRef(null) 
@@ -217,7 +218,11 @@ export function Up () {
             <div className="upOutter">
                 <div className="upInner">
 
-                    <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div>
+                    {/* <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div> */}
+                    <div className="blurBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
+                    <div className="maskBg"></div>
+                    <div className="maskBg blurbg2"></div>
+                    </div>
 
                     <div className='playerCont'>
                         <div className="leftPanelCont">
