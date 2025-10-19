@@ -820,6 +820,7 @@
     }
 
     .decorSnow {
+      display: none;
       height: 13vh;
       display: none;
       /* z-index: ; */
