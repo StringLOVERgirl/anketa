@@ -215,9 +215,11 @@ export function Up () {
     function changePlayStatus() {
         if (playstatus == 'pause') {
             setPlaystatus('play') 
+            if (playerst.label == 'special') {videoref.current.play()}
             audioref.current.play()
         } else {
             setPlaystatus('pause')
+            if (playerst.label == 'special') {videoref.current.pause()}
             audioref.current.pause()
         }
     }
