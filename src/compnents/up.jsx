@@ -280,9 +280,14 @@ export function Up () {
                             </div>
 
                             <div className="leftTextBottom">
-                                <div className="time">{time}</div>
+                                <div className="metaLeft">
+                                    <div className="time">{time}</div>
+                                    <div>{'\u00A0'}</div>
+                                    <div className="moscow">Moscow</div>
+                                </div>
+                                {/* <div className="time">{time}</div>
                                 <div>{'\u00A0'}</div>
-                                <div className="moscow">Moscow</div>
+                                <div className="moscow">Moscow</div> */}
                                 <div className="year">October 2025</div>
                             </div>
                         </div>

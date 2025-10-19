@@ -9,8 +9,6 @@
     /* width: 100vw; */
     overscroll-behavior: none;
     overflow-x: hidden;
-    background: url('assets/startsnow.svg');
-
   }
 
   html {
@@ -652,6 +650,10 @@
     align-items: center;
   }
 
+  .metaleft {
+    display: flex;
+  }
+
   .time, .moscow, .year {
     font-size: 1.1em;
     border: solid 1px var(--textColor);
@@ -878,10 +880,23 @@
       padding-left: 0.75em;
       padding-top: 1em;
       align-self: unset;
+      display: flex;
     }
 
     .leftTextBottom {
-      padding-top: 1em;
+      padding-top: unset;
+      display: flex;
+      gap: 0.5em;
+      flex-direction: column;
+    }
+
+    .metaLeft {
+      display: flex;
+    }
+
+    .year {
+      position: unset;
+      align-self: flex-end;
     }
 
     .leftup {
