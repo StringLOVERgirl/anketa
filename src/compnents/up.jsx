@@ -5,6 +5,7 @@ import xxx from '/audio/XXXTENTACION - before I dive (AI Generated Song).mp3'
 import bones from '/audio/IAmCertainlyNotWorthYourTime.mp3'
 import chlorella from '/audio/BONES-Chlorella.mp3'
 import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
+import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
 
 
 function CreditsRL() {
@@ -99,6 +100,7 @@ export function Up () {
     
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
+        burgos: ['Burgos, NUG BEATZ - White Girls in the Back of the Bus', 'burgos', burgos],
         xxx: ['XXXTENTACION - before I dive (AI Generated Song) ', 'xxxost', xxx],
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
         maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],

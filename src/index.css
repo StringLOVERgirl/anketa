@@ -425,7 +425,7 @@
   .audioRLInner {
     display: flex;
     align-items: center;
-    animation: audiorl 15s linear infinite;
+    animation: audiorl 25s linear infinite;
   }
 
   @keyframes audiorl {
@@ -455,6 +455,10 @@
 
   .hierarchyOst {
     background: url('assets/hierarchylabel.jpeg') center / cover;
+  }
+
+  .burgos {
+    background: url('assets/burgos.jpeg') center / cover;
   }
 
   .xxxost {
