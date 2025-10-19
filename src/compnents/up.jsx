@@ -302,7 +302,11 @@ export function Up () {
                         </div>
                     </div>
 
-                    <div className="decorSnow"></div>
+                    <div className="snowCont">
+                        <div className="decorSnow snowblur"></div>
+                        <div className="decorSnow"></div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
