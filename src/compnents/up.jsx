@@ -8,6 +8,8 @@ import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
 import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
 import handbook from '/audio/HandbookForTheRecentlyDeceased.mp3'
 import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
+import twoh from '/audio/2high.mp3'
+
 
 
 function CreditsRL() {
@@ -108,6 +110,7 @@ export function Up () {
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
         maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
         blackl: [' Bones - BlackLungs & YellowTape ', 'handbook', blacklungs],
+        twohigh: [' Yushee -  2high Released on: 2021-04-02 ', 'twohigh', twoh],
         chlorellaBones: [' Bones - Chlorella by TeamSESH ', 'chlorella', chlorella],
     }
 

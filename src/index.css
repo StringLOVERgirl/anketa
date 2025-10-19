@@ -478,6 +478,10 @@
     background: url('assets/hqdefault.jpeg') center / cover;
   }
 
+  .twohigh {
+    background: url('./assets/2high.avif') center / cover;
+  }
+
   .chlorella {
     background: url('assets/chlorella.webp') center / cover;
   }
