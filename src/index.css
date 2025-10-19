@@ -466,6 +466,10 @@
     background: url('assets/burgos.jpeg') center / cover;
   }
 
+  .handbook {
+    background: url('./assets/handbook.jpeg') center / cover;
+  }
+
   .xxxost {
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
