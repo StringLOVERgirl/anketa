@@ -11,6 +11,7 @@ import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
 import twoh from '/audio/2high.mp3'
 import dclxvi from '/audio/DCLXVI_-_DISSECTION_76038142.mp3'
 import dissection from '/assets/dissection720.mp4'
+import { use } from "react"
 
 
 
@@ -109,6 +110,7 @@ export function Up () {
     let [videoSet, setfirstplay] = useState({status: false, class: ""})
     let [h1ContOpacity, setH1Opacity] = useState('')
     let [videoFull, setFull] = useState('')
+    const bgVideo = useRef(null)
 
     function fullScreen(){
         if (videoFull != 'fullScreen') {
@@ -279,6 +281,7 @@ export function Up () {
                         <video playsInline className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
+                               setfirstplay(prev=>({...prev, class: ''}))
                             }}></video>
                         <div className="fullCont" onClick={fullScreen}>
                             <button className="full full1"></button>
