@@ -266,7 +266,10 @@ export function Up () {
                        <div className="maskBg blurbg2"></div>
                     </div>
                     <div className={`special ${videoSet.class}`}>
-                        <video src={dissection} ref={videoref} muted onEnded={() => videoref.current.style.setProperty('--opacity', 0)}></video>
+                        <video src={dissection} ref={videoref} muted onEnded={() => {
+                               videoref.current.style.setProperty('--opacity', 0)
+                               topSection.current.style.setProperty('--onPlayOpacity', 1)
+                            }}></video>
                     </div>
 
                     <div className='playerCont'>
