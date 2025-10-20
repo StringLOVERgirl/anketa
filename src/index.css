@@ -180,6 +180,7 @@
     aspect-ratio: 1/1;
     transition: transform 0.4s var(--cubic);
     background: url('./assets/full3.svg') center 0.2em / contain no-repeat;
+    background-color: unset;
   }
 
   .full1 {
@@ -600,7 +601,10 @@
     width: fit-content;
     background: #ffffff1f;
     border-radius: 8px;
+    /* overflow: visible; */
     padding: 1em;
+    padding-right: 2em;
+
     /* display: flex; */
     transition: opacity 0.3s;
     opacity: var(--onPlayOpacity)
