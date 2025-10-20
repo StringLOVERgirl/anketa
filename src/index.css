@@ -385,6 +385,7 @@
     border-radius: 35px;
     transition: clip-path 0.6s var(--cubic);
     clip-path: inset(0 40% 0 0 );
+    overflow: scroll;
   }
 
   .playerCont::after {
@@ -860,6 +861,11 @@
       bottom: 2em;
     }
 
+    .upSection {
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
     .speedhunters {
       display: flex;
       align-items: center;
@@ -910,6 +916,22 @@
       height: 7vh;
       margin-top: 4vh;
       margin-left: 0.7em;;
+      clip-path: unset;
+      display: flex;
+      width: 94vw;
+      margin-inline: 3vw;
+    }
+
+    .playerCont:hover {
+      clip-path: unset;
+    }
+
+    .playerCont::after {
+      width: 100%;
+    }
+
+    .playerCont:hover::after {
+      width: 100%;
     }
 
     .snowCont {
