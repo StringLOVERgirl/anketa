@@ -1141,6 +1141,7 @@ padding: UNSET;
 
     .inspiredCont {
       right: 3%;
+      transform: scale(0.8);
     }
 
     .insp {
@@ -1173,6 +1174,10 @@ padding: UNSET;
 
     .inspBy {
       font-size: 0.8em;
+    }
+
+    .linkCont {
+      transform: scale(0.8);
     }
 
     .meg {
