@@ -142,7 +142,7 @@ export function Up () {
     const player = {
         hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
         burgos: ['White Girls in the Back of the Bus', 'burgos', burgos],
-        special: ['DCLXVI - Dissection • SPECIAL', 'special', dclxvi],
+        special: ['DCLXVI - Dissection • SPECIAL', 'dclxvi', dclxvi],
         handbook: ['Bones - HandbookForTheRecentlyDeceased', 'handbook', handbook],
         xxx: ['XXXTENTACION - before I dive (AI) ', 'xxxost', xxx],
         bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
@@ -227,11 +227,11 @@ export function Up () {
     function changePlayStatus() {
         if (playstatus == 'pause') {
             setPlaystatus('play') 
-            if (playerst.label == 'special') {videoref.current.play()}
+            if (playerst.label == 'dclxvi') {videoref.current.play()}
             audioref.current.play()
         } else {
             setPlaystatus('pause')
-            if (playerst.label == 'special') {videoref.current.pause()}
+            if (playerst.label == 'dclxvi') {videoref.current.pause()}
             audioref.current.pause()
         }
     }
@@ -324,7 +324,7 @@ export function Up () {
 
                     <audio src={playerst.track} ref={audioref} onEnded={() => {
                            setPlaystatus('pause')
-                           if (playerst.label == 'special') {
+                           if (playerst.label == 'dclxvi') {
                               setfirstplay(prev=>({...prev, class: ''}))
                               setH1Opacity('')
                            }

@@ -571,6 +571,10 @@
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
 
+  .dclxvi {
+    background: url('assets/dclxvi.jpeg') center / cover;
+  }
+
   .bones {
     background: url('assets/hqdefault.jpeg') center / cover;
   }
@@ -926,6 +930,11 @@
       left: 0;
     }
 
+    .fullScreen {
+      width: 100vw !important;
+      height: 100% !important;
+    }
+
     .maskBg {
       background: unset
       /* radial-gradient(
@@ -991,7 +1000,7 @@
     }
 
     .playerCont:hover .leftPanelCont {
-      width: 94vw;
+      width: 69vw;
     }
 
     .snowCont {
