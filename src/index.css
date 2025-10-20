@@ -11,6 +11,11 @@
     overflow-x: hidden;
   }
 
+  .mainCont {
+    overflow: hidden;
+    height: 100dvh;
+  }
+
   html {
     /* overflow-x: hidden; */
   }
@@ -158,8 +163,8 @@
   }
 
   .videoBg {
-    top: 50vh;
-    height: 70vh;
+    top: 30dvh;
+    height: 70dvh;
     width: 100%;
     z-index: 2;
     /* opacity: 0.8; */
@@ -168,7 +173,7 @@
     transition: clip-path 1.3s var(--cubic);
     clip-path: inset(0 0  0 100% );
     /* clip-path: inset(0 0 0 0); */
-        background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('./assets/blurgtr.png') center / cover no-repeat;
+        background:radial-gradient(circle at left center, transparent , black 50%), url('./assets/blurgtr.png') center 20% / cover no-repeat;
       background-color: black;
       /* linear-gradient(var(--darkMainColor), var(--darkMainColor)) repeat; */
   }
@@ -280,10 +285,15 @@
     rgba(255, 47, 47, 0.571) 0%,
     transparent 40%
     ) no-repeat; */
+    transition: opacity 1.3s;
     background: linear-gradient(var(--darkMainColor), var(--darkMainColor)) repeat;
     /* pointer-events: none; */
     /* z-index: -1; */
-}
+  }
+
+  .hideviolet {
+    opacity: 0;
+  }
 
   .snowCont {
     position: absolute;
@@ -960,6 +970,12 @@
 
     .special video {
       height: 70%;
+    }
+
+    .videoBg {
+      background: 
+      radial-gradient(circle at left center, transparent , black 50%), 
+      url('/src/assets/blurgtr.png') bottom / cover no-repeat;
     }
 
     .fullCont {

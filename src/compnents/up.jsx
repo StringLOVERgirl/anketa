@@ -97,6 +97,8 @@ function CreditsRL() {
 
 export function Up () {
 
+    const mainCont = useRef(null)
+    let [mainOf, setmainOf] = useState('')
     const topSection = useRef(null)
     const middleSection = useRef(null)
     const middleSectionCont = useRef(null)
@@ -111,7 +113,9 @@ export function Up () {
     let [h1ContOpacity, setH1Opacity] = useState('')
     let [videoFull, setFull] = useState('')
     let [isVideoBg, setvideobg] = useState('')
+    let [isblurbg, setblurbg] = useState('')
     const bgVideo = useRef(null)
+
 
     function fullScreen(){
         if (videoFull != 'fullScreen') {
@@ -132,6 +136,9 @@ export function Up () {
             videoref.current.play()
             setH1Opacity('h1ContVideo')
             setvideobg('videoBgShow')
+            setblurbg('hideviolet')
+            setmainOf('mainCont')
+            window.scrollTo(0,0)
             topSection.current.style.setProperty('--onPlayOpacity', 0.7)
         }
         if (videoSet.class == 'speedhunters') {
@@ -140,6 +147,8 @@ export function Up () {
             }))
             setH1Opacity('')
             setvideobg('')
+            setblurbg('')
+            setmainOf('')
             topSection.current.style.setProperty('--onPlayOpacity', 1)
         }
     }
@@ -270,13 +279,13 @@ export function Up () {
     },[])
 
 
-    return (<>
+    return (<div className={mainOf} ref={mainCont}>
         <section className="upSection" ref={topSection}>
             <div className="upOutter">
                 <div className="upInner">
 
                     {/* <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div> */}
-                    <div className="blurBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
+                    <div className={`blurBg ${isblurbg}`} ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
                        <div className="maskBg"></div>
                        <div className="maskBg blurbg2"></div>
                     </div>
@@ -333,6 +342,8 @@ export function Up () {
                               setfirstplay(prev=>({...prev, class: ''}))
                               setH1Opacity('')
                               setvideobg('')
+                              setblurbg('')
+                              setmainOf('')
                            }
                         }}></audio>
                     <div className={`upTextCont ${h1ContOpacity}`}>
@@ -386,5 +397,5 @@ export function Up () {
             </div>
             <div className="middleBg" ref={middleSection}></div>
         </section>
-    </>)
+    </div>)
 }
