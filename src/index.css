@@ -1135,6 +1135,15 @@ padding: UNSET;
       height: 5vh;
     }
 
+    .upSection {
+      height: 100vh;
+      border-radius: 0;
+    }
+
+    .maskBg, .blurBg {
+      height: 100vh;
+    }
+
     .link {
       font-size: 1.2em;
     }
