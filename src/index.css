@@ -168,9 +168,9 @@
     backdrop-filter: blur(3px);
     /* background: var(--darkMainColor); */
     border-radius: 15px;
-    opacity: 0.3;
+    opacity: 0.5;
     overflow: visible;
-    /* mix-blend-mode: difference; */
+    mix-blend-mode: difference;
   }
 
   .full {
@@ -608,7 +608,7 @@
 
   .insp {
     background: url('./assets/inspired.png') center / cover;
-    height: 15vh;
+    height: 13vh;
     border-radius: 7px;
     aspect-ratio: 1.65/1;
   }
