@@ -956,7 +956,7 @@
      } 
 
      .prevTrack {
-      margin-top: 0.6em
+      margin-top: unset
      }
 
     .middleSection {
