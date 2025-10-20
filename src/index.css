@@ -127,6 +127,7 @@
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     overflow: hidden;
+    --onPlayOpacity: 1;
   }
 
   .special {
@@ -216,6 +217,8 @@
     right: 0;
     display: flex;
     transform: translate(-30%, -45%) rotate(0);
+    transition: opacity 0.3s;
+    opacity: var(--onPlayOpacity)
   }
 
   .decorSnow {
@@ -302,6 +305,8 @@
     left: 50%;
     display: flex;
     gap: 0.5em;
+    transition: opacity 0.3s;
+    opacity: var(--onPlayOpacity)
   }
 
   .elHoyoImg {
@@ -362,7 +367,7 @@
   }
 
   .link {
-    font-size: 1.4em;
+    font-size: 1.2em;
     white-space: nowrap;
     font-family: inter;
     color: white;
@@ -371,7 +376,7 @@
   }
 
   .playerCont {
-    height: 9vh;
+    height: 8vh;
     margin-top: 5vh;
     margin-left: 1em;
     width: fit-content;
@@ -448,7 +453,7 @@
     margin-left: 0.5em;
     margin-right: 0.2em;
     --rotate: -180deg; 
-    margin-top: 0.025em;
+    margin-top: 0.095em;
     transform: rotate(var(--rotate));
   }
 
@@ -492,6 +497,7 @@
     white-space: nowrap;
     text-transform: capitalize;
     color: white;
+    font-size: 1em;
     /* padding-right: 1em; */
     /* text-decoration: underline; */
   }
@@ -540,10 +546,12 @@
     right: 2%;
     padding-top: 5vh;
     width: fit-content;
-background: #ffffff1f;
-border-radius: 8px;
-padding: 1em;
+    background: #ffffff1f;
+    border-radius: 8px;
+    padding: 1em;
     /* display: flex; */
+    transition: opacity 0.3s;
+    opacity: var(--onPlayOpacity)
   }
 
   .insp {
@@ -1022,7 +1030,7 @@ padding: UNSET;
     }
 
     .link {
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     .another {

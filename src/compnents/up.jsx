@@ -118,12 +118,14 @@ export function Up () {
             }))
             videoref.current.play()
             setH1Opacity('h1ContVideo')
+            topSection.current.style.setProperty('--onPlayOpacity', 0.7)
         }
         if (videoSet.class == 'speedhunters') {
              setfirstplay(prev=>({
                 status: true, class: '' 
             }))
             setH1Opacity('')
+            topSection.current.style.setProperty('--onPlayOpacity', 1)
         }
     }
     
