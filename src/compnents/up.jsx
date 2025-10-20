@@ -343,8 +343,10 @@ export function Up () {
                             <div className={`leftTextTop ${text}`} ref={leftTextTop}>
                                 {/* <div className="leftup topText">Thank you for visiting</div> */}
                                 {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
-                                <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div>
-                                <div className="leftup bottomText">Здесь немного из мира моих интересов</div>
+                                <div className="leftup topText">Thanks for visiting. </div>
+                                {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
+                                {/* <div className="leftup bottomText">Здесь немного из мира моих интересов</div> */}
+                                <div className="leftup bottomText">Here are some things I like.</div>
                             </div>
 
                             <div className="leftTextBottom">
