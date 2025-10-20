@@ -110,6 +110,7 @@ export function Up () {
     let [videoSet, setfirstplay] = useState({status: false, class: ""})
     let [h1ContOpacity, setH1Opacity] = useState('')
     let [videoFull, setFull] = useState('')
+    let [isVideoBg, setvideobg] = useState('')
     const bgVideo = useRef(null)
 
     function fullScreen(){
@@ -130,6 +131,7 @@ export function Up () {
             }))
             videoref.current.play()
             setH1Opacity('h1ContVideo')
+            setvideobg('videoBgShow')
             topSection.current.style.setProperty('--onPlayOpacity', 0.7)
         }
         if (videoSet.class == 'speedhunters') {
@@ -137,6 +139,7 @@ export function Up () {
                 status: true, class: '' 
             }))
             setH1Opacity('')
+            setvideobg('')
             topSection.current.style.setProperty('--onPlayOpacity', 1)
         }
     }
@@ -281,7 +284,6 @@ export function Up () {
                         <video playsInline className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
-                               setfirstplay(prev=>({...prev, class: ''}))
                             }}></video>
                         <div className="fullCont" onClick={fullScreen}>
                             <button className="full full1"></button>
@@ -327,9 +329,10 @@ export function Up () {
 
                     <audio src={playerst.track} ref={audioref} onEnded={() => {
                            setPlaystatus('pause')
-                           if (playerst.label == 'special') {
+                           if (playerst.label == 'dclxvi') {
                               setfirstplay(prev=>({...prev, class: ''}))
                               setH1Opacity('')
+                              setvideobg('')
                            }
                         }}></audio>
                     <div className={`upTextCont ${h1ContOpacity}`}>
@@ -370,11 +373,10 @@ export function Up () {
                         <div className="decorSnow snowblur"></div>
                         <div className="decorSnow"></div>
                     </div>
-                    
                 </div>
             </div>
         </section>
-
+        <div className={`videoBg ${isVideoBg}`}></div>
         <section className="middleSection">
             <div className="creditsCont">
                 <div className="creditsRL">
