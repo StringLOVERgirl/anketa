@@ -948,7 +948,7 @@
     }
 
     .audioRLInner {
-      animation: audiorl 30s linear infinite;
+      animation: audiorl 35s linear infinite;
     }
 
      .nextTrack:hover,  .prevTrack:hover {
@@ -995,7 +995,7 @@
     }
 
     .leftPanelCont {
-      width: 69vw;
+      width: 66vw;
       transition: width 0.6s var(--cubic);
       /* перенсла сюда ширину т к это убираетартефакт почеркивани и длбавила наконт ауто ширина для этой же цели */
     }
@@ -1006,7 +1006,7 @@
     }
 
     .playerCont:hover .leftPanelCont {
-      width: 69vw;
+      width: 66vw;
     }
 
     .snowCont {
