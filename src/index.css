@@ -918,7 +918,7 @@
       margin-left: 0.7em;;
       clip-path: unset;
       display: flex;
-      width: 94vw;
+      width: auto;
       margin-inline: 3vw;
     }
 
@@ -932,6 +932,10 @@
 
     .playerCont:hover::after {
       width: 100%;
+    }
+
+    .leftPanelCont {
+      width: 94vw;
     }
 
     .snowCont {
