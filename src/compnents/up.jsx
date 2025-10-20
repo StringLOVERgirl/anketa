@@ -119,9 +119,9 @@ export function Up () {
         }
     }
 
-    function dclxviChecking(){
+    function dclxviChecking(direction){
         console.log(videoSet.status, playerst.label)
-        if (playerst.label == 'burgos' && videoSet.status == false) {
+        if (playerst.label == 'burgos' && videoSet.status == false && direction == '+') {
             console.log(123245)
             setfirstplay(prev=>({
                 status: true, class: 'speedhunters' 
@@ -176,7 +176,7 @@ export function Up () {
                currentindex.current -= 1
             }
             // video cheking
-        dclxviChecking()
+        dclxviChecking(direction)
 
         console.log(currentindex.current)
         let nexttrack = playlist[currentindex.current]
