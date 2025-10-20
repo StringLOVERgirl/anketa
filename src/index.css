@@ -1075,11 +1075,11 @@ padding: UNSET;
 
   @media (min-width: 1380px) {
     .decorSnow {
-      height: 20vh;
+      /* height: 20vh; */
     }
 
     .ostTitle, .ostTitle2 {
-      font-size: 2em;
+      font-size: 1.5em;
     }
 
     .link {
