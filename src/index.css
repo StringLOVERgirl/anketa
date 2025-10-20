@@ -955,6 +955,10 @@
        transform: rotate(var(--rotate));
      } 
 
+     .prevTrack {
+      margin-top: 0.75em
+     }
+
     .middleSection {
       height: 85vh;
       background: unset 
