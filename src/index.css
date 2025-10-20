@@ -1160,12 +1160,16 @@ padding: UNSET;
       margin-top: unset;
     }
 
+    .nextTrack:hover,  .prevTrack:hover {
+       transform: rotate(var(--rotate));
+     } 
+
     .fullCont {
       height: 2.5em;
     }
 
     .ostTitle, .ostTitle2 {
-      font-size: 0.8em;
+      font-size: 0.75em;
     }
 
     .inspTitle {
