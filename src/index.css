@@ -1208,6 +1208,10 @@ padding: UNSET;
       height: fit-content;
       font-size:  0.8em;
     }
+
+    .year {
+      padding-top:  0.1em;
+    }
   }
 
   @media (min-width: 1380px) {
