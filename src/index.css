@@ -1012,7 +1012,7 @@
     }
 
     .playerCont:hover .leftPanelCont {
-      width: 66vw;
+      width: 94vw;
     }
 
     .snowCont {
@@ -1139,16 +1139,36 @@ padding: UNSET;
       font-size: 1.2em;
     }
 
+    .inspiredCont {
+      right: 3%;
+    }
+
+    .insp {
+      display: none;
+    }
+
     .another {
       font-size: 0.84em
     }
 
+    .playerCont {
+      height: 9vh;
+    }
+
+    .fullCont {
+      height: 2.5em;
+    }
+
     .ostTitle, .ostTitle2 {
-      font-size: 1em;
+      font-size: 0.8em;
     }
 
     .inspTitle {
       font-size: 1.2em;
+    }
+
+    .inspTitle::after {
+      display: none;
     }
 
     .inspBy {

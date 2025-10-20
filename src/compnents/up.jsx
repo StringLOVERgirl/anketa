@@ -324,7 +324,7 @@ export function Up () {
 
                     <audio src={playerst.track} ref={audioref} onEnded={() => {
                            setPlaystatus('pause')
-                           if (playerst.label == 'dclxvi') {
+                           if (playerst.label == 'special') {
                               setfirstplay(prev=>({...prev, class: ''}))
                               setH1Opacity('')
                            }
