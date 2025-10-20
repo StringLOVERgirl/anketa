@@ -1156,6 +1156,10 @@ padding: UNSET;
       height: 9vh;
     }
 
+    .prevTrack {
+      margin-top: unset;
+    }
+
     .fullCont {
       height: 2.5em;
     }
