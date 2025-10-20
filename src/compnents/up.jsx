@@ -276,7 +276,7 @@ export function Up () {
                        <div className="maskBg blurbg2"></div>
                     </div>
                     <div className={`special ${videoSet.class}`}>
-                        <video className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
+                        <video playsInline className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}></video>
