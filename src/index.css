@@ -150,10 +150,53 @@
   .special video {
     --opacity: 1;
     height: 100%;
-    /* width: 100vw; */
-    object-fit: contain;
-    transition: opacity 0.3s;
+    margin-left: 0;
+    width: 53em;
+    object-fit: cover;
+    transition: opacity 0.3s, width 0.8s var(--cubic);
     opacity: var(--opacity);
+  }
+
+  .fullCont {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    margin-left: 1em;
+    height: 3.5em;
+    aspect-ratio: 1/1;
+    backdrop-filter: blur(3px);
+    /* background: var(--darkMainColor); */
+    border-radius: 15px;
+    opacity: 0.3;
+    overflow: visible;
+    /* mix-blend-mode: difference; */
+  }
+
+  .full {
+    height: 100%;
+    border: none;
+    aspect-ratio: 1/1;
+    transition: transform 0.4s var(--cubic);
+    background: url('./assets/full3.svg') center 0.2em / contain no-repeat;
+  }
+
+  .full1 {
+    clip-path: inset(0 50% 0 0);
+  }
+  .full2 {
+    left: 0;
+    position: absolute;
+    clip-path: inset(0 0 0 50%);
+  }
+  .fullCont:hover .full2 {
+    transform: scale(1.1) translate(10%, -10%);
+  }
+  .fullCont:hover .full1 {
+    transform: scale(1.1) translate(-10%, 10%);
+  }
+
+  .fullScreen {
+    width: 100% !important;
   }
 
   .maskBg {
@@ -475,6 +518,7 @@
 
   .audioRL {
     overflow: hidden;
+    padding-top: 0.1em;
   }
 
   .audioRLInner {
@@ -876,6 +920,10 @@
       height: 70%;
     }
 
+    .fullCont {
+      left: 0;
+    }
+
     .maskBg {
       background: unset
       /* radial-gradient(
@@ -935,6 +983,12 @@
     }
 
     .leftPanelCont {
+      width: 69vw;
+      transition: width 0.6s var(--cubic);
+      /* перенсла сюда ширину т к это убираетартефакт почеркивани и длбавила наконт ауто ширина для этой же цели */
+    }
+
+    .playerCont:hover .leftPanelCont {
       width: 94vw;
     }
 
@@ -1102,6 +1156,15 @@ padding: UNSET;
   @media (min-width: 1380px) {
     .decorSnow {
       /* height: 20vh; */
+    }
+
+    .special video {
+      width: 70em
+    }
+
+    .fullCont {
+      margin-left: 2em;
+      height: 4em;
     }
 
     .ostTitle, .ostTitle2 {

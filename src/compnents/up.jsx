@@ -108,6 +108,16 @@ export function Up () {
     const videoref = useRef(null)
     let [videoSet, setfirstplay] = useState({status: false, class: ""})
     let [h1ContOpacity, setH1Opacity] = useState('')
+    let [videoFull, setFull] = useState('')
+
+    function fullScreen(){
+        if (videoFull != 'fullScreen') {
+            setFull('fullScreen')
+        }
+        else {
+            setFull('')
+        }
+    }
 
     function dclxviChecking(){
         console.log(videoSet.status, playerst.label)
@@ -266,10 +276,14 @@ export function Up () {
                        <div className="maskBg blurbg2"></div>
                     </div>
                     <div className={`special ${videoSet.class}`}>
-                        <video src={dissection} ref={videoref} muted onEnded={() => {
+                        <video className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}></video>
+                        <div className="fullCont" onClick={fullScreen}>
+                            <button className="full full1"></button>
+                            <button className="full full2"></button>
+                        </div>    
                     </div>
 
                     <div className='playerCont'>

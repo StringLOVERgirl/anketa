@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg"  data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px">
+    <g>
+        <rect fill="white" x="46" y="17.72" width="8" height="64.57" transform="translate(-20.71 50) rotate(-45)" />
+        <path fill="white" d="M60.83,44.83,74,31.66V42h8V22a4,4,0,0,0-4-4H58v8H68.34L55.17,39.17Z" />
+        <path fill="white" d="M22,82H42V74H31.66L44.83,60.83l-5.66-5.66L26,68.34V58H18V78A4,4,0,0,0,22,82Z" />
+    </g>
+</svg>
