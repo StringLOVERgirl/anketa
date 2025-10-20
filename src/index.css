@@ -1149,7 +1149,7 @@ padding: UNSET;
     }
 
     .inspiredCont {
-      right: 3%;
+      right: 0;
       transform: scale(0.65);
     }
 
