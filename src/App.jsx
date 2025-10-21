@@ -28,9 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`preloaderCont ${preloader} ${userAgent.preloader}`}>
+      <div className={`preloaderCont ${preloader}`}>
         <div className="preloadersuqare"></div>
-        <div className="preloader">
+        <div className={`preloader ${userAgent.preloader}`}>
           <div className="preloaderline"></div>
           <div className="preloadertext">loading</div>
         </div>
