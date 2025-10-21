@@ -1432,7 +1432,7 @@ padding: UNSET;
     }
 
     .bottomPanel {
-      margin-bottom: 2.5em;
+      margin-bottom: auto;
     }
 
     .specialTitle {
