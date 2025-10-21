@@ -127,7 +127,7 @@ export function Up () {
         if (isIphone ){
             setuseragent(_=>({bottompanel: 'bottomiphone'}))
         } else if (isEdge) {
-            setuseragent(_=>({bottompanel: 'bottomiphone'}))
+            setuseragent(_=>({bottompanel: 'bottomalt'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
