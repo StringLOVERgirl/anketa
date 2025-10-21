@@ -1089,6 +1089,7 @@
     .bottomiphone {
       margin-bottom: 5em;
       background: white;
+      display: none;
     }
     .underlineSpecial {
       display: none;
