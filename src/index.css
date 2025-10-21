@@ -1357,12 +1357,12 @@ padding: UNSET;
     }
 
     .upSection {
-      height: 85vh;
+      height: 83vh;
       border-radius: 0;
     }
 
     .maskBg, .blurBg {
-      /* height: 100dvh; */
+      height: 83vh;
     }
 
     .link {
