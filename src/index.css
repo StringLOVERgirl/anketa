@@ -1362,7 +1362,7 @@ padding: UNSET;
     }
 
     .maskBg, .blurBg {
-      height: 100dvh;
+      /* height: 100dvh; */
     }
 
     .link {
