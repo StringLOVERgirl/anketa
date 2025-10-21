@@ -569,6 +569,7 @@
     transition: clip-path 0.6s var(--cubic);
     clip-path: inset(0 40% 0 0 );
     overflow: scroll;
+    /* opacity: var(--onPlayOpacity); */
   }
 
   .playerCont::after {
@@ -1242,6 +1243,7 @@ padding: UNSET;
       /* right: 0; */
       transform: scale(0.85);
     /* } */
+    display: none;
     }
 
     .insp {
@@ -1262,8 +1264,9 @@ padding: UNSET;
     }
 
     .linkCont {
-      left: 3%;
-      margin-top: 13vh;
+      left: unset;
+      margin-top: 2.3em;
+      right: 1em;
       /* margin-left: 0.1em; */
       height: fit-content;
     }
