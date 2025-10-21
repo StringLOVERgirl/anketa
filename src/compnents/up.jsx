@@ -124,9 +124,9 @@ export function Up () {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone)
         if (isIphone || isEdge){
-            userAgent(_=>({bottompanel: 'bottomPanelAlt'}))
+            setuseragent(_=>({bottompanel: 'bottomPanelAlt'}))
         }
-        setuseragent(_=>({iphone: isIphone, edge: isEdge}))
+        // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
     },[])
 
