@@ -1075,7 +1075,7 @@
     .bottomPanel {
       flex-direction: column;
       gap: 0.1em;
-      margin-bottom: 3em;
+      margin-bottom: auto;
       margin-left: unset;
       /* margin-left: auto;
       margin-right: 0.25em;
@@ -1100,6 +1100,7 @@
     .specialTitle::before {
       content: unset;
     }
+
     .videoBgCont {
       /* background: white */
       /* radial-gradient(circle at left center, transparent , black 50%),  */
@@ -1432,7 +1433,7 @@ padding: UNSET;
     }
 
     .bottomPanel {
-      margin-bottom: auto;
+      margin-bottom: 2.5em;
     }
 
     .specialTitle {
