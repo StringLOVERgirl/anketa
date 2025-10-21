@@ -1086,6 +1086,9 @@
     .bottomPanelAlt {
       margin-bottom: 2em;
     }
+    .bottomiphone {
+      margin-bottom: auto;
+    }
     .underlineSpecial {
       display: none;
     }
@@ -1094,7 +1097,7 @@
       display: none;
     }
     .specialTitle {
-      font-size: 2.25em;
+      font-size: 2em;
       opacity: 0.3;
     }
     .specialTitle::before {
