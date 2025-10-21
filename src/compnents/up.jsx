@@ -300,10 +300,10 @@ export function Up () {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}></video>
-                        <div className="fullCont" onClick={fullScreen}>
+                        {/* <div className="fullCont" onClick={fullScreen}>
                             <button className="full full1"></button>
                             <button className="full full2"></button>
-                        </div>    
+                        </div>     */}
                     </div>
 
                     <div className='playerCont'>
@@ -394,8 +394,14 @@ export function Up () {
             </div>
         </section>
 
-        <div className={`videoBgCont ${isVideoBg}`}>
-            <div className="specialTitle">
+        <div className={`videoBgCont ${isVideoBg}`}>  
+
+            <div className="bottomPanel">
+            <div className="fullCont" onClick={fullScreen}>
+                            <button className="full full1"></button>
+                            <button className="full full2"></button>
+                        </div>  
+            <div className="specialTitle">  
                 <div className="underlineSpecial"></div>
                 <div style={{display: 'flex'}}>
                 {
@@ -407,6 +413,8 @@ export function Up () {
                 }
                 </div>
             </div>
+            </div>
+
         </div>
 
         <section className="middleSection">
