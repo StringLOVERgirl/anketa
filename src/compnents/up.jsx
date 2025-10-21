@@ -299,7 +299,18 @@ export function Up () {
                         <video playsInline className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
-                            }}></video>
+                            }}
+                             onClick={()=>{
+                            if (videoref.current.paused){
+                                videoref.current.play()
+                                changePlayStatus()
+                            }else{
+                                videoref.current.pause()
+                                changePlayStatus()
+                            }
+                            }}
+                            onDoubleClick={fullScreen}
+                        ></video>
                         {/* <div className="fullCont" onClick={fullScreen}>
                             <button className="full full1"></button>
                             <button className="full full2"></button>
@@ -413,6 +424,7 @@ export function Up () {
                 }
                 </div>
             </div>
+            <div className="bottomPanelDecor"></div>
             </div>
 
         </div>
