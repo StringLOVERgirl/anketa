@@ -1055,7 +1055,7 @@
   @media (max-width: 500px) {
 
     .preloader {
-      /* bottom: 2em; */
+      bottom: 1em;
     }
 
     .preloaderiphone {
