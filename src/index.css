@@ -1055,7 +1055,11 @@
   @media (max-width: 500px) {
 
     .preloader {
-      bottom: 2em;
+      /* bottom: 2em; */
+    }
+
+    .preloaderiphone {
+      bottom: 3.5em;
     }
 
     .upSection {

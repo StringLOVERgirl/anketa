@@ -115,7 +115,7 @@ export function Up () {
     let [isVideoBg, setvideobg] = useState('')
     let [isblurbg, setblurbg] = useState('')
     let [isLetter, setLetter] = useState('')
-    let [userAgent, setuseragent] = useState({bottompanel: ''})
+    let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
     const bgVideo = useRef(null)
 
     useEffect(() => {
@@ -125,9 +125,9 @@ export function Up () {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone || safari)
         if (isIphone ){
-            setuseragent(_=>({bottompanel: 'bottomiphone'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone'}))
         } else if (isEdge) {
-            setuseragent(_=>({bottompanel: 'bottomalt'}))
+            setuseragent(prev=>({...prev,bottompanel: 'bottomalt'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
