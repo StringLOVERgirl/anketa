@@ -141,7 +141,11 @@ export function Up () {
             setmainOf('mainCont')
             setLetter('showLetter')
             window.scrollTo(0,0)
-            topSection.current.style.setProperty('--onPlayOpacity', 0.3)
+            if (window.innerWidth < 600) {
+                topSection.current.style.setProperty('--onPlayOpacity', 0.6)
+            } else {
+               topSection.current.style.setProperty('--onPlayOpacity', 0.3)
+            }
         }
         if (videoSet.class == 'speedhunters') {
              setfirstplay(prev=>({

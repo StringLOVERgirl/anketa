@@ -575,11 +575,11 @@
   }
 
   .nextTrack:hover, .playstatus:hover, .prevTrack:hover {
-    transform: scale(1.25) rotate(var(--rotate));
+    transform: scaleX(var(--rotate)) scale(1.25);
   } 
 
   .trackButtonsScale {
-    transform: scale(1.25) rotate(var(--rotate)) !important;
+    transform: scaleX(var(--rotate)) scale(1.25)  !important;
   }
 
   .playstatus {
@@ -595,19 +595,22 @@
     height: 60%;
     aspect-ratio: 1/1;
     cursor: pointer;
-    --rotate: 0
+    /* --rotate: 0 */
   }
 
   .nextTrack {
     margin-right: 0.2em;
+    --rotate: 1;
+    /* transform: scaleX(var(--rotate)); */
+
   }
 
   .prevTrack { 
     margin-left: 0.5em;
     margin-right: 0.2em;
-    --rotate: -180deg; 
-    margin-top: 0.095em;
-    transform: rotate(var(--rotate));
+    --rotate: -1; 
+    /* margin-top: 0.095em; */
+    transform: scaleX(var(--rotate));
   }
 
   .pause {
@@ -1039,9 +1042,11 @@
       height: 70%;
     }
     .specialTitle {
-      margin-left: 0.25em;
+      margin-left: auto;
+      margin-right: 0.25em;
       margin-bottom: 2em;
-      font-size: 2.5em;
+      font-size: 2em;
+      opacity: 0.3;
     }
 
     .videoBgCont {
@@ -1075,7 +1080,7 @@
     }
 
      .nextTrack:hover,  .prevTrack:hover {
-       transform: rotate(var(--rotate));
+       transform: scaleX(var(--rotate));
      } 
 
      .prevTrack {
@@ -1304,9 +1309,12 @@ padding: UNSET;
       margin-top: unset;
     }
 
-    .nextTrack:hover,  .prevTrack:hover {
-       transform: rotate(var(--rotate));
+    .nextTrack:hover {
+       transform: scaleX(var(--rotate));
      } 
+     .prevTrack:hover {
+      transform: scaleX(var(--rotate));
+    } 
 
     .fullCont {
       height: 2.5em;
