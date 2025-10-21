@@ -121,8 +121,9 @@ export function Up () {
     useEffect(() => {
         const ua = navigator.userAgent;
         const isIphone = /iPhone/.test(ua);
+        const safari = /^((?!chrome|android).)*safari/i.test(ua)
         const isEdge = /Edg/.test(ua);
-        console.log(isIphone)
+        console.log(isIphone || safari)
         if (isIphone ){
             setuseragent(_=>({bottompanel: 'bottomPanelAlt'}))
         } else if (isEdge) {
