@@ -251,11 +251,14 @@
     display: block;
     transform: translate(-100%);
     opacity: 0;
-    transition: transform 1.2s var(--cubic) var(--delayLetter), opacity 0.9s;
+    transition: 
+      transform 1.2s var(--cubic) var(--delayLetter), 
+      opacity 0.9s var(--delayLetter)
   }
   .showLetter {
     transform: translate(0%);
     opacity: 1;
+    filter: unset;
   }
   .specialTitle::before {
     content: '#';
@@ -285,6 +288,7 @@
   .fullCont {
     /* position: absolute;
     top: 45%; */
+    filter: drop-shadow(0 0 10px greenyellow);
     transform: translateY(-5%);
     position: relative;
     cursor: pointer;
@@ -1078,6 +1082,9 @@
       margin-bottom: 2em;
       font-size: 0.75em; */
       /* opacity: 0.3; */
+    }
+    .bottomPanelAlt {
+      margin-bottom: 0.5em;
     }
     .underlineSpecial {
       display: none;

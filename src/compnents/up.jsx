@@ -115,8 +115,20 @@ export function Up () {
     let [isVideoBg, setvideobg] = useState('')
     let [isblurbg, setblurbg] = useState('')
     let [isLetter, setLetter] = useState('')
+    let [userAgent, setuseragent] = useState({bottompanel: ''})
     const bgVideo = useRef(null)
 
+    useEffect(() => {
+        const ua = navigator.userAgent;
+        const isIphone = /iPhone/.test(ua);
+        const isEdge = /Edg/.test(ua);
+        console.log(isIphone)
+        if (isIphone || isEdge){
+            userAgent(_=>({bottompanel: 'bottomPanelAlt'}))
+        }
+        setuseragent(_=>({iphone: isIphone, edge: isEdge}))
+        // setTimeout(()=> console.log(userAgent), 2000)
+    },[])
 
     function fullScreen(){
         if (videoFull != 'fullScreen') {
@@ -144,7 +156,7 @@ export function Up () {
             if (window.innerWidth < 600) {
                 topSection.current.style.setProperty('--onPlayOpacity', 0.6)
             } else {
-               topSection.current.style.setProperty('--onPlayOpacity', 0.3)
+               topSection.current.style.setProperty('--onPlayOpacity', 0.5)
             }
         }
         if (videoSet.class == 'speedhunters') {
@@ -407,7 +419,7 @@ export function Up () {
 
         <div className={`videoBgCont ${isVideoBg}`}>  
 
-            <div className="bottomPanel">
+            <div className={`bottomPanel ${userAgent.bottompanel}`}>
             <div className="fullCont" onClick={fullScreen}>
                             <button className="full full1"></button>
                             <button className="full full2"></button>
