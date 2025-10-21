@@ -125,7 +125,7 @@ export function Up () {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone || safari)
         if (isIphone ){
-            setuseragent(_=>({bottompanel: 'bottomPanelAlt'}))
+            setuseragent(_=>({bottompanel: 'bottomiphone'}))
         } else if (isEdge) {
             setuseragent(_=>({bottompanel: 'bottomiphone'}))
         }
