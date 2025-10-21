@@ -874,7 +874,7 @@
     font-family: inter;
     font-size: 1.35em;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.2;
     color: var(--textColor);
     pointer-events: none;
   }
