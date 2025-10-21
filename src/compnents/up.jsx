@@ -114,6 +114,7 @@ export function Up () {
     let [videoFull, setFull] = useState('')
     let [isVideoBg, setvideobg] = useState('')
     let [isblurbg, setblurbg] = useState('')
+    let [isLetter, setLetter] = useState('')
     const bgVideo = useRef(null)
 
 
@@ -138,8 +139,9 @@ export function Up () {
             setvideobg('videoBgShow')
             setblurbg('hideviolet')
             setmainOf('mainCont')
+            setLetter('showLetter')
             window.scrollTo(0,0)
-            topSection.current.style.setProperty('--onPlayOpacity', 0.7)
+            topSection.current.style.setProperty('--onPlayOpacity', 0.3)
         }
         if (videoSet.class == 'speedhunters') {
              setfirstplay(prev=>({
@@ -387,7 +389,22 @@ export function Up () {
                 </div>
             </div>
         </section>
-        <div className={`videoBg ${isVideoBg}`}></div>
+
+        <div className={`videoBgCont ${isVideoBg}`}>
+            <div className="specialTitle">
+                <div className="underlineSpecial"></div>
+                <div style={{display: 'flex'}}>
+                {
+                    'DCLXVI - Dissection'.split('').map((e,i)=>{
+                        return <div className="h2Special">
+                                  <span className={`letter ${isLetter}`} style={{'--delayLetter': (i+1) * 0.03+'s'}}>{e}</span>
+                               </div>
+                    })
+                }
+                </div>
+            </div>
+        </div>
+
         <section className="middleSection">
             <div className="creditsCont">
                 <div className="creditsRL">
