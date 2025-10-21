@@ -395,7 +395,7 @@ export function Up () {
                 <div className="underlineSpecial"></div>
                 <div style={{display: 'flex'}}>
                 {
-                    'DCLXVI - Dissection'.split('').map((e,i)=>{
+                    'DCLXVI\u00A0-\u00A0Dissection'.split('').map((e,i)=>{
                         return <div className="h2Special">
                                   <span className={`letter ${isLetter}`} style={{'--delayLetter': (i+1) * 0.03+'s'}}>{e}</span>
                                </div>
