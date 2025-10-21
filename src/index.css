@@ -1357,7 +1357,7 @@ padding: UNSET;
     }
 
     .upSection {
-      /* height: 100dvh; */
+      height: 80lvh;
       border-radius: 0;
     }
 
