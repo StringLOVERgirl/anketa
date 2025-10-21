@@ -1110,6 +1110,7 @@
     .fullCont {
       left: 0;
       margin-left: unset;
+      display: none;
     }
 
     .fullScreen {
