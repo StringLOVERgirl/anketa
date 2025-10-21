@@ -1243,7 +1243,6 @@ padding: UNSET;
       /* right: 0; */
       transform: scale(0.85);
     /* } */
-    display: none;
     }
 
     .insp {
@@ -1264,9 +1263,8 @@ padding: UNSET;
     }
 
     .linkCont {
-      left: unset;
-      margin-top: 2.3em;
-      right: 1em;
+      left: 3%;
+      margin-top: 13vh;
       /* margin-left: 0.1em; */
       height: fit-content;
     }
