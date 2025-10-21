@@ -125,9 +125,9 @@ export function Up () {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone || safari)
         if (isIphone ){
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone'}))
+            setuseragent(_=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone'}))
         } else if (isEdge) {
-            setuseragent(prev=>({...prev,bottompanel: 'bottomalt'}))
+            setuseragent(_=>({preloader: 'preloaderiphone',bottompanel: 'bottomalt'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
