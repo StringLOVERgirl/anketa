@@ -163,8 +163,8 @@
   }
 
   .videoBgCont {
-    top: 30vh;
-    height: 70vh;
+    top: 30svh;
+    height: 70svh;
     width: 100%;
     z-index: 2;
     opacity: 0;
