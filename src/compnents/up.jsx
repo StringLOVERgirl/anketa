@@ -95,7 +95,7 @@ function CreditsRL() {
 }
 
 
-export function Up () {
+export function Up ({userAgent}) {
 
     const mainCont = useRef(null)
     let [mainOf, setmainOf] = useState('')
@@ -115,23 +115,9 @@ export function Up () {
     let [isVideoBg, setvideobg] = useState('')
     let [isblurbg, setblurbg] = useState('')
     let [isLetter, setLetter] = useState('')
-    let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
+    // let [userAgent, setuseragent] = useState({bottompanel: ''})
     const bgVideo = useRef(null)
-
-    useEffect(() => {
-        const ua = navigator.userAgent;
-        const isIphone = /iPhone/.test(ua);
-        const safari = /^((?!chrome|android).)*safari/i.test(ua)
-        const isEdge = /Edg/.test(ua);
-        console.log(isIphone || safari)
-        if (isIphone ){
-            setuseragent(_=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone'}))
-        } else if (isEdge) {
-            setuseragent(_=>({preloader: 'preloaderiphone',bottompanel: 'bottomalt'}))
-        }
-        // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
-        // setTimeout(()=> console.log(userAgent), 2000)
-    },[])
+    
 
     function fullScreen(){
         if (videoFull != 'fullScreen') {
