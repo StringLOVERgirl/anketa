@@ -117,6 +117,7 @@ export function Up ({userAgent}) {
     let [isLetter, setLetter] = useState('')
     // let [userAgent, setuseragent] = useState({bottompanel: ''})
     const bgVideo = useRef(null)
+    const specialtitle = useRef(null)
     
 
     function fullScreen(){
@@ -141,6 +142,7 @@ export function Up ({userAgent}) {
             setblurbg('hideviolet')
             setmainOf('mainCont')
             setLetter('showLetter')
+            specialtitle.current.style.setProperty('--letterBg', 1)
             window.scrollTo(0,0)
             if (window.innerWidth < 600) {
                 topSection.current.style.setProperty('--onPlayOpacity', 0.6)
@@ -413,7 +415,7 @@ export function Up ({userAgent}) {
                             <button className="full full1"></button>
                             <button className="full full2"></button>
                         </div>  
-            <div className="specialTitle">  
+            <div className="specialTitle" ref={specialtitle}>  
                 <div className="underlineSpecial"></div>
                 <div style={{display: 'flex'}}>
                 {

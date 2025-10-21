@@ -217,6 +217,20 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    --letterBg: 0
+  }
+  .specialTitle::after {
+    content: '';
+    display: block;
+    height: 30%;
+    width: 88%;
+    transform: translate(4%) scaleX(var(--letterBg));
+    transform-origin: left;
+    transition: transform 1.1s cubic-bezier(0.33, 1, 0.68, 1)	 1s;
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 0, 0.716);
+    background: #d8c0d894;
   }
 
   .underlineSpecial {
@@ -1107,6 +1121,9 @@
       font-size: 2em;
       opacity: 0.3;
     }
+    .specialTitle::after {
+      content: '';
+    }
     .specialTitle::before {
       content: unset;
     }
@@ -1340,7 +1357,7 @@ padding: UNSET;
     }
 
     .upSection {
-      height: 100dvh;
+      /* height: 100dvh; */
       border-radius: 0;
     }
 
