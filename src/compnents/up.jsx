@@ -64,7 +64,7 @@ export function Up ({userAgent}) {
         if (playStatus == 'pause') {
             setPlayStatus('play')
             videoref.current.play()
-            audioref.current.play()
+            requestAnimationFrame(()=> audioref.current.play())
         } else {
             setPlayStatus('pause')
             videoref.current.pause()

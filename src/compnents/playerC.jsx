@@ -28,7 +28,7 @@ export function Player ({endVideo, playVideo, topSection, videoref, audioref, pl
             // setPlayerState(pr=>({...pr, playstatus: 'play'}))
             setPlayStatus('play')
             if (playerState.playerUi.label == 'dclxvi') {videoref.current.play()}
-            audioref.current.play()
+            requestAnimationFrame(()=> audioref.current.play())
         } else {
             // setPlayerState(pr=>({...pr, playstatus: 'pause'}))
             setPlayStatus('pause')
