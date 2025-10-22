@@ -6,6 +6,9 @@ import { VideoPanel } from "./videopanel"
 import { useSelector, useDispatch } from 'react-redux';
 import { Player } from "./playerC"
 import { Uptext } from "./upText"
+// import { endVideo } from "./storage"
+import { play, full, unfull } from './storage'
+
 
 
 
@@ -36,15 +39,17 @@ export function Up ({userAgent}) {
 
     const dispatch = useDispatch()
     const videoState = useSelector(state => state)
+    console.log(play)
     console.log(videoState)
-    function playVideo(){
-        dispatch({type: 'play'})
-        // вызывает редьюсер 
-      }
-    function endVideo(){
-        dispatch({type: 'stop'})
-        // вызывает редьюсер 
-    }
+    
+    // function playVideo(){
+    //     dispatch({type: 'play'})
+    //     // вызывает редьюсер 
+    //   }
+    // function endVideo(){
+    //     dispatch({type: 'stop'})
+    //     // вызывает редьюсер 
+    // }
 
     const mainCont = useRef(null)
     const topSection = useRef(null)
@@ -57,6 +62,7 @@ export function Up ({userAgent}) {
 
     let [playStatus, setPlayStatus] = useState('pause')
 
+    const videoBg = useRef(null)
     const audioref = useRef(null)
     const videoref = useRef(null)
 
@@ -75,10 +81,12 @@ export function Up ({userAgent}) {
 
     function fullScreen(){
         if (videoState.videoFull != 'fullScreen') {
-            dispatch({type: 'full'})
+            // dispatch({type: 'full'})
+            dispatch(full())
         }
         else {
-            dispatch({type: 'unfull'})
+            // dispatch({type: 'unfull'})
+            dispatch(unfull())
         }
     }
 
@@ -135,6 +143,8 @@ export function Up ({userAgent}) {
                            src={dissection} 
                            ref={videoref}
                            onEnded={() => {
+                            //    endVideo(dispatch)
+                               dispatch(stop())
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
@@ -144,11 +154,10 @@ export function Up ({userAgent}) {
                     </div>
 
                     <Player 
+                      videoBg={videoBg}
                       playStatus={playStatus}
                       setPlayStatus={setPlayStatus}
                       audioref={audioref}
-                      endVideo={endVideo} 
-                      playVideo={playVideo}
                       topSection={topSection} 
                       videoref={videoref}
                     ></Player>
@@ -184,7 +193,7 @@ export function Up ({userAgent}) {
             </div>
         </section>
         
-        <VideoPanel userAgent={userAgent} fullScreen={fullScreen}></VideoPanel>
+        <VideoPanel userAgent={userAgent} fullScreen={fullScreen} videoBg={videoBg}></VideoPanel>
         
         <section className="middleSection">
             <div className="creditsCont">

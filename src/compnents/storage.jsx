@@ -1,4 +1,6 @@
 import {createStore} from 'redux'
+import { useDispatch } from 'react-redux'
+import { createSlice, configureStore } from '@reduxjs/toolkit'
 
 
   const stateVideo = {
@@ -11,6 +13,50 @@ import {createStore} from 'redux'
         //   ограничивает скролл при видео
         mainOf: ''
   }
+
+  const initialState =  {   
+    h1ContOpacity: '',
+    videoFull: '',
+    isVideoBg: '',
+    isLetter: '',
+    class: '',
+    blurBg: '',
+    //   ограничивает скролл при видео
+    mainOf: ''
+  }
+
+  const videoSlice = createSlice({
+    name: 'videoState',
+    initialState, 
+    // обязательные атрибуты и имена
+    reducers: {
+      play: state => {
+        state.h1ContOpacity = 'h1ContVideo'
+        state.isVideoBg = 'videoBgShow'
+        state.mainOf = 'mainCont'
+        state.blurBg = 'hideviolet'
+        state.class = 'speedhunters'
+        state.isLetter = 'showLetter'
+      },
+      stop: state => { Object.assign(state, initialState) },
+      full: state => { state.videoFull = 'fullScreen' },
+      unfull: state => { state.videoFull = ''}
+    }
+  })
+
+  export const { play, stop, full, unfull } = videoSlice.actions
+  console.log(play)
+
+  export const store = configureStore({ reducer: videoSlice.reducer })
+
+//   export function playVideo(dispatch){
+//     dispatch({type: 'play'})
+//     // вызывает редьюсер 
+//   }
+//   export function endVideo(dispatch){
+//     dispatch({type: 'stop'})
+//     // вызывает редьюсер 
+//   }
 
   
   function reducer(state = stateVideo, action){
@@ -49,4 +95,4 @@ import {createStore} from 'redux'
     }
   }
 
-  export const store = createStore(reducer)
+//   export const store = createStore(reducer)

@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 
 
-export function VideoPanel({userAgent, fullScreen}) {
+export function VideoPanel({userAgent, fullScreen, videoBg}) {
 
     const videoState = useSelector(state => state)
 
     return(
-        <div className={`videoBgCont ${videoState.isVideoBg}`}>  
+        <div className={`videoBgCont ${videoState.isVideoBg}`} ref={videoBg}>  
 
             <div className={`bottomPanel ${userAgent.bottompanel}`}>
 

@@ -1,9 +1,15 @@
 import { useState } from "react"
 import { player } from "./player"
 import { useRef } from "react"
+// import { playVideo, endVideo } from "./storage"
+import { play, stop } from './storage'
+import { useDispatch } from "react-redux"
 
-export function Player ({endVideo, playVideo, topSection, videoref, audioref, playStatus, setPlayStatus}) {
+export function Player ({topSection, videoref, audioref, playStatus, setPlayStatus, videoBg}) {
 // вынести в стор
+
+    const dispatch = useDispatch()
+
     let currentindex = useRef(0)
 
     const playlist = Object.keys(player)
@@ -46,9 +52,11 @@ export function Player ({endVideo, playVideo, topSection, videoref, audioref, pl
         videoref.current.play()
 
         if (action == 'on') {
-            playVideo()
+            // playVideo(dispatch)
+            dispatch(play())
         } else {
-            endVideo()
+            // endVideo(dispatch)
+            dispatch(stop())
             }
     }
 
@@ -58,7 +66,7 @@ export function Player ({endVideo, playVideo, topSection, videoref, audioref, pl
             
             videoUI('on')     
 
-            topSection.current.style.setProperty('--letterBg', 1)
+            videoBg.current.style.setProperty('--letterBg', 1)
             window.scrollTo(0,0)
             if (window.innerWidth < 600) {
                topSection.current.style.setProperty('--onPlayOpacity', 0.6)
@@ -119,7 +127,8 @@ export function Player ({endVideo, playVideo, topSection, videoref, audioref, pl
                         setPlayStatus('play')
                            if (playerState.playerUi.label == 'dclxvi') {
                               setfirstplay(prev=>({...prev, class: ''}))
-                              endVideo() 
+                            //   endVideo(dispatch) 
+                              dispatch(stop())
                            }
                 }}></audio>
 
