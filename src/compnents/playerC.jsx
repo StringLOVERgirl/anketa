@@ -50,6 +50,7 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
             status: true, class: state
         }))
         videoref.current.play()
+        // videoref.current.currentTime = 170
 
         if (action == 'on') {
             // playVideo(dispatch)

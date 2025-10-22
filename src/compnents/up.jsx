@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Player } from "./playerC"
 import { Uptext } from "./upText"
 // import { endVideo } from "./storage"
-import { play, full, unfull } from './storage'
+import { stop, full, unfull } from './storage'
 
 
 
@@ -39,7 +39,7 @@ export function Up ({userAgent}) {
 
     const dispatch = useDispatch()
     const videoState = useSelector(state => state)
-    console.log(play)
+
     console.log(videoState)
     
     // function playVideo(){
@@ -145,6 +145,7 @@ export function Up ({userAgent}) {
                            onEnded={() => {
                             //    endVideo(dispatch)
                                dispatch(stop())
+                               changePlayStatus()
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}

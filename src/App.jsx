@@ -8,7 +8,7 @@ function App() {
   let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
 
   useEffect(()=>{
-    setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
+    // setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
 
     // useEffect(() => {
         const ua = navigator.userAgent;
