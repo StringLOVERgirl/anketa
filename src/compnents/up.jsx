@@ -1,21 +1,17 @@
 import { useEffect, useState } from "react"
 import { useRef } from "react"
 import dissection from '/assets/dissection720.mp4'
-import { player } from "./player"
 import { content } from "./content"
 import { VideoPanel } from "./videopanel"
 import { useSelector, useDispatch } from 'react-redux';
 import { Player } from "./playerC"
+import { Uptext } from "./upText"
 
 
 
 function CreditsRL() {
-// мне леень было раздедлять на компоненты -итак сойдет
-//  сокращу коллчиеств остейтов может организю редукс
-//  разоью на комопненты 
-// разделю стили 
-// уберу логи 
 
+    
     return(
         <div className="">
             <div className="shows">
@@ -55,24 +51,24 @@ export function Up ({userAgent}) {
     const middleSection = useRef(null)
 
     const maskref = useRef(null)
-    const leftTextTop = useRef(null) 
-    let [text, isText] = useState('')
+
     const isMobile = useRef() // ???
 
+
     let [playStatus, setPlayStatus] = useState('pause')
+
     const audioref = useRef(null)
     const videoref = useRef(null)
+
     function changePlayStatus() {
-        console.log(111)
         if (playStatus == 'pause') {
             setPlayStatus('play')
             videoref.current.play()
             audioref.current.play()
         } else {
-            // setPlayStatus('play')
+            setPlayStatus('pause')
             videoref.current.pause()
             audioref.current.pause()
-            setPlayStatus('pause')
         }
     }
 
@@ -86,18 +82,7 @@ export function Up ({userAgent}) {
         }
     }
 
-    const options = {
-        timeZone: "Europe/Moscow",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false
-      }
 
-    const moscowStr = new Date().toLocaleTimeString('ru-RU', options)
-
-    let [time, setTime] = useState(moscowStr)
-
-    let [meg, setMeg] = useState(null)
 
     function mask(event) {
         const x = event.clientX
@@ -117,22 +102,12 @@ export function Up ({userAgent}) {
 
     useEffect(() => {
 
-        setTimeout(()=>{
-            setMeg('showMeg')
-            isText('showText')
-        }, 3200)
-
-        const id = setInterval(() => setTime(new Date().toLocaleTimeString('ru-RU', options)), 1000);
-
-        // if (window.innerWidth >= 600){
-            window.addEventListener('scroll', middleParallax) 
-        // }
+        window.addEventListener('scroll', middleParallax) 
 
         return (() => {
-            // if (window.innerWidth >= 600){
+            
             window.removeEventListener('scroll', middleParallax) 
-        // }
-            clearInterval(id);
+
         })
 
     },[])
@@ -169,8 +144,8 @@ export function Up ({userAgent}) {
                     </div>
 
                     <Player 
-                    playStatus={playStatus}
-                    setPlayStatus={setPlayStatus}
+                      playStatus={playStatus}
+                      setPlayStatus={setPlayStatus}
                       audioref={audioref}
                       endVideo={endVideo} 
                       playVideo={playVideo}
@@ -198,37 +173,8 @@ export function Up ({userAgent}) {
                             <a className="inspByInner" target="_blank" href="https://www.google.com/search?q=hierarchy+2024">Inspired by</a>
                         </div>
                     </div>
-
-                    <div className={`upTextCont ${videoState.h1ContOpacity}`}>
-                        <div className='divH1Cont'>
-                            {/* {['s','k','y'].map((e,i) => { */}
-                            {['m','e','g'].map((e,i) => {
-                                   if (i == 2) {return <span className={`meg g ${meg}`} style={{'--delay': i * 0.17 + "s"}}>{e}</span>}
-                                   else {return <span className={`meg ${meg}`} style={{'--delay': i * 0.17 + 's'}}>{e}</span>}
-                               })
-                            }
-                        </div>
-
-                        <div className="upTextLeftCont">
-                            <div className={`leftTextTop ${text}`} ref={leftTextTop}>
-                                {/* <div className="leftup topText">Thank you for visiting</div> */}
-                                {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
-                                <div className="leftup topText">Thanks for visiting. </div>
-                                {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
-                                {/* <div className="leftup bottomText">Здесь немного из мира моих интересов</div> */}
-                                <div className="leftup bottomText">Here are some things I like.</div>
-                            </div>
-
-                            <div className="leftTextBottom">
-                                <div className="metaLeft">
-                                    <div className="time">{time}</div>
-                                    <div>{'\u00A0'}</div>
-                                    <div className="moscow">Moscow</div>
-                                </div>
-                                <div className="year">October 2025</div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <Uptext></Uptext>
 
                     <div className="snowCont">
                         <div className="decorSnow snowblur"></div>

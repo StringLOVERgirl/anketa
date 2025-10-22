@@ -3,7 +3,7 @@ import { player } from "./player"
 import { useRef } from "react"
 
 export function Player ({endVideo, playVideo, topSection, videoref, audioref, playStatus, setPlayStatus}) {
-
+// вынести в стор
     let currentindex = useRef(0)
 
     const playlist = Object.keys(player)
