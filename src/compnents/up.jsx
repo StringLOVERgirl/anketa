@@ -5,6 +5,7 @@ import { player } from "./player"
 import { content } from "./content"
 import { VideoPanel } from "./videopanel"
 import { useSelector, useDispatch } from 'react-redux';
+import { Player } from "./playerC"
 
 
 
@@ -53,131 +54,36 @@ export function Up ({userAgent}) {
     const topSection = useRef(null)
     const middleSection = useRef(null)
 
-    const audioref = useRef(null)
-
     const maskref = useRef(null)
     const leftTextTop = useRef(null) 
     let [text, isText] = useState('')
     const isMobile = useRef() // ???
 
+    let [playStatus, setPlayStatus] = useState('pause')
+    const audioref = useRef(null)
     const videoref = useRef(null)
-    // const specialtitle = useRef(null)
-    let [videoSet, setfirstplay] = useState({status: false, class: ""})
+    function changePlayStatus() {
+        console.log(111)
+        if (playStatus == 'pause') {
+            setPlayStatus('play')
+            videoref.current.play()
+            audioref.current.play()
+        } else {
+            // setPlayStatus('play')
+            videoref.current.pause()
+            audioref.current.pause()
+            setPlayStatus('pause')
+        }
+    }
 
-    // let [videoState, setVideoState] = useState({
-    //     h1ContOpacity: '',
-    //     videoFull: '',
-    //     isVideoBg: '',
-    //     isblurbg: '',
-    //     isLetter: '',
-    //     //   ограничивает скролл при видео
-    //     mainOf: ''
-    // })
-
-
-    const playlist = Object.keys(player)
-    let currentindex = useRef(0)
-    let [currenttrack, setCurrentTrack] = useState(playlist[0])
-    const [playerState, setPlayerState] = useState({
-        next: {next: '', prev: ''},   
-        playerUi: {
-            title: player[currenttrack][0],
-            label: player[currenttrack][1],
-            track: player[currenttrack][2]
-        },
-        playstatus: 'pause'
-    })
-    
 
     function fullScreen(){
         if (videoState.videoFull != 'fullScreen') {
-            // setVideoState(prev=>({...prev, videoFull: 'fullScreen'}))
             dispatch({type: 'full'})
         }
         else {
-            // setVideoState(prev=>({...prev, videoFull: ''}))
             dispatch({type: 'unfull'})
         }
-    }
-
-    function videoUI(action){
-            const state = action == 'on' ? 'speedhunters' : ''
-            setfirstplay(_=>({
-                status: true, class: state
-            }))
-            videoref.current.play()
-            // setVideoState(prev=>({
-            //     ...prev, 
-            //     h1ContOpacity: state[0][0],
-            //     isVideoBg: state[0][1],
-            //     isblurbg: state[0][2],
-            //     mainOf: state[0][3],
-            //     isLetter: state[0][4]
-            // }))  
-            if (action == 'on') {
-                playVideo()
-            } else {
-                endVideo()
-            }
-    }
-
-    function dclxviChecking(direction){
-        console.log(videoSet.status, playerState.playerUi.label)
-        if (playerState.playerUi.label == 'burgos' && videoSet.status == false && direction == '+') {
-            
-            console.log(123245)
-            videoUI('on')     
-
-            topSection.current.style.setProperty('--letterBg', 1)
-            window.scrollTo(0,0)
-            if (window.innerWidth < 600) {
-                topSection.current.style.setProperty('--onPlayOpacity', 0.6)
-            } else {
-               topSection.current.style.setProperty('--onPlayOpacity', 0.5)
-            }
-        }
-        if (videoSet.class == 'speedhunters') {
-
-            videoUI('off')      
-
-            topSection.current.style.setProperty('--onPlayOpacity', 1)
-        }
-    }
-    
-
-    function playnext (direction) {
-        if (currentindex.current == playlist.length - 1 && direction != '-' ) return
-        if (direction == '-' && currentindex.current === 0) return
-        if (direction == '+') {
-               currentindex.current += 1 
-            } else {
-               currentindex.current -= 1
-            }
-            // video cheking
-        dclxviChecking(direction)
-
-        console.log(currentindex.current)
-        let nexttrack = playlist[currentindex.current]
-        setCurrentTrack(nexttrack);
-        setPlayerState(prev => (
-           {...prev, playerUi: {
-                title: player[nexttrack][0],
-                label: player[nexttrack][1],
-                track: player[nexttrack][2]
-             }
-           }
-           ))
-
-           if (direction == '+') {
-            setPlayerState(pr=>({...pr, next: {...pr.next, next: 'trackButtonsScale'}}))} else {
-            setPlayerState(pr=>({...pr, next: {...pr.next, prev: 'trackButtonsScale'}}))   
-        }
-        
-       setTimeout(()=>{ 
-        audioref.current.play()
-        setPlayerState(pr=>({...pr, playstatus: 'play', next: {next: '', prev: ''}}))
-        // setPlayerState(pr=>({...pr, next: {next: '', prev: ''}}))   
-       }, 300)
     }
 
     const options = {
@@ -201,18 +107,6 @@ export function Up ({userAgent}) {
         // на сам эл или родитель ближайшмй
         maskref.current.style.maskImage = `radial-gradient(circle ${radius}px at ${x}px ${y}px, transparent 0%, black 100%)`;
         maskref.current.style.webkitMaskImage = `radial-gradient(circle ${radius}px at ${x}px ${y}px, transparent 0%, black 100%)`;
-    }
-
-    function changePlayStatus() {
-        if (playerState.playstatus == 'pause') {
-            setPlayerState(pr=>({...pr, playstatus: 'play'}))
-            if (playerState.playerUi.label == 'dclxvi') {videoref.current.play()}
-            audioref.current.play()
-        } else {
-            setPlayerState(pr=>({...pr, playstatus: 'pause'}))
-            if (playerState.playerUi.label == 'dclxvi') {videoref.current.pause()}
-            audioref.current.pause()
-        }
     }
 
     function middleParallax () {
@@ -250,45 +144,40 @@ export function Up ({userAgent}) {
             <div className="upOutter">
                 <div className="upInner">
 
-                    {/* <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div> */}
-                    <div className={`blurBg ${videoState.isblurbg}`} ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
-                       <div className="maskBg"></div>
-                       <div className="maskBg blurbg2"></div>
+                    <div 
+                      className={`blurBg ${videoState.blurBg}`} 
+                      ref={maskref} 
+                      onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
+                         <div className="maskBg"></div>
+                         <div className="maskBg blurbg2"></div>
                     </div>
-                    <div className={`special ${videoSet.class}`}>
-                        <video playsInline className={videoState.videoFull} src={dissection} ref={videoref} muted onEnded={() => {
+
+                    <div className={`special ${videoState.class}`}>
+                        <video 
+                           playsInline 
+                           muted
+                           className={videoState.videoFull} 
+                           src={dissection} 
+                           ref={videoref}
+                           onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
-                             onClick={()=>{
-                            if (videoref.current.paused){
-                                videoref.current.play()
-                                changePlayStatus()
-                            }else{
-                                videoref.current.pause()
-                                changePlayStatus()
-                            }
-                            }}
-                            onDoubleClick={fullScreen}
-                        ></video>
+                           onClick={changePlayStatus} 
+                           onDoubleClick={fullScreen}>
+                        </video>
                     </div>
 
-                    <div className='playerCont'>
-                        <div className="leftPanelCont">
-                            <button className={`playstatus ${playerState.playstatus}`} onClick={changePlayStatus}></button>
-                            <div className={`label ${playerState.playerUi.label}`}></div>
-                            <button className={`prevTrack ${playerState.next.prev}`} onClick={()=>playnext('-')}></button>
-                            <button className={`nextTrack ${playerState.next.next}`} onClick={()=>playnext('+')}></button>
-                            <div className="audioRL">
-                                <div className="audioRLInner">
-                                    <div className="ostTitle">{playerState.playerUi.title}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}</div>
-                                    <div className="ostTitle2">{playerState.playerUi.title}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Player 
+                    playStatus={playStatus}
+                    setPlayStatus={setPlayStatus}
+                      audioref={audioref}
+                      endVideo={endVideo} 
+                      playVideo={playVideo}
+                      topSection={topSection} 
+                      videoref={videoref}
+                    ></Player>
 
-                    {/* <div className="year">October 2025</div> */}
                     <div className="linkCont">
                         {/* <div className="elHoyoImg"></div> */}
                         {/* удалить стили */}
@@ -310,20 +199,6 @@ export function Up ({userAgent}) {
                         </div>
                     </div>
 
-                    <audio src={playerState.playerUi.track} ref={audioref} onEnded={() => {
-                           setPlayerState(pr=>({...pr, playstatus: 'pause'}))
-                           if (playerState.playerUi.label == 'dclxvi') {
-                              setfirstplay(prev=>({...prev, class: ''}))
-                            //   setVideoState(prev=>({
-                            //     ...prev, 
-                            //     h1ContOpacity: '',
-                            //     isVideoBg: '',
-                            //     isblurbg: '',
-                            //     mainOf: '',
-                            //   }))  
-                              endVideo() 
-                           }
-                        }}></audio>
                     <div className={`upTextCont ${videoState.h1ContOpacity}`}>
                         <div className='divH1Cont'>
                             {/* {['s','k','y'].map((e,i) => { */}

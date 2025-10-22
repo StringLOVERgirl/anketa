@@ -5,8 +5,9 @@ import {createStore} from 'redux'
         h1ContOpacity: '',
         videoFull: '',
         isVideoBg: '',
-        // isblurbg: '',
         isLetter: '',
+        class: '',
+        blurBg: '',
         //   ограничивает скролл при видео
         mainOf: ''
   }
@@ -21,21 +22,28 @@ import {createStore} from 'redux'
         isVideoBg: 'videoBgShow',
         // isblurbg: 'hideviolet',
         mainOf: 'mainCont',
+        blurBg: 'hideviolet',
+        class: 'speedhunters',
         isLetter: 'showLetter'
       }
+
       case 'stop': 
       return {
         ...state,
         h1ContOpacity: '',
         isVideoBg: '',
-        // isblurbg: '',
         mainOf: '',
+        blurBg: '',
+        class: '',
         isLetter: ''
       }
+
       case 'full':
       return {...state, videoFull: 'fullScreen'}
+
       case 'unfull': 
       return {...state, videoFull: ''}
+
       default: 
       return state
     }
