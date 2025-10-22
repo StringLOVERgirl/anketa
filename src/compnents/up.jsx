@@ -1,79 +1,19 @@
 import { useEffect, useState } from "react"
 import { useRef } from "react"
-import hierarchyost from '/audio/hierarchy.mp3'
-import xxx from '/audio/XXXTENTACION - before I dive (AI Generated Song).mp3'
-import bones from '/audio/IAmCertainlyNotWorthYourTime.mp3'
-import chlorella from '/audio/BONES-Chlorella.mp3'
-import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
-import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
-import handbook from '/audio/HandbookForTheRecentlyDeceased.mp3'
-import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
-import twoh from '/audio/2high.mp3'
-import dclxvi from '/audio/DCLXVI_-_DISSECTION_76038142.mp3'
 import dissection from '/assets/dissection720.mp4'
-import { use } from "react"
-
-
+import { player } from "./player"
+import { content } from "./content"
+import { VideoPanel } from "./videopanel"
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 function CreditsRL() {
 // мне леень было раздедлять на компоненты -итак сойдет
-    const content = [
-        [
-           'Reborn Rich',
-           'Revenge of Others',
-           'Death\'s Game',
-           'Parasyte: The Grey',
-           'The 8 Show',
-           'Black Mirror',
-           'Happiness',
-           'Squid Game',
-           'Alice in Borderland',
-           'Hierarchy',
-           'True Detective: 1 season',
-           'Mister Robot'
-        ],
-        [
-           'It Follows',
-           'MCU',
-           'Longlegs',
-           'Boîte noire',
-           'Substance 2024',
-           'Passengers',
-           'Prometheus',
-           '2049'
-        ],
-        [    
-        //    'Used to play Detroit 2038',
-        //    'and minecraft,',
-        //    'learn English',
-        //    'and math',
-        //    'Like web-design and', 
-        //    'frontend development',
-        //    '(but sometimes I burn out',
-        //    'and abandon it',
-        //    'A few random facts:',
-        //    'I\'m curious and well-read', 
-        //    'value creativity and creation', 
-        //    'love hotels, and', 
-        //    'find music and voices more important than text'
-           'Нравится Detroit 2038',
-           'и minecraft,',
-           'изучала английский',
-           'и математику',
-           'нравится веб-дизайн и', 
-           'фронтенд разработка',
-           '(но иногда выгораю и забрасываю)',
-           'И еще несколько случайных фактов:',
-           'Я любознательная', 
-           'имею читательский опыт', 
-           'ценю творчество и созидание', 
-           'люблю отели, и', 
-           'музыка и голос важнее текста'
-        ]
-    ]
-
+//  сокращу коллчиеств остейтов может организю редукс
+//  разоью на комопненты 
+// разделю стили 
+// уберу логи 
 
     return(
         <div className="">
@@ -97,52 +37,98 @@ function CreditsRL() {
 
 export function Up ({userAgent}) {
 
+    const dispatch = useDispatch()
+    const videoState = useSelector(state => state)
+    console.log(videoState)
+    function playVideo(){
+        dispatch({type: 'play'})
+        // вызывает редьюсер 
+      }
+    function endVideo(){
+        dispatch({type: 'stop'})
+        // вызывает редьюсер 
+    }
+
     const mainCont = useRef(null)
-    let [mainOf, setmainOf] = useState('')
     const topSection = useRef(null)
     const middleSection = useRef(null)
-    const middleSectionCont = useRef(null)
+
     const audioref = useRef(null)
+
     const maskref = useRef(null)
     const leftTextTop = useRef(null) 
     let [text, isText] = useState('')
-    const isMobile = useRef()
-    let [next, setnext] = useState({next: '', prev: ''})
+    const isMobile = useRef() // ???
+
     const videoref = useRef(null)
+    // const specialtitle = useRef(null)
     let [videoSet, setfirstplay] = useState({status: false, class: ""})
-    let [h1ContOpacity, setH1Opacity] = useState('')
-    let [videoFull, setFull] = useState('')
-    let [isVideoBg, setvideobg] = useState('')
-    let [isblurbg, setblurbg] = useState('')
-    let [isLetter, setLetter] = useState('')
-    // let [userAgent, setuseragent] = useState({bottompanel: ''})
-    const bgVideo = useRef(null)
-    const specialtitle = useRef(null)
+
+    // let [videoState, setVideoState] = useState({
+    //     h1ContOpacity: '',
+    //     videoFull: '',
+    //     isVideoBg: '',
+    //     isblurbg: '',
+    //     isLetter: '',
+    //     //   ограничивает скролл при видео
+    //     mainOf: ''
+    // })
+
+
+    const playlist = Object.keys(player)
+    let currentindex = useRef(0)
+    let [currenttrack, setCurrentTrack] = useState(playlist[0])
+    const [playerState, setPlayerState] = useState({
+        next: {next: '', prev: ''},   
+        playerUi: {
+            title: player[currenttrack][0],
+            label: player[currenttrack][1],
+            track: player[currenttrack][2]
+        },
+        playstatus: 'pause'
+    })
     
 
     function fullScreen(){
-        if (videoFull != 'fullScreen') {
-            setFull('fullScreen')
+        if (videoState.videoFull != 'fullScreen') {
+            // setVideoState(prev=>({...prev, videoFull: 'fullScreen'}))
+            dispatch({type: 'full'})
         }
         else {
-            setFull('')
+            // setVideoState(prev=>({...prev, videoFull: ''}))
+            dispatch({type: 'unfull'})
         }
     }
 
-    function dclxviChecking(direction){
-        console.log(videoSet.status, playerst.label)
-        if (playerst.label == 'burgos' && videoSet.status == false && direction == '+') {
-            console.log(123245)
-            setfirstplay(prev=>({
-                status: true, class: 'speedhunters' 
+    function videoUI(action){
+            const state = action == 'on' ? 'speedhunters' : ''
+            setfirstplay(_=>({
+                status: true, class: state
             }))
             videoref.current.play()
-            setH1Opacity('h1ContVideo')
-            setvideobg('videoBgShow')
-            setblurbg('hideviolet')
-            setmainOf('mainCont')
-            setLetter('showLetter')
-            specialtitle.current.style.setProperty('--letterBg', 1)
+            // setVideoState(prev=>({
+            //     ...prev, 
+            //     h1ContOpacity: state[0][0],
+            //     isVideoBg: state[0][1],
+            //     isblurbg: state[0][2],
+            //     mainOf: state[0][3],
+            //     isLetter: state[0][4]
+            // }))  
+            if (action == 'on') {
+                playVideo()
+            } else {
+                endVideo()
+            }
+    }
+
+    function dclxviChecking(direction){
+        console.log(videoSet.status, playerState.playerUi.label)
+        if (playerState.playerUi.label == 'burgos' && videoSet.status == false && direction == '+') {
+            
+            console.log(123245)
+            videoUI('on')     
+
+            topSection.current.style.setProperty('--letterBg', 1)
             window.scrollTo(0,0)
             if (window.innerWidth < 600) {
                 topSection.current.style.setProperty('--onPlayOpacity', 0.6)
@@ -151,44 +137,13 @@ export function Up ({userAgent}) {
             }
         }
         if (videoSet.class == 'speedhunters') {
-             setfirstplay(prev=>({
-                status: true, class: '' 
-            }))
-            setH1Opacity('')
-            setvideobg('')
-            setblurbg('')
-            setmainOf('')
+
+            videoUI('off')      
+
             topSection.current.style.setProperty('--onPlayOpacity', 1)
         }
     }
     
-    const player = {
-        hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
-        burgos: ['White Girls in the Back of the Bus', 'burgos', burgos],
-        special: ['DCLXVI - Dissection • SPECIAL', 'dclxvi', dclxvi],
-        handbook: ['Bones - HandbookForTheRecentlyDeceased', 'handbook', handbook],
-        xxx: ['XXXTENTACION - before I dive (AI) ', 'xxxost', xxx],
-        bones: [' Bones - IAmCertainlyNotWorthYourTime ', 'bones', bones],
-        maid: [' Chikoi The Maid - Reflection ', 'chekoi', chikoi],
-        blackl: [' Bones - BlackLungs & YellowTape ', 'handbook', blacklungs],
-        twohigh: [' Yushee -  2high Released on: 2021-04-02 ', 'twohigh', twoh],
-        chlorellaBones: [' Bones - Chlorella by TeamSESH ', 'chlorella', chlorella],
-    }
-
-    const playlist = Object.keys(player)
-    console.log(playlist)
-
-    let currentindex = useRef(0)
-    let [currenttrack, setCurrentTrack] = useState(playlist[0])
-    console.log(currenttrack)
-
-    let [playerst, setPlayer] = useState({
-        title: player[currenttrack][0],
-        label: player[currenttrack][1],
-        track: player[currenttrack][2]
-    })
-
-    let [playstatus, setPlaystatus] = useState('pause')
 
     function playnext (direction) {
         if (currentindex.current == playlist.length - 1 && direction != '-' ) return
@@ -204,23 +159,24 @@ export function Up ({userAgent}) {
         console.log(currentindex.current)
         let nexttrack = playlist[currentindex.current]
         setCurrentTrack(nexttrack);
-        setPlayer(prev => (
-           {
-            title: player[nexttrack][0],
-            label: player[nexttrack][1],
-            track: player[nexttrack][2]
+        setPlayerState(prev => (
+           {...prev, playerUi: {
+                title: player[nexttrack][0],
+                label: player[nexttrack][1],
+                track: player[nexttrack][2]
+             }
            }
            ))
 
-           if (direction == '+') {setnext(pr=>({...pr, next: 'trackButtonsScale'}))} else {
-            setnext(pr=>({...pr, prev: 'trackButtonsScale'}))   
+           if (direction == '+') {
+            setPlayerState(pr=>({...pr, next: {...pr.next, next: 'trackButtonsScale'}}))} else {
+            setPlayerState(pr=>({...pr, next: {...pr.next, prev: 'trackButtonsScale'}}))   
         }
         
        setTimeout(()=>{ 
         audioref.current.play()
-        setPlaystatus('play')
-        setnext(_=>({prev: '', next: ''}))
-        // setnext(_=>({prev:'',next:''}))
+        setPlayerState(pr=>({...pr, playstatus: 'play', next: {next: '', prev: ''}}))
+        // setPlayerState(pr=>({...pr, next: {next: '', prev: ''}}))   
        }, 300)
     }
 
@@ -248,13 +204,13 @@ export function Up ({userAgent}) {
     }
 
     function changePlayStatus() {
-        if (playstatus == 'pause') {
-            setPlaystatus('play') 
-            if (playerst.label == 'dclxvi') {videoref.current.play()}
+        if (playerState.playstatus == 'pause') {
+            setPlayerState(pr=>({...pr, playstatus: 'play'}))
+            if (playerState.playerUi.label == 'dclxvi') {videoref.current.play()}
             audioref.current.play()
         } else {
-            setPlaystatus('pause')
-            if (playerst.label == 'dclxvi') {videoref.current.pause()}
+            setPlayerState(pr=>({...pr, playstatus: 'pause'}))
+            if (playerState.playerUi.label == 'dclxvi') {videoref.current.pause()}
             audioref.current.pause()
         }
     }
@@ -288,18 +244,19 @@ export function Up ({userAgent}) {
     },[])
 
 
-    return (<div className={mainOf} ref={mainCont}>
+    return (
+    <div className={videoState.mainOf} ref={mainCont}>
         <section className="upSection" ref={topSection}>
             <div className="upOutter">
                 <div className="upInner">
 
                     {/* <div className="maskBg" ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}></div> */}
-                    <div className={`blurBg ${isblurbg}`} ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
+                    <div className={`blurBg ${videoState.isblurbg}`} ref={maskref} onMouseMove={(ev)=> {if(window.innerWidth >= 600){mask(ev)}}}>
                        <div className="maskBg"></div>
                        <div className="maskBg blurbg2"></div>
                     </div>
                     <div className={`special ${videoSet.class}`}>
-                        <video playsInline className={videoFull} src={dissection} ref={videoref} muted onEnded={() => {
+                        <video playsInline className={videoState.videoFull} src={dissection} ref={videoref} muted onEnded={() => {
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
@@ -314,22 +271,18 @@ export function Up ({userAgent}) {
                             }}
                             onDoubleClick={fullScreen}
                         ></video>
-                        {/* <div className="fullCont" onClick={fullScreen}>
-                            <button className="full full1"></button>
-                            <button className="full full2"></button>
-                        </div>     */}
                     </div>
 
                     <div className='playerCont'>
                         <div className="leftPanelCont">
-                            <button className={`playstatus ${playstatus}`} onClick={changePlayStatus}></button>
-                            <div className={`label ${playerst.label}`}></div>
-                            <button className={`prevTrack ${next.prev}`} onClick={()=>playnext('-')}></button>
-                            <button className={`nextTrack ${next.next}`} onClick={()=>playnext('+')}></button>
+                            <button className={`playstatus ${playerState.playstatus}`} onClick={changePlayStatus}></button>
+                            <div className={`label ${playerState.playerUi.label}`}></div>
+                            <button className={`prevTrack ${playerState.next.prev}`} onClick={()=>playnext('-')}></button>
+                            <button className={`nextTrack ${playerState.next.next}`} onClick={()=>playnext('+')}></button>
                             <div className="audioRL">
                                 <div className="audioRLInner">
-                                    <div className="ostTitle">{playerst.title}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}</div>
-                                    <div className="ostTitle2">{playerst.title}</div>
+                                    <div className="ostTitle">{playerState.playerUi.title}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}</div>
+                                    <div className="ostTitle2">{playerState.playerUi.title}</div>
                                 </div>
                             </div>
                         </div>
@@ -338,6 +291,7 @@ export function Up ({userAgent}) {
                     {/* <div className="year">October 2025</div> */}
                     <div className="linkCont">
                         {/* <div className="elHoyoImg"></div> */}
+                        {/* удалить стили */}
                         <div className="linkTextCont">
                             <div className="another">my project</div>
                             <div className="inspBy">
@@ -356,17 +310,21 @@ export function Up ({userAgent}) {
                         </div>
                     </div>
 
-                    <audio src={playerst.track} ref={audioref} onEnded={() => {
-                           setPlaystatus('pause')
-                           if (playerst.label == 'dclxvi') {
+                    <audio src={playerState.playerUi.track} ref={audioref} onEnded={() => {
+                           setPlayerState(pr=>({...pr, playstatus: 'pause'}))
+                           if (playerState.playerUi.label == 'dclxvi') {
                               setfirstplay(prev=>({...prev, class: ''}))
-                              setH1Opacity('')
-                              setvideobg('')
-                              setblurbg('')
-                              setmainOf('')
+                            //   setVideoState(prev=>({
+                            //     ...prev, 
+                            //     h1ContOpacity: '',
+                            //     isVideoBg: '',
+                            //     isblurbg: '',
+                            //     mainOf: '',
+                            //   }))  
+                              endVideo() 
                            }
                         }}></audio>
-                    <div className={`upTextCont ${h1ContOpacity}`}>
+                    <div className={`upTextCont ${videoState.h1ContOpacity}`}>
                         <div className='divH1Cont'>
                             {/* {['s','k','y'].map((e,i) => { */}
                             {['m','e','g'].map((e,i) => {
@@ -392,9 +350,6 @@ export function Up ({userAgent}) {
                                     <div>{'\u00A0'}</div>
                                     <div className="moscow">Moscow</div>
                                 </div>
-                                {/* <div className="time">{time}</div>
-                                <div>{'\u00A0'}</div>
-                                <div className="moscow">Moscow</div> */}
                                 <div className="year">October 2025</div>
                             </div>
                         </div>
@@ -407,31 +362,9 @@ export function Up ({userAgent}) {
                 </div>
             </div>
         </section>
-
-        <div className={`videoBgCont ${isVideoBg}`}>  
-
-            <div className={`bottomPanel ${userAgent.bottompanel}`}>
-            <div className="fullCont" onClick={fullScreen}>
-                            <button className="full full1"></button>
-                            <button className="full full2"></button>
-                        </div>  
-            <div className="specialTitle" ref={specialtitle}>  
-                <div className="underlineSpecial"></div>
-                <div style={{display: 'flex'}}>
-                {
-                    'DCLXVI\u00A0-\u00A0DISSECTION'.split('').map((e,i)=>{
-                        return <div className="h2Special">
-                                  <span className={`letter ${isLetter}`} style={{'--delayLetter': (i+1) * 0.03+'s'}}>{e}</span>
-                               </div>
-                    })
-                }
-                </div>
-            </div>
-            <div className="bottomPanelDecor"></div>
-            </div>
-
-        </div>
-
+        
+        <VideoPanel userAgent={userAgent} fullScreen={fullScreen}></VideoPanel>
+        
         <section className="middleSection">
             <div className="creditsCont">
                 <div className="creditsRL">

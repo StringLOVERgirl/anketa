@@ -134,6 +134,7 @@
     border-bottom-right-radius: 40px;
     overflow: hidden;
     --onPlayOpacity: 1;
+    --letterBg: 0
   }
 
   .special {
@@ -204,7 +205,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    --letterBg: 0
+    /* --letterBg: 0 */
   }
   .specialTitle::after {
     content: '';
