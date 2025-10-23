@@ -129,9 +129,10 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
                         //    setPlayerState(pr=>({...pr, playstatus: 'pause'}))
                         setPlayStatus('play')
                            if (playerState.playerUi.label == 'dclxvi') {
+                            console.log(212)
                               setfirstplay(prev=>({...prev, class: ''}))
                             //   endVideo(dispatch) 
-                              dispatch(stop())
+                              requestAnimationFrame(()=>dispatch(stop()))
                            }
                 }}></audio>
 
