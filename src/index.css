@@ -762,6 +762,10 @@
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
 
+  .tracy {
+    background: url('assets/tracy.jpeg') center / cover;
+  }
+
   .peep {
     background: url('assets/peep.jpeg') center / cover;
   }

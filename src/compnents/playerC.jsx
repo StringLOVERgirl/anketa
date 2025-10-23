@@ -65,7 +65,7 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
 
     function dclxviChecking(direction){
         console.log(videoSet.status, playerState.playerUi.label)
-        if (playerState.playerUi.label == 'burgos' && videoSet.status == false && direction == '+') {
+        if (playerState.playerUi.label == 'tracy' && videoSet.status == false && direction == '+') {
             
             videoUI('on')     
 
