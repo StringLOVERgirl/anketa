@@ -43,7 +43,6 @@ function App() {
             <div className="brand">
               <span className={`preloadertext ${preloadertext}`}>brand</span>
             </div>
-            <div className="blurPreloader"></div>
           </div>
         </div>
       {/* </div> */}
