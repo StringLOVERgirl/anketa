@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { player } from "./player"
 import { useRef } from "react"
 // import { playVideo, endVideo } from "./storage"
@@ -29,19 +29,21 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
         // playstatus: 'pause'
     })
 
-    function changePlayStatus() {
+    const changePlayStatus= useCallback(() =>{
         if (playStatus == 'pause') {
             // setPlayerState(pr=>({...pr, playstatus: 'play'}))
             setPlayStatus('play')
             if (playerState.playerUi.label == 'dclxvi') {videoref.current.play()}
-            requestAnimationFrame(()=> audioref.current.play())
+            requestAnimationFrame(()=> {
+                audioref.current.play()
+            })
         } else {
             // setPlayerState(pr=>({...pr, playstatus: 'pause'}))
             setPlayStatus('pause')
             if (playerState.playerUi.label == 'dclxvi') {videoref.current.pause()}
             audioref.current.pause()
         }
-    }
+    }, [playStatus, playerState.playerUi.label, videoref, audioref]);
     
 
     function videoUI(action){

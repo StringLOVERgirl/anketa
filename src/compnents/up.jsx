@@ -39,7 +39,7 @@ export function Up ({userAgent}) {
 
     const dispatch = useDispatch()
     const videoState = useSelector(state => state)
-
+    // console.log(play)
     console.log(videoState)
     
     // function playVideo(){
@@ -144,7 +144,7 @@ export function Up ({userAgent}) {
                            ref={videoref}
                            onEnded={() => {
                             //    endVideo(dispatch)
-                               dispatch(stop())
+                            //    dispatch(stop())
                                changePlayStatus()
                                videoref.current.style.setProperty('--opacity', 0)
                                topSection.current.style.setProperty('--onPlayOpacity', 1)

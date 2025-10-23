@@ -32,7 +32,7 @@ function App() {
         <div className="preloadersuqare"></div>
         <div className={`preloader ${userAgent.preloader}`}>
           <div className="preloaderline"></div>
-          <div className="preloadertext">loading</div>
+          <div className="preloadertext">currently developing</div>
         </div>
       </div>
       <Up userAgent={userAgent}></Up>
