@@ -11,7 +11,7 @@ function App() {
   useEffect(()=>{
     setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
     setTimeout(()=>{settext('showPreloaderText')}, 100)
-    setTimeout(()=>{settext('hideprtext')}, 2800)
+    // setTimeout(()=>{settext('hideprtext')}, 2800)
 
     // useEffect(() => {
         const ua = navigator.userAgent;
