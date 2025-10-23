@@ -115,7 +115,9 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
         }
         
        setTimeout(()=>{ 
+        audioref.current.currentTime = 200
           audioref.current.play()
+          
           setPlayerState(pr=>({...pr, next: {next: '', prev: ''}}))
           setPlayStatus('play')
        }, 300)
@@ -127,12 +129,13 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
 
                 <audio src={playerState.playerUi.track} ref={audioref} onEnded={() => {
                         //    setPlayerState(pr=>({...pr, playstatus: 'pause'}))
-                        setPlayStatus('play')
+                        setPlayStatus('pause')
                            if (playerState.playerUi.label == 'dclxvi') {
                             console.log(212)
                               setfirstplay(prev=>({...prev, class: ''}))
+                              topSection.current.style.setProperty('--onPlayOpacity', 1)
                             //   endVideo(dispatch) 
-                              requestAnimationFrame(()=>dispatch(stop()))
+                              dispatch(stop())
                            }
                 }}></audio>
 

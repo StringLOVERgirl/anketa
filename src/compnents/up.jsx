@@ -148,7 +148,7 @@ export function Up ({userAgent}) {
                             //    dispatch(stop())
                                changePlayStatus()
                                videoref.current.style.setProperty('--opacity', 0)
-                               topSection.current.style.setProperty('--onPlayOpacity', 1)
+                            //    topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
                            onClick={changePlayStatus} 
                            onDoubleClick={fullScreen}>

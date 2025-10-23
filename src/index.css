@@ -243,8 +243,22 @@
     opacity: 0;
     transition: 
       transform 1.2s var(--cubic) var(--delayLetter), 
-      opacity 0.9s var(--delayLetter)
+      opacity 0.9s var(--delayLetter);  
   }
+  /* @keyframes letterAnimation {
+    from {
+      filter: blur(0);
+    }
+    3% {
+      filter: blur(3px);
+    }
+    6% {
+      filter: blur(0);
+    }
+    to {
+      filter: blur(0);
+    }
+  } */
   .showLetter {
     transform: translate(0%);
     opacity: 1;
