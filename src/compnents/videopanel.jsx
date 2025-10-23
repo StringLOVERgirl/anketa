@@ -45,8 +45,8 @@ export function VideoPanel({userAgent, fullScreen, videoBg}) {
                            return <div className="h2Special">
                                       <span className={`letter ${videoState.isLetter}`} 
                                       style={{
-                                        // '--delayLetter': (i+1) * 0.03+'s',
-                                        '--delayA': (i+1) * 0.5 +'s',
+                                        '--delayLetter': (i+1) * 0.03+'s'
+                                        // '--delayA': (i+1) * 0.5 +'s',
                                         // animation: numbers.current.has(i) ? 'letterAnimation 15s linear infinite var(--delayA)' : ''
                                       }}>{e}</span>
                                   </div>
