@@ -115,7 +115,7 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
         }
         
        setTimeout(()=>{ 
-        audioref.current.currentTime = 200
+        // audioref.current.currentTime = 200
           audioref.current.play()
           
           setPlayerState(pr=>({...pr, next: {next: '', prev: ''}}))
@@ -136,6 +136,10 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
                               topSection.current.style.setProperty('--onPlayOpacity', 1)
                             //   endVideo(dispatch) 
                               dispatch(stop())
+                           }
+                           if (playerState.playerUi.label == 'peep') {
+                            audioref.current.currentTime = 0
+                            audioref.current.play()
                            }
                 }}></audio>
 

@@ -5,10 +5,13 @@ import { Up } from './compnents/up'
 function App() {
 
   let [preloader, setpreloader] = useState('')
+  let [preloadertext, settext] = useState('')
   let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
 
   useEffect(()=>{
     setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
+    setTimeout(()=>{settext('showPreloaderText')}, 100)
+    setTimeout(()=>{settext('hideprtext')}, 2800)
 
     // useEffect(() => {
         const ua = navigator.userAgent;
@@ -30,11 +33,20 @@ function App() {
     <div className="App">
       <div className={`preloaderCont ${preloader}`}>
         <div className="preloadersuqare"></div>
-        <div className={`preloader ${userAgent.preloader}`}>
-          <div className="preloaderline"></div>
-          <div className="preloadertext">currently developing</div>
+        {/* <div className={`preloader ${userAgent.preloader}`}> */}
+          {/* <div className="preloaderline"></div> */}
+          {/* <div className="preloadertext">currently developing</div> */}
+          <div className="middleCont">
+            <div className="personal">
+              <span className={`preloadertext ${preloadertext}`}>personal</span>
+            </div>
+            <div className="brand">
+              <span className={`preloadertext ${preloadertext}`}>brand</span>
+            </div>
+            <div className="blurPreloader"></div>
+          </div>
         </div>
-      </div>
+      {/* </div> */}
       <Up userAgent={userAgent}></Up>
     </div>
   )

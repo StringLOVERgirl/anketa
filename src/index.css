@@ -48,11 +48,65 @@
   .preloaderCont {
     height: 100vh;
     width: 100vw;
-    background: white;
+    /* background: white; */
+    background: #eef2f3;
     position: fixed;
     z-index: 6;
+     display: flex;
+    /* justify-content: center;
+    align-items: center; */
     clip-path: inset(0 0 0 0);
     transition: clip-path 1s var(--cubic);
+  }
+
+  .middleCont {
+    height: fit-content;
+    align-self: center;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    margin-inline: auto; 
+    position: relative;
+  }
+
+  .personal, .brand {
+    overflow: hidden;
+  }
+
+  .personal span {
+    --prdelay: 0.05s
+  }
+
+  .brand span {
+    --prdelay: 0.1s
+  }
+
+  .middleCont span {
+    display: block;
+    will-change: transform;
+    font-family: inter;
+    text-transform: uppercase;
+    transform: translateY(-100%);
+    transition: transform 1s var(--prdelay) var(--cubic);
+  }
+
+  .showPreloaderText {
+    transform: translateY(0%) !important;
+  }
+  .hideprtext {
+    transform: translateY(100%) !important;
+  }
+
+  .blurPreloader {
+    height: 100%;
+    width: 50%;
+    /* background: blue; */
+    position: absolute;
+    right: 0;
+    /* backdrop-filter: blur(2px); */
   }
 
   .hidepreloader {
@@ -92,12 +146,12 @@
     }
   }
 
-  .preloadertext {
+  /* .preloadertext {
     font-family: inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--textColor);
     font-size: 3em;
     display: flex;
-  }
+  } */
 
   .preloadersuqare {
     height: 1em;
@@ -755,6 +809,9 @@
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
 
+  .peep {
+    background: url('assets/peep.jpeg') center / cover;
+  }
   .dclxvi {
     background: url('assets/dclxvi.jpeg') center / cover;
   }
