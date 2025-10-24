@@ -1067,7 +1067,7 @@
     .copy {
       padding-top: unset;
       padding-bottom: 1.25em;
-      bottom: 0;
+      /* bottom: 0; */
     }
 
     .brandIphone {
@@ -1075,7 +1075,7 @@
     }
 
     .copyIphone {
-      bottom: 11vh;
+      bottom: 11vh !important;
     }
 
     .copyAlt {
@@ -1083,7 +1083,7 @@
     }
 
     .preloaderiphone {
-      bottom: 8em;
+      bottom: 4.3em;
     }
 
     .upSection {
