@@ -1318,9 +1318,9 @@ only screen
     .copyIphone {
       bottom: 6vh;
     }
-    .copy {
-      bottom: 6vh;
-    }
+    /* .copy {
+      bottom: 6vh; */
+    /* } */
 
     .brandIphone {
       transform: translateY(-35%);
