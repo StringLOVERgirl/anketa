@@ -111,6 +111,7 @@
     justify-content: center;
     align-items: center;
     /* background: red; */
+    transform: translateY(-10%);
     margin-inline: auto; 
     position: relative;
   }
