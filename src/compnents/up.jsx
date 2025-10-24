@@ -176,7 +176,7 @@ export function Up ({userAgent}) {
                            onEnded={() => {
                             //    endVideo(dispatch)
                             //    dispatch(stop())
-                               changePlayStatus()
+                            //    changePlayStatus()
                                videoref.current.style.setProperty('--opacity', 0)
                             //    topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
