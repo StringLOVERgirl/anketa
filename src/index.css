@@ -1320,7 +1320,10 @@ only screen
     }
     .copy {
       bottom: 6vh;
-   
+    }
+
+    .brandIphone {
+      transform: translateY(-35%);
     }
   
 
