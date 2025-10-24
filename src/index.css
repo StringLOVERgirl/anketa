@@ -28,9 +28,10 @@
   .logocont {
     height: 6em;
     aspect-ratio: 1.7/1;
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     overflow: hidden;
     position: relative;
+    transform: translateX(-4%);
     clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
   }
   .logo {
