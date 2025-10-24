@@ -20,9 +20,9 @@ function App() {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone || safari)
         if (isIphone ){
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone'}))
         } else if (isEdge) {
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
@@ -49,7 +49,7 @@ function App() {
         
             {/* <div className="bg"></div> */}
           </div>
-          <div className="copy">2025© Meg. All rights reserverd. The logo is the property of Meg, any use is prohibited.</div>
+          <div className={`copy ${userAgent.copy}`}>2025© Meg. All rights reserverd. The logo is the property of Meg, any use is prohibited.</div>
         </div>
       {/* </div> */}
       <Up userAgent={userAgent}></Up>

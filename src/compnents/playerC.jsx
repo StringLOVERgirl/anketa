@@ -137,10 +137,10 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
                             //   endVideo(dispatch) 
                               dispatch(stop())
                            }
-                        //    if (playerState.playerUi.label == 'peep') {
-                        //     audioref.current.currentTime = 0
-                        //     audioref.current.play()
-                        //    }
+                           if (playerState.playerUi.label == 'peep') {
+                            audioref.current.currentTime = 0
+                            audioref.current.play()
+                           }
                 }}></audio>
 
                 <button className={`playstatus ${playStatus}`} onClick={changePlayStatus}></button>

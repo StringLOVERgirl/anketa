@@ -1064,6 +1064,10 @@
       bottom: 0;
     }
 
+    .copyIphone {
+      bottom: 15vh;
+    }
+
     .preloaderiphone {
       bottom: 4.3em;
     }
