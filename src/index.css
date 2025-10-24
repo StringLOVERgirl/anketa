@@ -1305,7 +1305,7 @@
     }
   }
 
-  @media and (min-height: 910px) and (max-width: 600px){
+  @media  (min-height: 910px) and (max-width: 600px){
     .copyIphone {
       bottom: 0vh;
     }
