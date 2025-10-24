@@ -1305,7 +1305,10 @@
     }
   }
 
-  @media  (min-height: 910px) and (max-width: 600px){
+  @media only screen 
+  and (device-width: 428px)
+  and (device-height: 926px)
+  and (-webkit-device-pixel-ratio: 3){
     .copyIphone {
       bottom: 0vh;
     }
