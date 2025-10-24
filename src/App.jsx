@@ -6,7 +6,7 @@ function App() {
 
   let [preloader, setpreloader] = useState('')
   let [preloadertext, settext] = useState('')
-  let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
+  let [userAgent, setuseragent] = useState({bottompanel: '', preloader: '', copy: '', brand: ''})
 
   useEffect(()=>{
     setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
