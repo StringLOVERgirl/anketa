@@ -2,6 +2,7 @@ import hierarchyost from '/audio/hierarchy.mp3'
 import xxx from '/audio/XXXTENTACION-whoa-(mind-in-awe).mp3'
 import bones from '/audio/IAmCertainlyNotWorthYourTime.mp3'
 import chlorella from '/audio/BONES-Chlorella.mp3'
+import xxx2 from '/audio/XXXTENTACION-AI-Selfless.mp3'
 import tracy from '/audio/Lil_Tracy_-_Tight_Rope.mp3'
 import peep3 from '/audio/Y2meta_app_Lil_Peep_x_Lil_Tracy_Blowing_Kisses_In_The_Wind_miro.mp3'
 // import chikoi from '/audio/Chikoi_The_Maid_-_Reflection_(SkySound.cc).mp3'
@@ -18,6 +19,7 @@ export const player = {
     hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
     tracy: ['Lil Tracy - Tight Rope', 'tracy', tracy], 
     special: ['DCLXVI - Dissection • SPECIAL', 'dclxvi', dclxvi],
+    xxx2: ['XXXTENTACION - selfless (AI)', 'xxxost', xxx2],
     peep3: ['Lil Peep x Lil Tracy - Blowing Kisses', 'peep', peep3],
     // peep: ['Lil Peep - The Day I Finally Do It', 'peep', lilpeep],
     // peep2: ['LiL Peep - 300 feet below', 'peep', peep2],

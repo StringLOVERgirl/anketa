@@ -16,16 +16,17 @@
   }
 
   .logocont {
-    height: 5em;
-    aspect-ratio: 1.5/1;
+    height: 6em;
+    aspect-ratio: 1.7/1;
     margin-top: 0.5em;
     overflow: hidden;
+    position: relative;
     clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
   }
   .logo {
-    background: url(./assets/logo-dark.png) center / auto 80% no-repeat;
-    height: 5em;
-    aspect-ratio: 1.5/1;
+    background: url(./assets/rebrend.png) center / auto 60% no-repeat;
+    height: 100%;
+    /* aspect-ratio: 1.5/1; */
     /* margin-top: 0.5em; */
     background-color: #323030;
     /* border-radius: 10px; */
@@ -893,6 +894,15 @@
     color: var(--textColor);
     pointer-events: none;
   }
+
+  .topText::after {
+    content: '*';
+    /* color: transparent; */
+    /* display: block; */
+    /* background: url('./assets/diamond.svg') center / cover no-repeat; */
+    /* position: absolute; */
+  }
+
 
   .leftTextTop {
     pointer-events: none;

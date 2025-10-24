@@ -21,21 +21,27 @@
         }
         .c {
             height: 100vh;
-            background: var(--lightbg);
+            background: var(--darkbg);
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             /* position: absolute; */
-            transform: scale(2);
+            /* transform: scale(2); */
         }
         .m {
-            font-family: raleway;
-            font-size: 2.5em;
+            font-family: inter;
+            font-size: 2.75em;
             position: relative;
-            color: var(--lightm);       
+            /* font-weight: 300; */
+            z-index: 12;
+            color: var(--darkbg);       
+        }
+        .m::before {
+            content: '*';
         }
         .circle::before {
-            content: '•#$';
+            content: '';
             display: block;
             position: relative;
             font-family: inter;
@@ -43,19 +49,21 @@
             height: 2vh;
             border-radius: 10px;
             aspect-ratio: 1/1;
-            transform: translate(-50%, -70%);
-            COLOR: var(--lightm);
+            transform: translate(-75%, -75%);
+            COLOR: var(--darkm);
+            border:solid 1px #d8c0d8;
             z-index: 1;
         }
         .circle {
             height: 9vh;
-            aspect-ratio: 1/1;
+            aspect-ratio: 3/1;
             position: absolute;
             border-radius: 35px;
             z-index: 0;
-            transform: translate(-50%, -25%);
+            /* transform: translate(-50%, -25%); */
             border: solid 1px;
-            border-color: var(--lightborder);
+            border-color: var(--darkborder);
+            background: #d8c0d8;
         }
         .bg {
             display: flex;
@@ -63,12 +71,14 @@
             align-items: center;  
             background: var(--darkbg);
             position: absolute;
-            height: 15vh;
-            z-index: -1;
-            border-radius: 50px;
-            width: 45vh;
+            height: 12vh;
+            z-index: 3;
+            /* border-radius: 50px; */
+            width: 4.5vh;
             transform: translate(-10%,-15%);
             /* padding-top: 1em; */
+            background: unset;
+            /* backdrop-filter: invert(1); */
         }
 
         .decor {
@@ -80,10 +90,10 @@
     <div class="c">
         <div class="m">m</div>
         <div class="circle"></div>
-        <!-- <div class="bg"> -->
+        <div class="bg">
             <!-- <div class="decor left">{</div> -->
             <!-- <div class="decor right"></div> -->
-        <!-- </div> -->
+        </div>
     </div>
     
 </body>
