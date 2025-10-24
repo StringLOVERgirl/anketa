@@ -9,7 +9,7 @@ function App() {
   let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
 
   useEffect(()=>{
-    // setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
+    setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
     setTimeout(()=>{settext('showPreloaderText')}, 100)
     // setTimeout(()=>{settext('hideprtext')}, 2800)
 
