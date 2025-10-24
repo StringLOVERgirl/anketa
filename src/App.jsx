@@ -9,7 +9,7 @@ function App() {
   let [userAgent, setuseragent] = useState({bottompanel: '', preloader: ''})
 
   useEffect(()=>{
-    setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
+    // setTimeout(()=>{setpreloader('hidepreloader')}, 3000)
     setTimeout(()=>{settext('showPreloaderText')}, 100)
     // setTimeout(()=>{settext('hideprtext')}, 2800)
 
@@ -44,11 +44,12 @@ function App() {
               <span className={`preloadertext ${preloadertext}`}>brand</span>
             </div>
             <div className="logocont">
-            <div className={`logo ${preloadertext}`}></div>
+               <div className={`logo ${preloadertext}`}></div>
             </div>
         
             {/* <div className="bg"></div> */}
           </div>
+          <div className="copy">2025© Meg. All rights reserverd. The logo is the property of Meg, any use is prohibited.</div>
         </div>
       {/* </div> */}
       <Up userAgent={userAgent}></Up>

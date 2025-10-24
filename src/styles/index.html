@@ -27,43 +27,58 @@
             align-items: center;
             position: relative;
             /* position: absolute; */
-            /* transform: scale(2); */
+            transform: scale(2);
         }
         .m {
-            font-family: inter;
+            font-family: raleway;
             font-size: 2.75em;
             position: relative;
-            /* font-weight: 300; */
+            font-weight: 300;
             z-index: 12;
-            color: var(--darkbg);       
+            color: var(--darkm);       
+            /* mix-blend-mode: difference; */
+            /* transform: translate(-40%, -50%); */
         }
         .m::before {
-            content: '*';
+            /* content: '*'; */
         }
         .circle::before {
-            content: '';
+            content: '∞';
             display: block;
+            /* width: %; */
             position: relative;
             font-family: inter;
-            font-size: 1.4em;
-            height: 2vh;
+            font-size: 2em;
+            width: 30%;
+            text-align: center;
+            /* height: 50%; */
+            font-weight: 300;
             border-radius: 10px;
-            aspect-ratio: 1/1;
-            transform: translate(-75%, -75%);
-            COLOR: var(--darkm);
-            border:solid 1px #d8c0d8;
+            /* aspect-ratio: 1/1; */
+            transform: translate(-50%, -50%) scale(0.6);
+            COLOR: var(--lightm);
+            background: var(--darkm);
+            /* border:solid 1px #d8c0d8; */
             z-index: 1;
         }
         .circle {
             height: 9vh;
-            aspect-ratio: 3/1;
+            aspect-ratio: 2/1;
             position: absolute;
             border-radius: 35px;
             z-index: 0;
             /* transform: translate(-50%, -25%); */
-            border: solid 1px;
+            /* border: solid 1px; */
             border-color: var(--darkborder);
-            background: #d8c0d8;
+            /* background: #d8c0d8; */
+        }
+        .symbols {
+            font-size: 0.75em;
+            font-weight: 600;
+            /* position: absolute; */
+            /* bottom: 0; */
+            margin-top: auto;
+            transform: translateY(-35%);
         }
         .bg {
             display: flex;
@@ -84,16 +99,32 @@
         .decor {
             color: var(--darkm);
         }
+        .inner {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clip {
+            font-size: 1em;
+            padding-inline: 0.5em;
+            font-family: inter;
+        }
     </style>
 </head>
 <body>
     <div class="c">
-        <div class="m">m</div>
+        <div class="inner">
+        <div class="clip m">(</div>
+        <!-- <div class="m symbols">•#$</div> -->
+        <div class="m">meg</div>
+        <div class="clip m">)</div>
         <div class="circle"></div>
         <div class="bg">
             <!-- <div class="decor left">{</div> -->
             <!-- <div class="decor right"></div> -->
         </div>
+    </div>
     </div>
     
 </body>
