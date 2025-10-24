@@ -1,0 +1,23 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- CSS Variables equivalent: colors -->
+  <!-- Dark BG: #323030 -->
+  <!-- Light BG: #eef2f3 (not used) -->
+  <!-- Dark M: #d8c0d8 -->
+  <!-- Light M: #4e4a4af0 (not used) -->
+  <!-- Dark Border: #d8c0d893 -->
+
+  <!-- BG: rounded rectangle, height 15vh (~15 units), width 45vh (~45 units), but scaled to viewBox; positioned with transform -->
+  <rect x="5" y="0" width="90" height="30" rx="25" ry="25" fill="#323030" />
+
+  <!-- Circle: height 9vh (~9 units), aspect 1/1 so width 9, border-radius 35px (scaled to ~3.5), border 1px #d8c0d893, positioned translate(-50%, -25%) relative to m -->
+  <!-- Assuming m at center x=50, y=60; circle at x=50, y= around 40 for overlap -->
+  <circle cx="50" cy="35" r="4.5" fill="none" stroke="#d8c0d893" stroke-width="0.2" />
+
+  <!-- •#$ inside circle: positioned translate(-50%, -70%) relative to circle center, font inter (sans-serif), 1.5em (~1.5 units) -->
+  <text x="50" y="32" font-family="Inter, Arial, sans-serif" font-size="1.5" fill="#d8c0d8" text-anchor="middle" font-weight="bold">•#$</text>
+
+  <!-- m: font raleway (serif fallback), 2.5em (~2.5 units), color #d8c0d8, positioned center -->
+  <text x="50" y="65" font-family="Raleway, serif" font-size="2.5" fill="#d8c0d8" text-anchor="middle" font-weight="normal">m</text>
+
+  <!-- Overall container not needed in SVG, but viewBox centers it -->
+</svg>

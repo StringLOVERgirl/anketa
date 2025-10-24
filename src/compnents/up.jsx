@@ -65,15 +65,44 @@ export function Up ({userAgent}) {
     const videoBg = useRef(null)
     const audioref = useRef(null)
     const videoref = useRef(null)
+    // const isvideoPlay= useRef(videoref.current.paused)
+
+    function keyPlayer(event) {
+        // console.log(event)
+        if (event.code == 'Space') {
+            console.log(event , playStatus)
+            event.preventDefault(); // Отключает прокрутку
+            if (videoref.current && videoref.current.paused === false ){
+            changePlayStatus()
+            } else {
+                if (playStatus == 'pause') {
+                    setPlayStatus('play')
+                    requestAnimationFrame(()=> 
+                        audioref.current.play())
+                        videoref.current.play()
+                }  else {
+                setPlayStatus('pause')
+                audioref.current.pause()
+                videoref.current.pause()
+                }
+            }
+        }
+    }
 
     function changePlayStatus() {
+        console.log('changing')
         if (playStatus == 'pause') {
             setPlayStatus('play')
+            console.log('changingplay')
+
             videoref.current.play()
-            audioref.current.play()
-            requestAnimationFrame(()=> audioref.current.play())
+            // audioref.current.play()
+            requestAnimationFrame(()=> 
+            audioref.current.play())
         } else {
             setPlayStatus('pause')
+            console.log('changingpause')
+
             videoref.current.pause()
             audioref.current.pause()
         }
@@ -112,22 +141,23 @@ export function Up ({userAgent}) {
     useEffect(() => {
 
         window.addEventListener('scroll', middleParallax) 
+        window.addEventListener('keydown', keyPlayer) 
 
         return (() => {
             
             window.removeEventListener('scroll', middleParallax) 
-
+            window.removeEventListener('keydown', keyPlayer) 
         })
 
-    },[])
+    },[playStatus])
 
 
     return (
     <div className={videoState.mainOf} ref={mainCont}>
-        <section className="upSection" ref={topSection}>
+        <section className="upSection" ref={topSection}> 
             <div className="upOutter">
                 <div className="upInner">
-
+                    <div className="circle"></div>
                     <div 
                       className={`blurBg ${videoState.blurBg}`} 
                       ref={maskref} 

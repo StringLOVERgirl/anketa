@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: inter;
+            src: url(../../public/assets/inter.ttf);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            --darkbg: #323030;
+            --lightbg: #eef2f3;
+            --lightm: #4e4a4af0;
+            --darkm: #d8c0d8;
+            --lightborder: #4e4a4a82;
+            --darkborder: #d8c0d893
+        }
+        .c {
+            height: 100vh;
+            background: var(--lightbg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* position: absolute; */
+            transform: scale(2);
+        }
+        .m {
+            font-family: raleway;
+            font-size: 2.5em;
+            position: relative;
+            color: var(--lightm);       
+        }
+        .circle::before {
+            content: '•#$';
+            display: block;
+            position: relative;
+            font-family: inter;
+            font-size: 1.4em;
+            height: 2vh;
+            border-radius: 10px;
+            aspect-ratio: 1/1;
+            transform: translate(-50%, -70%);
+            COLOR: var(--lightm);
+            z-index: 1;
+        }
+        .circle {
+            height: 9vh;
+            aspect-ratio: 1/1;
+            position: absolute;
+            border-radius: 35px;
+            z-index: 0;
+            transform: translate(-50%, -25%);
+            border: solid 1px;
+            border-color: var(--lightborder);
+        }
+        .bg {
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            background: var(--darkbg);
+            position: absolute;
+            height: 15vh;
+            z-index: -1;
+            border-radius: 50px;
+            width: 45vh;
+            transform: translate(-10%,-15%);
+            /* padding-top: 1em; */
+        }
+
+        .decor {
+            color: var(--darkm);
+        }
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div class="m">m</div>
+        <div class="circle"></div>
+        <!-- <div class="bg"> -->
+            <!-- <div class="decor left">{</div> -->
+            <!-- <div class="decor right"></div> -->
+        <!-- </div> -->
+    </div>
+    
+</body>
+</html>

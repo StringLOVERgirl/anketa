@@ -43,6 +43,11 @@ function App() {
             <div className="brand">
               <span className={`preloadertext ${preloadertext}`}>brand</span>
             </div>
+            <div className="logocont">
+            <div className={`logo ${preloadertext}`}></div>
+            </div>
+        
+            {/* <div className="bg"></div> */}
           </div>
         </div>
       {/* </div> */}
