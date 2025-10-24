@@ -1065,7 +1065,7 @@
     }
 
     .brandIphone {
-      transform: translateY(-15%);
+      transform: translateY(-20%);
     }
 
     .copyIphone {
@@ -1302,6 +1302,12 @@
 
     .creditsRL {
       animation: creditsRL 170s linear infinite;
+    }
+  }
+
+  @media (max-width: 500px) and (min-height: 910px) {
+    .copyIphone {
+      bottom: 8vh;
     }
   }
 
