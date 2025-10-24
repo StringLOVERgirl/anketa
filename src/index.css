@@ -1311,6 +1311,7 @@
     }
     .copy {
       bottom: 0;
+      background: red;
     }
   }
 
