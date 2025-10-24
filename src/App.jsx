@@ -22,7 +22,7 @@ function App() {
         if (isIphone ){
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
         } else if (isEdge) {
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt', brand: 'brandAlt'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyIphone', brand: 'brandIphone'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
