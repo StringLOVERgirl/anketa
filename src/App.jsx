@@ -20,9 +20,9 @@ function App() {
         const isEdge = /Edg/.test(ua);
         console.log(isIphone || safari)
         if (isIphone ){
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
         } else if (isEdge) {
-            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt'}))
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt', brand: 'brandAlt'}))
         }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
@@ -36,7 +36,7 @@ function App() {
         {/* <div className={`preloader ${userAgent.preloader}`}> */}
           {/* <div className="preloaderline"></div> */}
           {/* <div className="preloadertext">currently developing</div> */}
-          <div className="middleCont">
+          <div className={`middleCont ${userAgent.brand}`}>
             <div className="personal">
               <span className={`preloadertext ${preloadertext}`}>personal</span>
             </div>
