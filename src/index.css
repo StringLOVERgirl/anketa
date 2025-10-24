@@ -1305,7 +1305,7 @@
     }
   }
 
-  @media (max-width: 500px) and (min-height: 910px) {
+  @media (mix-width: 400px) and (min-height: 910px) and (max-width: 600px){
     .copyIphone {
       bottom: 8vh;
     }
