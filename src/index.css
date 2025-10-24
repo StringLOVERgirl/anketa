@@ -1306,11 +1306,15 @@
   }
 
   @media only screen 
-  and (min-device-width: 428px)
-  and (max-device-width: 430px)
-  and (min-device-height: 926px)
-  and (max-device-height: 932px)
-  and (-webkit-device-pixel-ratio: 3) {
+  and (min-width: 428px)
+  and (max-width: 460px)
+  and (min-device-pixel-ratio: 3),
+only screen 
+  and (min-width: 428px)
+  and (max-width: 460px)
+  and (resolution: 3dppx) {
+  /* стили для всех iPhone Pro Max */
+}
     .copyIphone {
       bottom: 7vh;
     }
