@@ -1058,10 +1058,14 @@
       bottom: 1em;
     }
 
+    .middleCont {
+      transform: translateY(-20%);
+    }
+
     .copy {
       padding-top: unset;
       padding-bottom: 1.25em;
-      bottom: 6vh;
+      bottom: 0;
     }
 
     .brandIphone {
