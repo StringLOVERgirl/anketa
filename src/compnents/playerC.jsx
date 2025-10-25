@@ -5,7 +5,7 @@ import { useRef } from "react"
 import { play, stop } from './storage'
 import { useDispatch } from "react-redux"
 
-export function Player ({topSection, videoref, audioref, playStatus, setPlayStatus, videoBg}) {
+export function Player ({topSection, videoref, audioref, playStatus, setPlayStatus, videoBg, loop}) {
 // вынести в стор
 
     const dispatch = useDispatch()
@@ -129,13 +129,17 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
 
                 <audio src={playerState.playerUi.track} ref={audioref} onEnded={() => {
                         //    setPlayerState(pr=>({...pr, playstatus: 'pause'}))
-                        setPlayStatus('pause')
+                           setPlayStatus('pause')
                            if (playerState.playerUi.label == 'dclxvi') {
                             console.log(212)
                               setfirstplay(prev=>({...prev, class: ''}))
                               topSection.current.style.setProperty('--onPlayOpacity', 1)
                             //   endVideo(dispatch) 
                               dispatch(stop())
+                           }
+                           if (loop) {
+                            audioref.current.play()
+                            setPlayStatus('play')
                            }
                         //    if (playerState.playerUi.label == 'peep') {
                         //     audioref.current.currentTime = 0

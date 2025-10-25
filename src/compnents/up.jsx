@@ -8,6 +8,7 @@ import { Player } from "./playerC"
 import { Uptext } from "./upText"
 // import { endVideo } from "./storage"
 import { stop, full, unfull } from './storage'
+import { use } from "react"
 
 
 
@@ -61,10 +62,17 @@ export function Up ({userAgent}) {
 
 
     let [playStatus, setPlayStatus] = useState('pause')
-
+    let [loop, setloop] = useState(false)
     const videoBg = useRef(null)
     const audioref = useRef(null)
     const videoref = useRef(null)
+    function changeLoop(){
+        if (loop) {
+            setloop(false)
+        } else {
+            setloop(true)
+        }
+    }
     // const isvideoPlay= useRef(videoref.current.paused)
 
     function keyPlayer(event) {
@@ -217,8 +225,8 @@ export function Up ({userAgent}) {
                     
                     <Uptext></Uptext>
 
-                    <div className="snowCont">
-                        <div className="decorSnow snowblur"></div>
+                    <div className={`snowCont ${loop?'loop':''}`} onClick={changeLoop}>
+                        <div className={`decorSnow snowblur`}></div>
                         <div className="decorSnow"></div>
                     </div>
                 </div>
