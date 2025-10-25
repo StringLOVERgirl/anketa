@@ -935,17 +935,17 @@
     }
     1% {
       /* color: white; */
-      content: '#';
+      content: '$';
     }
-    2% {
+    3% {
       content: '%';
       /* color: white; */
     }
-    3% {
+    5% {
       content: '&';
       /* color: white; */
     }
-    4% {
+    7% {
       content: attr(aria-labe);
       /* color: unset; */
     }
