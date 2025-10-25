@@ -67,8 +67,8 @@ export const Uptext = React.memo( () => {
                return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
             )}
             {iw != words.length-1 ? '\u00A0' : ''}
-           </div>  
-           {iw == 3?<br></br>:''}}         
+            
+           </div>  }         
            )
 
         // words.map((ew,iw)=> {
