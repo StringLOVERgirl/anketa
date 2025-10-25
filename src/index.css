@@ -1323,7 +1323,7 @@
     }
 
     .leftTextTop {
-      max-width: 45vw;
+      max-width: 50vw;
     }
 
     .upTextLeftCont {
@@ -1340,6 +1340,7 @@
       display: flex;
       gap: 0.5em;
       flex-direction: column;
+      margin-left: 1em;
     }
 
     .metaLeft {
@@ -1375,7 +1376,7 @@ only screen
   /* стили для всех iPhone Pro Max */
 
     .copyIphone {
-      bottom: 2vh;
+      bottom: 5vh !important;
     }
     /* .copy {
       bottom: 6vh; */
@@ -1383,6 +1384,10 @@ only screen
 
     .brandIphone {
       transform: translateY(-35%);
+    }
+
+    .leftTextBottom {
+    margin-left: 1em;
     }
 
 
@@ -1393,6 +1398,10 @@ only screen
       align-self: unset;
       display: flex;
       width: unset;
+    }
+
+    .leftTextTop {
+      max-width: 50vw;
     }
   }
 
