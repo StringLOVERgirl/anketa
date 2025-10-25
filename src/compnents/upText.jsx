@@ -59,12 +59,12 @@ export const Uptext = React.memo( () => {
         elements.current =  words.map((ew,iw)=> {     
             // let currentindex = globalindex
            globalindex.current+=1
-            return  <div style={{display: 'flex'}}>
+            return  <div style={{display: 'flex', whiteSpace: 'nowrap'}}>
             {ew.split('').map((e,i)=>{
                 // let currentindex = globalindex
                 globalindex.current+=1
                 console.log(globalindex.current, e, letters.length-1)
-               return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': globalindex.current*0.5+'s'}} className='ux'></div>:<div>{e}</div>}
+               return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
             )}
             {iw != words.length-1 ? '\u00A0' : ''}
            </div>  }         
