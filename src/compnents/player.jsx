@@ -10,6 +10,7 @@ import burgos from '/audio/White-Girls-in-the-Back-of-the-Bus.mp3'
 // import handbook from '/audio/HandbookForTheRecentlyDeceased.mp3'
 // import blacklungs from '/audio/BlackLungs&YellowTape.mp3'
 // import twoh from '/audio/2high.mp3'
+import kyoto from '/audio/kyoto.mp3'
 import dclxvi from '/audio/DCLXVI_-_DISSECTION_76038142.mp3'
 // import lilpeep from '/audio/Y2meta_app_LIL_PEEP_&_BOY_FROOT_THE_DAY_I_FINALLY_DO_IT_НА_РУССКОМ.mp3'
 import peep2 from '/audio/lil_peep_300_feet_below_pineapple_soda_without_feature_extended.mp3'
@@ -19,6 +20,7 @@ export const player = {
     hierarchy: ['kum junhyeon - ruin life', 'hierarchyOst', hierarchyost],
     tracy: ['Lil Tracy - Tight Rope', 'tracy', tracy], 
     special: ['DCLXVI - Dissection • SPECIAL', 'dclxvi', dclxvi],
+    kyoto: ['yung lean - kyoto (single)', 'kyoto', kyoto],
     xxx2: ['XXXTENTACION - selfless (AI)', 'xxxost', xxx2],
     peep3: ['Lil Peep x Lil Tracy - Blowing Kisses', 'peep', peep3],
     // peep: ['Lil Peep - The Day I Finally Do It', 'peep', lilpeep],

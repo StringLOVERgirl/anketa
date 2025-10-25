@@ -824,6 +824,10 @@
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
 
+  .kyoto {
+    background: url('assets/kyoto.jpeg') center / cover;
+  }
+
   .tracy {
     opacity: 0.9;
     background: url('assets/tracy.jpeg') center / cover;
@@ -927,6 +931,9 @@
   .ux::after {
     content: attr(aria-labe);
     display: block; 
+    /* font-family: raleway; */
+    /* width: 0; */
+    /* position: absolute; */
     animation: ux 20s var(--delayAS) linear infinite;
   }
   @keyframes ux {
@@ -936,6 +943,7 @@
     1% {
       /* color: white; */
       content: '$';
+      /* transform: translateY(-50%); */
     }
     3% {
       content: '%';
@@ -947,7 +955,7 @@
     }
     7% {
       content: attr(aria-labe);
-      /* color: unset; */
+      color: unset;transform: translateY(0%);
     }
   }
 
