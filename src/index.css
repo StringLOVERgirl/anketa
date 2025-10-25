@@ -197,6 +197,18 @@
     background-color: black;
   }
 
+  @keyframes cpa {
+    from {
+      
+        }
+    20% {
+      clip-path: polygon(0% 0%, 0 100%, 0 100%, 0 14%, 99% 14%, 100% 18%, 0 18%, 0 100%, 100% 100%, 100% 0%);
+    }
+    21% {
+      clip-path: unset;      
+    }
+  }
+
   .speedhunters {
     clip-path: inset(0 0 0 0);
   }
@@ -256,6 +268,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    animation: cpa 2s var(--cubic) infinite;
     /* --letterBg: 0 */
   }
   .specialTitle::after {
@@ -888,9 +901,10 @@
 
 
   .upTextLeftCont {
+    width: 32vw;
     height: fit-content;
     align-self: flex-end;
-    width: fit-content;
+    /* width: fit-content; */
     padding-bottom: 1em;
     padding-left: 2em;
     min-width: 30vw;
@@ -907,6 +921,39 @@
     pointer-events: none;
   }
 
+  .ux {
+    /* display: flex; */
+  }
+  .ux::after {
+    content: attr(aria-labe);
+    display: block; 
+    animation: ux 20s var(--delayAS) linear infinite;
+  }
+  @keyframes ux {
+    from {
+      content: attr(aria-labe)
+    }
+    1% {
+      /* color: white; */
+      content: '#';
+    }
+    2% {
+      content: '%';
+      /* color: white; */
+    }
+    3% {
+      content: '&';
+      /* color: white; */
+    }
+    4% {
+      content: attr(aria-labe);
+      /* color: unset; */
+    }
+  }
+
+  .topText{
+    flex-wrap: wrap;
+  }
   .topText::after {
     content: '*';
     /* color: transparent; */
@@ -918,6 +965,7 @@
 
   .leftTextTop {
     pointer-events: none;
+    padding-right: 0.5em;
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1.5s var(--cubic);
   }
