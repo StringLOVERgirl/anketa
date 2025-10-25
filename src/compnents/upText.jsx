@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 export const Uptext = React.memo( () => {
 
     const [init, setinit ]= useState({meg: null, text: ''})
-    // let [meg, setMeg] = useState(null)
     const leftTextTop = useRef(null) 
-    // let [text, isText] = useState('')
 
     const videoState = useSelector(state => state)
 
@@ -33,7 +31,7 @@ export const Uptext = React.memo( () => {
         interval.current = setInterval(() => setTime(new Date().toLocaleTimeString('ru-RU', options)), 1000);
 
         return (() => {
-            clearInterval(id);
+            clearInterval(interval.current);
         })
     }, [])
 
@@ -57,14 +55,12 @@ export const Uptext = React.memo( () => {
         console.log(numbers.current)
 
         elements.current =  words.map((ew,iw)=> {     
-            // let currentindex = globalindex
            globalindex.current+=1
             return  <>
             {window.innerWidth < 410 && iw == 4?<br></br>:''}
             {window.innerWidth < 5000 && window.innerWidth > 410 && iw == 5?<br></br>:''}
             <div style={{display: 'flex', whiteSpace: 'nowrap'}}>
             {ew.split('').map((e,i)=>{
-                // let currentindex = globalindex
                 globalindex.current+=1
                 console.log(globalindex.current, e, letters.length-1)
                return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
@@ -73,16 +69,6 @@ export const Uptext = React.memo( () => {
             
            </div> </> }         
            )
-
-        // words.map((ew,iw)=> {
-        //     globalindex+=1
-        //     ew.split('').map((e,i)=>{
-        //         // let currentindex = globalindex
-        //         globalindex+=1
-        //     })
-        //   })
-
-
     },[])
 
     function getRandomInRange(min, max) {
@@ -111,19 +97,6 @@ export const Uptext = React.memo( () => {
                 {/* <div className="leftup topText">Thank you for visiting</div> */}
                 {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
                 <div className="leftup topText" style={{display: 'flex'}}>
-                   {/* {words.map((ew,iw)=> {     
-                    // let currentindex = globalindex
-                   globalindex+=1
-                    return  <div style={{display: 'flex'}}>
-                    {ew.split('').map((e,i)=>{
-                        // let currentindex = globalindex
-                        globalindex+=1
-                        console.log(globalindex, e, letters.length-1)
-                       return numbers.current.has(globalindex) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': globalindex*0.5+'s'}} className='ux'></div>:<div>{e}</div>}
-                    )}
-                    {iw != words.length-1 ? '\u00A0' : ''}
-                   </div>  }         
-                   )} */}
                    {elements.current}
                 </div>
                 {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
