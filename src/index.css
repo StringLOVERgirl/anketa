@@ -1310,7 +1310,7 @@
     .snowCont {
       /* bottom: 3.75em; */
       transform: translate(-10%, -45%);
-      /* display: none */
+      display: none
     }
     .snowCont:hover::before {
       transform: unset;
