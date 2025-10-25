@@ -1312,9 +1312,9 @@
     }
 
     .snowCont {
-      /* bottom: 3.75em; */
-      transform: translate(-10%, -45%);
-      display: none
+      bottom: 1.35em;
+      transform: translate(-10%,0);
+      /* display: none */
     }
     .snowCont:hover::before {
       transform: unset;
@@ -1376,7 +1376,7 @@
     }
 
     .leftTextTop {
-      max-width: 53vw;
+      max-width: unset;
     }
 
     .upTextLeftCont {
@@ -1385,15 +1385,18 @@
       padding-top: 1em;
       align-self: unset;
       display: flex;
+      flex-direction: column;
+      gap: 0.5em;
       width: unset;
     }
 
     .leftTextBottom {
       padding-top: unset;
       display: flex;
+      /* flex-direction: column; */
       gap: 0.5em;
-      flex-direction: column;
-      margin-left: 1em;
+      /* flex-direction: column; */
+      margin-left: unset;
     }
 
     .metaLeft {
@@ -1402,7 +1405,9 @@
 
     .year {
       position: unset;
+      margin-left: auto;
       align-self: flex-end;
+      display: none;
     }
 
     .leftup {
