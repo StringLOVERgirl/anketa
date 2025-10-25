@@ -514,7 +514,8 @@
   .loop {
     --loop:white;
     --snowBg: white;
-    --loopColor: white
+    --loopColor: white;
+    /* transform: translateX(-50%) !important; */
   }
 
 
@@ -1307,17 +1308,23 @@
     }
 
     .snowCont {
-      bottom: 3.75em;
-      display: none
+      /* bottom: 3.75em; */
+      transform: translate(-10%, -45%);
+      /* display: none */
     }
-
+    .snowCont:hover::before {
+      transform: unset;
+    }
     .decorSnow {
       background: url(/src/assets/startsnow.svg) center / contain no-repeat;
-      height: 13vh;
+      width: 30vw;
+      height: 3vh;
     }
 
+    
+
     .snowblur {
-      background: var(--textColor);
+      background: var(--snowBg);
     }
 
     .inspiredCont { 

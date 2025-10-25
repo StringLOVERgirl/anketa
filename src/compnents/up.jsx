@@ -226,7 +226,7 @@ export function Up ({userAgent}) {
                     
                     <Uptext></Uptext>
 
-                    <div className={`snowCont ${loop?'loop':''}`} onClick={changeLoop}>
+                    <div className={`snowCont ${loop?'loop':''}`} onClick={changeLoop} onAnimationEnd={changeLoop}>
                         <div className={`decorSnow snowblur`}></div>
                         <div className="decorSnow"></div>
                     </div>
