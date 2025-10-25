@@ -194,6 +194,7 @@ export function Up ({userAgent}) {
                     </div>
 
                     <Player 
+                      loop={loop}
                       videoBg={videoBg}
                       playStatus={playStatus}
                       setPlayStatus={setPlayStatus}
