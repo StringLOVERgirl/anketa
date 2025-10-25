@@ -1152,17 +1152,17 @@
     }
 
     .middleCont {
-      transform: translateY(-40%);
+      transform: translateY(-35%);
     }
     
      .preloaderCont {
-      background: red;
+      /* background: red; */
      }
 
     .copy {
       padding-top: unset;
       padding-bottom: 1.25em;
-      bottom: 0;
+      bottom:8vh;
     }
 
     .brandIphone {
