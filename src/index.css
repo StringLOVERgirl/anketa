@@ -1109,13 +1109,13 @@
     }
 
     .middleCont {
-      transform: translateY(-20%);
+      transform: translateY(-30%);
     }
 
     .copy {
       padding-top: unset;
       padding-bottom: 1.25em;
-      /* bottom: 0; */
+      bottom: 0;
     }
 
     .brandIphone {
@@ -1323,7 +1323,7 @@
     }
 
     .leftTextTop {
-      max-width: 55vw;
+      max-width: 50vw;
     }
 
     .upTextLeftCont {
@@ -1401,7 +1401,7 @@ only screen
     }
 
     .leftTextTop {
-      max-width: 55vw;
+      max-width: 50vw;
     }
   }
 

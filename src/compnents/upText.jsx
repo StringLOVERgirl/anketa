@@ -59,7 +59,7 @@ export const Uptext = React.memo( () => {
         elements.current =  words.map((ew,iw)=> {     
             // let currentindex = globalindex
            globalindex.current+=1
-            return  <>{window.innerWidth < 420 && iw == 4?<br></br>:''}<div style={{display: 'flex', whiteSpace: 'nowrap'}}>
+            return  <>{window.innerWidth < 500 && iw == 5?<br></br>:''}<div style={{display: 'flex', whiteSpace: 'nowrap'}}>
             {ew.split('').map((e,i)=>{
                 // let currentindex = globalindex
                 globalindex.current+=1
