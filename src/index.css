@@ -945,6 +945,7 @@
     padding-left: 2em;
     min-width: 30vw;
     position: relative;
+    overflow: hidden;
   }
 
 
@@ -1005,12 +1006,18 @@
   .leftTextTop {
     pointer-events: none;
     padding-right: 0.5em;
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 1.5s var(--cubic);
+    /* clip-path: inset(0 100% 0 0); */
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(60%);
+    transition: clip-path 1.5s var(--cubic), transform 1.7s cubic-bezier(0.0, 0.0, 0.1, 0.9), filter 1.9s var(--cubic), opacity 1.3s var(--cubic);
   }
 
   .showText {
     clip-path: inset(0 0 0 0);
+    filter: unset;
+    transform: unset;
+    opacity: 1;
   }
 
   .leftTextBottom {
