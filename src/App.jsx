@@ -21,7 +21,7 @@ function App() {
         const y = /YaBrowser/i.test(ua) || /Yandex/i.test(ua) || navigator.vendor === 'Yandex';
         const tg = /Telegram/i.test(ua) || !!window.Telegram?.WebApp;
         console.log(isIphone || safari)
-        alert(tg,y)
+        // alert(tg,y)
         if (isIphone ){
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
         } else if (isEdge) {
