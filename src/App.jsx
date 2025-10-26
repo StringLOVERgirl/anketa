@@ -22,8 +22,8 @@ function App() {
         /YaBrowser/i.test(ua) ||
         /YaApp_Android/i.test(ua) ||
         /YaSearchBrowser/i.test(ua);
-        const tg = /Telegram/i.test(ua) || (typeof window.Telegram !== "undefined" && !!window.Telegram.WebApp)
-alert(ua)
+        // const tg = /Telegram/i.test(ua) || (typeof window.Telegram !== "undefined" && !!window.Telegram.WebApp)
+alert(window.Telegram)
         console.log(isIphone || safari)
         // alert(tg,y)
         if (isIphone ){
@@ -35,9 +35,10 @@ alert(ua)
          if (y) {
           setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyY', brand: 'brandIphone'}))
           // return
-        } else if (tg) {
-          setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyTg', brand: 'brandIphone'}))
-        }
+        } 
+        // else if (tg) {
+          // setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyTg', brand: 'brandIphone'}))
+        // }
         // setuseragent(_=>({iphone: isIphone, edge: isEdge}))
         // setTimeout(()=> console.log(userAgent), 2000)
     // },[])
