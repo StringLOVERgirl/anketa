@@ -499,7 +499,7 @@
     color: var(--loopColor);
     z-index: -1;
     transform: var(--loopOffset);
-    transition: transform 0.8s var(--cubic), border 0.3s, color 0.3s;
+    transition: transform 0.8s 0.6s var(--cubic), border 0.3s, color 0.3s;
     /* transform: translateX(0); */
     border-radius: 35px;
     background: var(--loopbg);
@@ -970,17 +970,17 @@
     1% {
       content: '$';
     }
-    3% {
+    2% {
       content: '%';
     }
-    5% {
+    3% {
       content: '&';
     }
-    6% {
+    4% {
       /* --color: 0px; */
       /* filter:blur( var(--color)); */
     }
-    7% {
+    5% {
       content: attr(aria-label);
     }
   }

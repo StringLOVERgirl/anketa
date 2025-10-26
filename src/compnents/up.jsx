@@ -70,7 +70,7 @@ export function Up ({userAgent}) {
                 setloop((prev)=>({...prev, loop: !prev.loop, loopMobile: ''}))
                 if (window.innerWidth < 500) {
                 setloop((prev)=>({...prev, loopMobile: 'loopMobile'}))
-                setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 800)
+                setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 1300)
                 }
         }
         
