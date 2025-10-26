@@ -21,12 +21,13 @@ function App() {
         const y = /YaBrowser/i.test(ua) || /Yandex/i.test(ua) || navigator.vendor === 'Yandex';
         const tg = /Telegram/i.test(ua) || !!window.Telegram?.WebApp;
         console.log(isIphone || safari)
-        // if (isIphone ){
-        //     setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
-        // } else if (isEdge) {
-        //     setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt', brand: 'brandIphone'}))
-        //     // return
-        // } else
+        alert(tg,y)
+        if (isIphone ){
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
+        } else if (isEdge) {
+            setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt', brand: 'brandIphone'}))
+            // return
+        } else
          if (y) {
           setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyY', brand: 'brandIphone'}))
           // return
