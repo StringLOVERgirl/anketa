@@ -1183,11 +1183,11 @@
 
     .copyY {
       transform: translateY(-20%);
-      background: red;
-    }
+color: red;    }
 
     .copyTg {
       bottom: 0;
+      color: green;
     }
 
     .preloaderiphone {
