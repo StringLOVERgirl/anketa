@@ -995,6 +995,7 @@
   }
 
   .topText{
+    min-width: 40vw;
     flex-wrap: wrap;
   }
   .topText::after {
