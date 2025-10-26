@@ -62,7 +62,7 @@ export function Up ({userAgent}) {
 
 
     let [playStatus, setPlayStatus] = useState('pause')
-    let [loop, setloop] = useState({loop: false, loopMobile: ''})
+    let [loop, setloop] = useState({loop: false, loopMobile: '', loopon: 'loopon'})
     const videoBg = useRef(null)
     const audioref = useRef(null)
     const videoref = useRef(null)
@@ -234,7 +234,14 @@ export function Up ({userAgent}) {
                     
                     <Uptext></Uptext>
 
-                    <div className={`snowCont ${loop.loop?'loop':''} ${loop.loopMobile?'loopMobile':''}`} onClick={changeLoop}>
+                    <div 
+                    className={`snowCont 
+                        ${loop.loop ? 'loop' : ''} 
+                        ${loop.loopMobile?'loopMobile':''}
+                        ${loop.loopon ? 'loopon' : ''} 
+                        `} 
+                    onClick={changeLoop}
+                    onMouseEnter={()=>loop.loopon?setloop(prev=>({...prev, loopon: ''})):''}>
                         <div className={`decorSnow snowblur`}></div>
                         <div className="decorSnow"></div>
                     </div>

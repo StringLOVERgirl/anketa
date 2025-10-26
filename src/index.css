@@ -455,7 +455,7 @@
     --loopColor: var(--textColor);
     --snowBg: var(--textColor);
     --loop: var(--textColor);
-    --loopbg: unset;
+    --loopbg: url('./assets/loopoff.svg') 25% center / contain no-repeat;;
     position: absolute;
     /* bottom: 2.25em; */
     bottom: 0;
@@ -517,13 +517,16 @@
     transition: background 0.3s;
   }
   .loop {
-    --loop:white;
+    --loop: white;
     --snowBg: white;
     --loopColor: white;
-    --loopbg: url('./assets/loopoff.svg') 25% center / contain no-repeat;
+    --loopbg: url('./assets/loopon.svg') 25% center / contain no-repeat;
     /* transform: translateX(-50%) !important; */
   }
   .loopMobile {
+    --loopOffset: translateX(-50%) !important;
+  }
+  .loopon {
     --loopOffset: translateX(-50%) !important;
   }
 
