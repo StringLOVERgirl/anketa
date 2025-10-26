@@ -1181,6 +1181,15 @@
       bottom: 14vh;
     }
 
+    .copyY {
+      transform: translateY(-20%);
+      background: red;
+    }
+
+    .copyTg {
+      bottom: 0;
+    }
+
     .preloaderiphone {
       bottom: 4.3em;
     }
