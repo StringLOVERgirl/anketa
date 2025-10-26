@@ -499,7 +499,7 @@
     color: var(--loopColor);
     z-index: -1;
     transform: var(--loopOffset);
-    transition: transform 0.8s 0.6s var(--cubic), border 0.3s, color 0.3s;
+    transition: transform 0.8s var(--cubic), border 0.3s, color 0.3s;
     /* transform: translateX(0); */
     border-radius: 35px;
     background: var(--loopbg);
@@ -509,6 +509,7 @@
     --loopOffset: translateX(-50%);
     /* transform: translateX(-50%); */
   }
+  
   .snowblur {
     position: absolute;
     z-index: -1;
