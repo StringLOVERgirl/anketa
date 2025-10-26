@@ -137,7 +137,7 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
                             //   endVideo(dispatch) 
                               dispatch(stop())
                            }
-                           if (loop) {
+                           if (loop.loop) {
                             audioref.current.play()
                             setPlayStatus('play')
                            }

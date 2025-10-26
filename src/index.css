@@ -451,9 +451,11 @@
   }
 
   .snowCont {
+    --loopOffset: unset;
     --loopColor: var(--textColor);
     --snowBg: var(--textColor);
     --loop: var(--textColor);
+    --loopbg: unset;
     position: absolute;
     /* bottom: 2.25em; */
     bottom: 0;
@@ -484,7 +486,7 @@
   }
 
   .snowCont::before {
-    content: 'loop';
+    content: '';
     display: flex;
     position: absolute;
     font-family: inter;
@@ -496,13 +498,16 @@
     align-items: center;
     color: var(--loopColor);
     z-index: -1;
+    transform: var(--loopOffset);
     transition: transform 0.8s var(--cubic), border 0.3s, color 0.3s;
-    transform: translateX(0);
+    /* transform: translateX(0); */
     border-radius: 35px;
+    background: var(--loopbg);
     border: solid 1px var(--loop);
   }
-  .snowCont:hover::before {
-    transform: translateX(-50%);
+  .snowCont:hover {
+    --loopOffset: translateX(-50%);
+    /* transform: translateX(-50%); */
   }
   .snowblur {
     position: absolute;
@@ -515,7 +520,11 @@
     --loop:white;
     --snowBg: white;
     --loopColor: white;
+    --loopbg: url('./assets/loopoff.svg') 25% center / contain no-repeat;
     /* transform: translateX(-50%) !important; */
+  }
+  .loopMobile {
+    --loopOffset: translateX(-50%) !important;
   }
 
 
@@ -976,21 +985,20 @@
       content: attr(aria-labe)
     }
     1% {
-      /* color: white; */
       content: '$';
-      /* transform: translateY(-50%); */
     }
     3% {
       content: '%';
-      /* color: white; */
     }
     5% {
       content: '&';
-      /* color: white; */
+    }
+    6% {
+      /* --color: 0px; */
+      /* filter:blur( var(--color)); */
     }
     7% {
       content: attr(aria-label);
-      color: unset;transform: translateY(0%);
     }
   }
 
@@ -1317,8 +1325,9 @@
       transform: translate(-10%,0);
       /* display: none */
     }
-    .snowCont:hover::before {
-      transform: unset;
+    .snowCont:hover {
+      --loopOffset: unset;
+      transform: translate(-10%,0);
     }
     .decorSnow {
       background: url(/src/assets/startsnow.svg) center / contain no-repeat;

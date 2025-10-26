@@ -62,15 +62,23 @@ export function Up ({userAgent}) {
 
 
     let [playStatus, setPlayStatus] = useState('pause')
-    let [loop, setloop] = useState(false)
+    let [loop, setloop] = useState({loop: false, loopMobile: ''})
     const videoBg = useRef(null)
     const audioref = useRef(null)
     const videoref = useRef(null)
     function changeLoop(){
-        if (loop) {
-            setloop(false)
+        if (loop.loop) {
+                setloop(()=>({loop: false, loopMobile: ''}))
+                if (window.innerWidth < 500) {
+                setloop((prev)=>({...prev, loopMobile: 'loopMobile'}))
+                setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 800)
+                }
         } else {
-            setloop(true)
+                setloop(()=>({loop: true, loopMobile: ''}))
+                if (window.innerWidth < 500) {
+                    setloop((prev)=>({...prev, loopMobile: 'loopMobile'}))
+                    setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 800)
+                    }
         }
     }
     // const isvideoPlay= useRef(videoref.current.paused)
@@ -226,7 +234,7 @@ export function Up ({userAgent}) {
                     
                     <Uptext></Uptext>
 
-                    <div className={`snowCont ${loop?'loop':''}`} onClick={changeLoop} onAnimationEnd={changeLoop}>
+                    <div className={`snowCont ${loop.loop?'loop':''} ${loop.loopMobile?'loopMobile':''}`} onClick={changeLoop}>
                         <div className={`decorSnow snowblur`}></div>
                         <div className="decorSnow"></div>
                     </div>
