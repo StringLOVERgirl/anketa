@@ -23,7 +23,7 @@ function App() {
         /YaApp_Android/i.test(ua) ||
         /YaSearchBrowser/i.test(ua);
         const tg = /Telegram/i.test(ua) || (typeof window.Telegram !== "undefined" && !!window.Telegram.WebApp;)
-
+alert(ua)
         console.log(isIphone || safari)
         // alert(tg,y)
         if (isIphone ){
