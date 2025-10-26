@@ -67,21 +67,13 @@ export function Up ({userAgent}) {
     const audioref = useRef(null)
     const videoref = useRef(null)
     function changeLoop(){
-        if (loop.loop) {
-                setloop(()=>({loop: false, loopMobile: ''}))
+                setloop((prev)=>({...prev, loop: !prev.loop, loopMobile: ''}))
                 if (window.innerWidth < 500) {
                 setloop((prev)=>({...prev, loopMobile: 'loopMobile'}))
                 setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 800)
                 }
-        } else {
-                setloop(()=>({loop: true, loopMobile: ''}))
-                if (window.innerWidth < 500) {
-                    setloop((prev)=>({...prev, loopMobile: 'loopMobile'}))
-                    setTimeout(()=>setloop((prev)=>({...prev, loopMobile: ''})), 800)
-                    }
         }
-    }
-    // const isvideoPlay= useRef(videoref.current.paused)
+        
 
     function keyPlayer(event) {
         // console.log(event)
@@ -110,15 +102,12 @@ export function Up ({userAgent}) {
         if (playStatus == 'pause') {
             setPlayStatus('play')
             console.log('changingplay')
-
             videoref.current.play()
-            // audioref.current.play()
             requestAnimationFrame(()=> 
             audioref.current.play())
         } else {
             setPlayStatus('pause')
             console.log('changingpause')
-
             videoref.current.pause()
             audioref.current.pause()
         }
@@ -190,11 +179,7 @@ export function Up ({userAgent}) {
                            src={dissection} 
                            ref={videoref}
                            onEnded={() => {
-                            //    endVideo(dispatch)
-                            //    dispatch(stop())
-                            //    changePlayStatus()
                                videoref.current.style.setProperty('--opacity', 0)
-                            //    topSection.current.style.setProperty('--onPlayOpacity', 1)
                             }}
                            onClick={changePlayStatus} 
                            onDoubleClick={fullScreen}>

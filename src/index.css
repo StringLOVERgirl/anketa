@@ -578,32 +578,12 @@
     opacity: var(--onPlayOpacity)
   }
 
-  .elHoyoImg {
-    height: 100%; 
-    aspect-ratio: 1.5/1;
-    border-radius: 8px;
-    animation: linkbg 30s linear infinite;
-  }
-
-  @keyframes linkbg {
-    from, 48% {
-      background: url('./assets/link1.png') center / 200%;
-    }
-    52%, 96% {
-      background: url('./assets/link2.png') center / 200%;
-    }
-    to {
-      background: url('./assets/link1.png') center / 200%;
-    }
-  }
-
   .another {
     font-size: 1em;
     white-space: nowrap;
     font-family: inter;
     color: var(--textColor);
   }
-
 
 
   .inspiredCont {
