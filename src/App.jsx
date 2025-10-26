@@ -18,8 +18,8 @@ function App() {
         const isIphone = /iPhone/.test(ua);
         const safari = /^((?!chrome|android).)*safari/i.test(ua)
         const isEdge = /Edg/.test(ua);
-        const y = /yabrowser/i.test(ua)
-        const tg = /telegram/i.test(ua)
+        const y = /YaBrowser/.test(ua)
+        const tg = /Telegram/.test(ua)
         console.log(isIphone || safari)
         if (isIphone ){
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
