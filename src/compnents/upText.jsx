@@ -52,16 +52,14 @@ export const Uptext = React.memo( () => {
             
             numbers.current.add(index)
         }
-        console.log(numbers.current)
 
         elements.current =  words.map((ew,iw)=> {     
            globalindex.current+=1
             return  <>
-            <div style={{display: 'flex', whiteSpace: 'nowrap'}}>
+            <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={iw+' alt word'}>
             {ew.split('').map((e,i)=>{
                 globalindex.current+=1
-                console.log(globalindex.current, e, letters.length-1)
-               return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-labe={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
+               return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-label={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
             )}
             {iw != words.length-1 ? '\u00A0' : ''}
             

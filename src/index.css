@@ -964,7 +964,7 @@
     /* display: flex; */
   }
   .ux::after {
-    content: attr(aria-labe);
+    content: attr(aria-label);
     display: block; 
     /* font-family: raleway; */
     /* width: 0; */
@@ -989,7 +989,7 @@
       /* color: white; */
     }
     7% {
-      content: attr(aria-labe);
+      content: attr(aria-label);
       color: unset;transform: translateY(0%);
     }
   }
