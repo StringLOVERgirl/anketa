@@ -18,8 +18,8 @@ function App() {
         const isIphone = /iPhone/.test(ua);
         const safari = /^((?!chrome|android).)*safari/i.test(ua)
         const isEdge = /Edg/.test(ua);
-        const y = /YaBrowser/i.test(ua)
-        const tg = /Telegram/i.test(ua)
+        const y = /YaBrowser/i.test(ua) || /Yandex/i.test(ua) || navigator.vendor === 'Yandex';
+        const tg = /Telegram/i.test(ua) || !!window.Telegram?.WebApp;
         console.log(isIphone || safari)
         if (isIphone ){
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
