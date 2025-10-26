@@ -18,17 +18,17 @@ function App() {
         const isIphone = /iPhone/.test(ua);
         const safari = /^((?!chrome|android).)*safari/i.test(ua)
         const isEdge = /Edg/.test(ua);
-        const y = /YaBrowser/.test(ua)
-        const tg = /Telegram/.test(ua)
+        const y = /YaBrowser/i.test(ua)
+        const tg = /Telegram/i.test(ua)
         console.log(isIphone || safari)
         if (isIphone ){
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomiphone', copy: 'copyIphone', brand: 'brandIphone'}))
         } else if (isEdge) {
             setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyAlt', brand: 'brandIphone'}))
-            return
+            // return
         } else if (y) {
           setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyY', brand: 'brandIphone'}))
-          return
+          // return
         } else if (tg) {
           setuseragent(prev=>({preloader: 'preloaderiphone', bottompanel: 'bottomalt', copy: 'copyTg', brand: 'brandIphone'}))
         }
