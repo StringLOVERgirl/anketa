@@ -51,9 +51,9 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
         setfirstplay(_=>({
             status: true, class: state
         }))
-        setTimeout(() => {
+        // setTimeout(() => {
             videoref.current.play()
-        }, 5000);
+        // }, 5000);
         // videoref.current.currentTime = 170
 
         if (action == 'on') {
