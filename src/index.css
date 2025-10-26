@@ -114,6 +114,7 @@
     transform: translateY(-10%);
     margin-inline: auto; 
     position: relative;
+    bottom: 0;
   }
 
   .personal, .brand {
