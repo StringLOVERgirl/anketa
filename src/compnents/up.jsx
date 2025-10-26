@@ -39,7 +39,10 @@ function CreditsRL() {
 export function Up ({userAgent}) {
 
     useEffect(()=>
-    window.scrollTo(0,0),[])
+    setTimeout(() => {
+        window.scrollTo(0,0)
+    }, 3000),
+    [])
 
     const dispatch = useDispatch()
     const videoState = useSelector(state => state)

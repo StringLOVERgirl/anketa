@@ -47,11 +47,19 @@ export const Uptext = React.memo( () => {
     console.log(letters, words)
     const globalindex = useRef(-2)
     useEffect(()=>{
-        for (let i = 0; i < 7; i++){
+      for (let i = 0; i < 7; i++){
             let index = getRandomInRange(0, letters.length-1)
             
             numbers.current.add(index)
         }
+    },[])
+    
+    useEffect(()=>{
+        // for (let i = 0; i < 7; i++){
+        //     let index = getRandomInRange(0, letters.length-1)
+            
+        //     numbers.current.add(index)
+        // }
 
         elements.current =  words.map((ew,iw)=> {     
            globalindex.current+=1
@@ -59,7 +67,7 @@ export const Uptext = React.memo( () => {
             <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={iw+' alt word'}>
             {ew.split('').map((e,i)=>{
                 globalindex.current+=1
-               return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-label={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className='ux'></div>:<div>{e}</div>}
+                return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-label={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className={`ux`}></div>:<div>{e}</div>}
             )}
             {iw != words.length-1 ? '\u00A0' : ''}
             
@@ -88,7 +96,7 @@ export const Uptext = React.memo( () => {
             }
         </div>
 
-        <div className="upTextLeftCont">
+        <div className={`upTextLeftCont`}>
             <div className={`leftTextTop ${init.text}`} ref={leftTextTop}>
                 {/* <div className="leftup topText">Thank you for visiting</div> */}
                 {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
@@ -97,7 +105,14 @@ export const Uptext = React.memo( () => {
                 </div>
                 {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
                 {/* <div className="leftup bottomText">Здесь немного из мира моих интересов</div> */}
-                <div className="leftup bottomText">Here're some things about me.</div>
+                <div className="leftup bottomText" style={{display: 'flex'}}>
+                    {
+                     'Here\'re\u00A0some\u00A0things\u00A0about\u00A0me.'.split('\u00A0').map((e,i)=><>
+                     <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={i+' alt bottom word'}>{e}</div>
+                     {'\u00A0'}
+                     </>)   
+                    }
+                </div>
             </div>
 
             <div className="leftTextBottom">
