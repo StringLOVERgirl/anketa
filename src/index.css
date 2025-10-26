@@ -1182,12 +1182,13 @@
     }
 
     .copyY {
-      transform: translateY(-20%);
-color: red;    }
+      transform: translateY(-40%);
+/* color: red;    */
+}
 
     .copyTg {
       bottom: 0;
-      color: green;
+      /* color: green; */
     }
 
     .preloaderiphone {
