@@ -18,8 +18,12 @@ function App() {
         const isIphone = /iPhone/.test(ua);
         const safari = /^((?!chrome|android).)*safari/i.test(ua)
         const isEdge = /Edg/.test(ua);
-        const y = /YaBrowser/i.test(ua) || /Yandex/i.test(ua) || navigator.vendor === 'Yandex';
-        const tg = /Telegram/i.test(ua) || !!window.Telegram?.WebApp;
+        const y = 
+        /YaBrowser/i.test(ua) ||
+        /YaApp_Android/i.test(ua) ||
+        /YaSearchBrowser/i.test(ua);
+        const tg = /Telegram/i.test(ua) || (typeof window.Telegram !== "undefined" && !!window.Telegram.WebApp;)
+
         console.log(isIphone || safari)
         // alert(tg,y)
         if (isIphone ){
