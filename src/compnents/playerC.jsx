@@ -51,7 +51,7 @@ export function Player ({topSection, videoref, audioref, playStatus, setPlayStat
         setfirstplay(_=>({
             status: true, class: state
         }))
-        videoref.current.play()
+        requestAnimationFrame(()=>videoref.current.play())
         // videoref.current.currentTime = 170
 
         if (action == 'on') {
