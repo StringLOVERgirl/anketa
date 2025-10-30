@@ -3,6 +3,7 @@ import xxx from '/audio/XXXTENTACION-whoa-(mind-in-awe).mp3'
 // import bones from '/audio/IAmCertainlyNotWorthYourTime.mp3'
 // import chlorella from '/audio/BONES-Chlorella.mp3'
 // import xxx2 from '/audio/XXXTENTACION-AI-Selfless.mp3'
+import brnew from '@a/brnew.mp3'
 import tracy from '/audio/Lil_Tracy_-_Tight_Rope.mp3'
 import castles from '@a/castles.mp3'
 import peep3 from '/audio/Y2meta_app_Lil_Peep_x_Lil_Tracy_Blowing_Kisses_In_The_Wind_miro.mp3'
@@ -23,6 +24,7 @@ export const player = {
     tracy: ['Lil Tracy - Tight Rope', 'tracy', tracy], 
     special: ['DCLXVI - Dissection • SPECIAL', 'dclxvi', dclxvi],
     kyoto: ['yung lean - kyoto (single)', 'kyoto', kyoto],
+    brnew: ['Brennan Savage - Cry Me A River', 'brnew', brnew],
     brennan: ['brennan savage - i could paint...', 'brennan', brennan],
     // xxx2: ['XXXTENTACION - selfless (AI)', 'xxxost', xxx2],
     peep3: ['Lil Peep x Lil Tracy - Blowing Kisses', 'peep', peep3],

@@ -849,6 +849,10 @@
     background: url('assets/xxxlabel.jpeg') center / cover;
   }
 
+  .brnew {
+    background: url('assets/brnew.jpeg') center / cover;
+  }
+
   .castles {
     background: url('./assets/castles.avif') center / cover;
   }
