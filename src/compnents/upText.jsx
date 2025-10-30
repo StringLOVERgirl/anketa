@@ -1,7 +1,68 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { getRandomInRange } from './functions';
 
-export const Uptext = React.memo( () => {
+
+function UptextInner({text}){
+
+    let words = 'Thanks\u00A0for\u00A0visiting.\u00A0Have\u00A0a\u00A0nice\u00A0UX'.split('\u00A0')
+    let letters = 'Thanks\u00A0for\u00A0visiting.\u00A0Have\u00A0a\u00A0nice\u00A0UX'.split('')
+    const numbers = useRef(new Set)
+    // const elements = useMemo(() =>
+    // можно сделать так при перерегенерации чтобы запускалось новые анимции
+    // }), [numbers.current]
+    // );
+    const elements = useRef(null)
+    console.log(letters, words)
+    const globalindex = useRef(-2)
+    useEffect(()=>{
+      for (let i = 0; i < 7; i++){
+            let index = getRandomInRange(0, letters.length-1, numbers)
+            
+            numbers.current.add(index)
+        }
+    },[])
+    
+    useEffect(()=>{
+
+        elements.current =  words.map((ew,iw)=> {     
+           globalindex.current+=1
+            return  <>
+               <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={iw+' alt word'}>
+                  {ew.split('').map((e,i)=>{
+                      globalindex.current+=1
+                      return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' 
+                      ? <div aria-label={e} style={{'--delayAS': getRandomInRange(0, letters.length-5, numbers)+'s'}} className={`ux`}></div>
+                      :<div>{e}</div>}
+                  )}
+                  {iw != words.length-1 ? '\u00A0' : ''}
+              </div> 
+           </> }         
+           )
+    },[])
+
+    return(
+        <>
+         {/* <div className="leftup topText">Thank you for visiting</div> */}
+        {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
+        <div className={`leftup topText ${text}`} style={{display: 'flex'}}>
+           {elements.current}
+        </div>
+        {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
+        {/* <div className="leftup bottomText">Здесь немного из мира моих интересов</div> */}
+        <div className={`leftup bottomText ${text}`} style={{display: 'flex'}}>
+            {
+             'Here\'re\u00A0some\u00A0things\u00A0about\u00A0me.'.split('\u00A0').map((e,i)=><>
+             <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={i+' alt bottom word'}>{e}</div>
+             {'\u00A0'}
+             </>)   
+            }
+        </div>
+        </>
+    )
+}
+
+export const Uptext = React.memo(() => {
 
     const [init, setinit ]= useState({meg: null, text: ''})
     const leftTextTop = useRef(null) 
@@ -34,54 +95,6 @@ export const Uptext = React.memo( () => {
             clearInterval(interval.current);
         })
     }, [])
-
-
-    let words = 'Thanks\u00A0for\u00A0visiting.\u00A0Have\u00A0a\u00A0nice\u00A0UX'.split('\u00A0')
-    let letters = 'Thanks\u00A0for\u00A0visiting.\u00A0Have\u00A0a\u00A0nice\u00A0UX'.split('')
-    const numbers = useRef(new Set)
-    // const elements = useMemo(() =>
-    // можно сделать так при перерегенерации чтобы запускалось новые анимции
-// }), [numbers.current]
-// );
-    const elements = useRef(null)
-    console.log(letters, words)
-    const globalindex = useRef(-2)
-    useEffect(()=>{
-      for (let i = 0; i < 7; i++){
-            let index = getRandomInRange(0, letters.length-1)
-            
-            numbers.current.add(index)
-        }
-    },[])
-    
-    useEffect(()=>{
-        // for (let i = 0; i < 7; i++){
-        //     let index = getRandomInRange(0, letters.length-1)
-            
-        //     numbers.current.add(index)
-        // }
-
-        elements.current =  words.map((ew,iw)=> {     
-           globalindex.current+=1
-            return  <>
-            <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={iw+' alt word'}>
-            {ew.split('').map((e,i)=>{
-                globalindex.current+=1
-                return numbers.current.has(globalindex.current) && e != '.' && e.trim() != '' ? <div aria-label={e} style={{'--delayAS': getRandomInRange(0, letters.length-5)+'s'}} className={`ux`}></div>:<div>{e}</div>}
-            )}
-            {iw != words.length-1 ? '\u00A0' : ''}
-            
-           </div> </> }         
-           )
-    },[])
-
-    function getRandomInRange(min, max) {
-        let index
-        do {
-            index = Math.floor(Math.random() * (max - min) + min);
-        } while (numbers.current.has(index))
-        return index
-    }
     
 
     return(
@@ -97,22 +110,9 @@ export const Uptext = React.memo( () => {
         </div>
 
         <div className={`upTextLeftCont`}>
-            <div className={`leftTextTop ${init.text}`} ref={leftTextTop}>
-                {/* <div className="leftup topText">Thank you for visiting</div> */}
-                {/* <div className="leftup bottomText">Our best solutions for your personal brand</div> */}
-                <div className="leftup topText" style={{display: 'flex'}}>
-                   {elements.current}
-                </div>
-                {/* <div className="leftup topText">Спасибо, что решила (или решил) заглянуть </div> */}
-                {/* <div className="leftup bottomText">Здесь немного из мира моих интересов</div> */}
-                <div className="leftup bottomText" style={{display: 'flex'}}>
-                    {
-                     'Here\'re\u00A0some\u00A0things\u00A0about\u00A0me.'.split('\u00A0').map((e,i)=><>
-                     <div style={{display: 'flex', whiteSpace: 'nowrap'}} key={i+' alt bottom word'}>{e}</div>
-                     {'\u00A0'}
-                     </>)   
-                    }
-                </div>
+            <div className={`leftTextTop `} ref={leftTextTop}>
+               {/* <UptextInner></UptextInner> */}
+               <UptextInner text={init.text}></UptextInner>
             </div>
 
             <div className="leftTextBottom">

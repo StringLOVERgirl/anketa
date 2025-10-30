@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useRef } from "react"
 import dissection from '/assets/dissection720.mp4'
-import { content } from "./content"
+import { content } from './content'
 import { VideoPanel } from "./videopanel"
 import { useSelector, useDispatch } from 'react-redux';
 import { Player } from "./playerC"
@@ -38,11 +38,11 @@ function CreditsRL() {
 
 export function Up ({userAgent}) {
 
-    useEffect(()=>
-    setTimeout(() => {
-        window.scrollTo(0,0)
-    }, 3000),
-    [])
+    useEffect(()=> {
+       setTimeout(() => {
+           window.scrollTo(0,0)
+       }, 3000)
+    }, [])
 
     const dispatch = useDispatch()
     const videoState = useSelector(state => state)
