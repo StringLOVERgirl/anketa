@@ -45,6 +45,9 @@
     will-change: transform;
     transition: transform 1.1s 0.3s var(--cubic);
   }
+  .brand {
+    color: #6b6060;
+  }
 
 
   .circle {
